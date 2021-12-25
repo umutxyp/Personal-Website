@@ -11,5 +11,5 @@ This music bot project is an adapted version of the original project published o
 <h2>Good Luck to You with the Music Bot.</h2>
 <br>
 Umut Bayraktar Youtube: <a href="https://www.youtube.com/UmutBayraktarYT">Subscribe</a><br>
-Code Share Discord: <a href="https://discord.gg/6XGqdgE">Join</a>
+Code Share Discord: <a href="https://discord.gg/6XGqdgE">Join</a><br>
 VİA: <a href="https://github.com/ZerioDev">ZerioDev</a>
