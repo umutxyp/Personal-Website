@@ -15,14 +15,13 @@ module.exports = (client, message) => {
     if (cmd && DJ.enabled && DJ.commands.includes(cmd.name)) {
         const roleDJ = message.guild.roles.cache.find(x => x.name === DJ.roleName);
 
-        if (!message.member._roles.includes(roleDJ.id)) {
+        if (!message.member.roles.includes(roleDJ.id)) {
             return message.channel.send(`${message.author}, This command is set only for those with the ${DJ.roleName} role. ❌`);
         }
     }
 
     if (cmd && cmd.voiceChannel) {
         if (!message.member.voice.channel) return message.channel.send(`${message.author}, You are not connected to an audio channel. ❌`);
-
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send(`${message.author}, You are not on the same audio channel as me. ❌`);
     }
 
