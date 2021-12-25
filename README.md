@@ -13,3 +13,5 @@ This music bot project is an adapted version of the original project published o
 Umut Bayraktar Youtube: <a href="https://www.youtube.com/UmutBayraktarYT">Subscribe</a><br>
 Code Share Discord: <a href="https://discord.gg/6XGqdgE">Join</a><br>
 VİA: <a href="https://github.com/ZerioDev">ZerioDev</a>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6WQIiojePQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
