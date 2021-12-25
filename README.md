@@ -12,3 +12,4 @@ This music bot project is an adapted version of the original project published o
 <br>
 Umut Bayraktar Youtube: <a href="https://www.youtube.com/UmutBayraktarYT">Subscribe</a><br>
 Code Share Discord: <a href="https://discord.gg/6XGqdgE">Join</a>
+VİA: <a href="https://github.com/ZerioDev">ZerioDev</a>
