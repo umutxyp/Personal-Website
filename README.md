@@ -1,7 +1,6 @@
 # Discord.js v13 Music Bot
 This music bot project is an adapted version of the original project published on **github.com** specifically for the **glitch.com** site so that users can repo it conveniently.<br><br>
 <h1>Music Bot Installation Guide</h1><hr>
-<h1><a href="https://youtu.be/6WQIiojePQ8">VİDEO GUIDE</a></h1>
 <b>1 |</b> After repoing the project to your project on the website <b>glitch.com</b> via github, log in to the file <b>.env</b> in the project and write the token of your discord bot in the section that says <b>TOKEN</b>.<br><br>
 <b>2 |</b> Press the <b>Tools</b> button at the bottom left, press the <b>Logs</b> button there, and your project specific log will be opened.<br><br>
 <b>3 |</b> If everything is correct, you will see a message in your log saying that your bot is <b>logged in with name</b>. However, if there is a problem, you can see a message about this problem in your log.<br><br>
