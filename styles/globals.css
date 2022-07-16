@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  background: rgb(0, 0, 0);
+  --scrollbar-background: #434243;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 14px;
+	height: 18px;
+	background: var(--scrollbar-background);
+}
+::-webkit-scrollbar-thumb {
+	background-color: #696869;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 2px;
+	background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #7b7a7a;
+}
+::-webkit-scrollbar-thumb:active {
+	background-color: #a1a1a1;
+}
+* {
+  font-family: 'K2D', sans-serif;
+}
+
+.overflow-small::-webkit-scrollbar {
+	width: 8px;
+	height: 18px;
+	background: var(--scrollbar-background);
+}
+
+/* PULSE AVATAR */
+.pulse-avatar-dnd {
+	background-color: red;
+	border-radius: 50%;
+	animation: pulse-dnd 2s infinite;
+  }
+  .pulse-avatar-online {
+	background-color: green;
+	border-radius: 50%;
+	animation: pulse-online 2s infinite;
+  }
+  .pulse-avatar-idle {
+	background-color: yellow;
+	border-radius: 50%;
+	animation: pulse-idle 2s infinite;
+  }
+  .pulse-avatar-offline {
+	background-color: grey;
+	border-radius: 50%;
+	animation: pulse-offline 2s infinite;
+  }
+  
+  
+  @keyframes pulse-dnd {
+	0% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
+	}
+	
+	70% {
+	  transform: scale(1);
+	  box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
+	}
+	
+	100% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
+	}
+  }
+  @keyframes pulse-idle {
+	0% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(250, 166, 26, 0.7);
+	}
+	
+	70% {
+	  transform: scale(1);
+	  box-shadow: 0 0 0 10px rgba(250, 166, 26, 0);
+	}
+	
+	100% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(250, 166, 26, 0);
+	}
+  }
+  @keyframes pulse-online {
+	0% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(67, 181, 129, 0.7);
+	}
+	
+	70% {
+	  transform: scale(1);
+	  box-shadow: 0 0 0 10px rgba(67, 181, 129, 0);
+	}
+	
+	100% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(67, 181, 129, 0);
+	}
+  }
+  @keyframes pulse-offline {
+	0% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(116, 127, 141, 0.7);
+	}
+	
+	70% {
+	  transform: scale(1);
+	  box-shadow: 0 0 0 10px rgba(116, 127, 141, 0);
+	}
+	
+	100% {
+	  transform: scale(0.9);
+	  box-shadow: 0 0 0 0 rgba(116, 127, 141, 0);
+	}
+  }
+
+.text-circle {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.text-online {
+    color: #46f154;
+}
