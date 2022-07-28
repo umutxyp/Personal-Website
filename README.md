@@ -2,7 +2,7 @@
 It is a quality portfolio site with a beautiful and simple design that you can personalize for yourself.
 
 <h3>DISCORD: https://discord.gg/Fy4WmSThRZ</h3>
-<h3>YOUTUBE: https://bit.ly/3zgizYR</h3>
+<h3>VİDEO: https://youtu.be/oeIEiTKhQBw</h3>
 <hr>
 <h3>
 Discord Developers: https://discord.dev<br>
