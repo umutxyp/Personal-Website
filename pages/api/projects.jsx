@@ -6,7 +6,7 @@ export default async (req, res) => {
       name: "Code Shop",
       description:
         "Publish your own software or images for free or for a fee. Earn money.",
-      link: "https://codeshare.xyz",
+      link: "https://codeshare.me",
     },
     {
       id: 2,
