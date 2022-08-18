@@ -32,13 +32,6 @@ export default function Home() {
                         <p className="font-semibold text-xl">Umut#6070</p>
                     </div>
                 </a>
-    <a target="_blank" rel="norefferer" href="WHATSAPP LİNK YAZ">
-<div className="mt-2 flex justify-between bg-zinc-500/5 hover:bg-zinc-500/10 transition-all duration-200 px-4 py-2 rounded-lg items-center">
-<i className="fab fa-whatsapp fa-2x" />
-<p className="font-semibold text-xl">Whatsapp</p>
-</div>
-</a>
-    
                 <a href="mailto:umutbayraktar55@gmail.com">
                     <div className="mt-2 flex justify-between bg-zinc-500/5 hover:bg-zinc-500/10 transition-all duration-200 px-4 py-2 rounded-lg items-center">
                         <i className="fa fa-envelope fa-2x" />
