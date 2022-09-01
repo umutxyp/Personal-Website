@@ -3,26 +3,16 @@ export default async (req, res) => {
     {
       id: 1,
       image: "https://media.discordapp.net/attachments/737348411568685066/954502826791428136/codeshare_logo.png",
-      name: "Code Shop",
-      description:
-        "Publish your own software or images for free or for a fee. Earn money.",
+      name: "Code Share",
+      description: "Discord türkiyenin en büyük discord bot komutları arşivi ve en büyük discord botu uptime, hostlayıcı websitesi. Code Share veritabanında discord botlarına özgü yüzlerce discord bot komutu bulunmaktadır ve kendi discord botunuzu yaratmanıza yardımcı olur.",
       link: "https://codeshare.me",
     },
     {
       id: 2,
       image: "https://media.discordapp.net/attachments/737348411568685066/999563078079361074/YT_AVATAR_NET.jpg",
-      name: "Youtube",
-      description:
-        "I am a professional editor and intermediate software developer. I have been professionally interested in community management and development for 5 years, I have high level knowledge and experience in areas such as community management and social media management. I post videos about discord on my youtube channel.",
+      name: "Youtube Channel",
+      description: "I am a professional editor and intermediate software developer. I have been professionally interested in community management and development for 5 years, I have high level knowledge and experience in areas such as community management and social media management. I post videos about discord on my youtube channel.",
       link: "https://youtube.com/UmutBayraktarYT",
-    },
-     {
-      id: 3,
-      image: "https://caoscrew.com/assets/images/team/KK.jpg",
-      name: "Caos Crew",
-      description:
-        "A magnificent and valuable nft collection of 8888 pieces.",
-      link: "https://caoscrew.com/",
     }
   ];
   res.status(200).json(data);
