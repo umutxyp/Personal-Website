@@ -1,9 +1,8 @@
 
 const items = [
+        { icon: 'fab fa-instagram', link: 'https://instagram.com/umutxyp' },
+        { icon: 'fab fa-telegram', link: 'https://t.me/umutland' },
     { icon: 'fab fa-youtube', link: 'https://youtube.com/UmutBayraktarYT' },
-    { icon: 'fab fa-twitch', link: 'https://twitch.com/umutxyp' },
-    { icon: 'fab fa-discord', link: 'https://discord.com/users/615029465726320654' },
-    { icon: 'fab fa-instagram', link: 'https://instagram.com/umutxyp' },
     { icon: 'fab fa-facebook', link: 'https://facebook.com/umutxyp' },
     { icon: 'fab fa-github', link: 'https://github.com/umutxyp' },
   ]
