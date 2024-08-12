@@ -73,7 +73,7 @@ function MyApp({ Component, pageProps }) {
             <div>
               <p>❤️ Umut Bayraktar</p></div>
             <div className="mt-2 md:mt-0 flex items-center">
-              <a href="https://discord.gg/58e5H4try3" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-neutral-700/5 hover:bg-neutral-700/20 px-4 py-2 rounded-md transition-all duration-200">
+              <a href="https://discord.gg/uQpVyeHVZw" target="_blank" rel="noreferrer" className="w-full md:w-auto bg-neutral-700/5 hover:bg-neutral-700/20 px-4 py-2 rounded-md transition-all duration-200">
                 <i className="fab fa-discord mr-2" />Join My Discord
               </a>
             </div>
