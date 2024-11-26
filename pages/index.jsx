@@ -25,9 +25,9 @@ export default function Home() {
         <br></br>
         <h1><strong>EXPERIENCE</strong></h1>
         <ul>
-            <li><strong>Community Management:</strong> With 5 years of experience, I’ve worked on various projects, building and managing communities and developing social media strategies. During this time, I’ve successfully coordinated communities with thousands of members, adding value to multiple projects.</li>
-            <li><strong>Software Development:</strong> As a full-stack web developer, I’ve been involved in various projects, including <strong>Code Share</strong>, a public platform for sharing software.</li>
-            <li><strong>Content Creation:</strong> I create expert-level content about software and cryptocurrency on social media, where I’ve gained a following of over <strong>55,000 people</strong>.</li>
+            <li><strong>* Community Management:</strong> With 5 years of experience, I’ve worked on various projects, building and managing communities and developing social media strategies. During this time, I’ve successfully coordinated communities with thousands of members, adding value to multiple projects.</li>
+            <li><strong>* Software Development:</strong> As a full-stack web developer, I’ve been involved in various projects, including <strong>Code Share</strong>, a public platform for sharing software.</li>
+            <li><strong>* Content Creation:</strong> I create expert-level content about software and cryptocurrency on social media, where I’ve gained a following of over <strong>55,000 people</strong>.</li>
         </ul>
         <br></br>
         <h1><strong>SOCIAL MEDIA AND COMMUNITY LINKS</strong></h1>
