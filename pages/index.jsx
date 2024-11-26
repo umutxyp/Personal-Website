@@ -39,7 +39,7 @@ export default function Home() {
         </ul>
 <br></br>
         <h1><strong>PROJECTS</strong></h1>
-        <p><strong>Code Share:</strong> My first project was a public platform for developers to share their software. This initiative helped me gain significant experience in planning, development, and project management.</p>
+        <p><strong>Code Share:</strong> My first project was a public platform for developers to share their software. This initiative helped me gain significant experience in planning, development, and project management. (<a href="https://codeshare.me" rel="follow" target="_blank">codeshare.me</a>)</p>
 <br></br>
         <h1><strong>GOALS</strong></h1>
         <p>I aim to reach wider audiences by sharing knowledge in the fields of cryptocurrency and technology. With a focus on innovative thinking and professionalism, I strive to make a difference, especially in community management and social media.</p>
