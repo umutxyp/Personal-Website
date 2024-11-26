@@ -23,14 +23,14 @@ export default function Home() {
                 <p className="text-white/50 text-md mt-3">
         <p>Hi! I'm <strong>Umut</strong>, a 19-year-old software developer and content creator based in London, UK. Originally from Antalya, Turkey, I specialize in technology, software, and cryptocurrency.</p>
         <br></br>
-        <h1><strong>Experience</strong></h1>
+        <h1><strong>EXPERIENCE</strong></h1>
         <ul>
             <li><strong>Community Management:</strong> With 5 years of experience, I’ve worked on various projects, building and managing communities and developing social media strategies. During this time, I’ve successfully coordinated communities with thousands of members, adding value to multiple projects.</li>
             <li><strong>Software Development:</strong> As a full-stack web developer, I’ve been involved in various projects, including <strong>Code Share</strong>, a public platform for sharing software.</li>
             <li><strong>Content Creation:</strong> I create expert-level content about software and cryptocurrency on social media, where I’ve gained a following of over <strong>55,000 people</strong>.</li>
         </ul>
         <br></br>
-        <h1><strong>Social Media and Community Links</strong></h1>
+        <h1><strong>SOCIAL MEDIA AND COMMUNITY LINKS</strong></h1>
         <ul>
             <li><a href="https://facebook.com/umutxyp" target="_blank">* umutxyp - Facebook</a></li>
             <li><a href="https://instagram.com/umutxyp" target="_blank">* umutxyp - Instagram</a></li>
@@ -38,10 +38,10 @@ export default function Home() {
             <li><a href="https://youtube.com/umutxyp" target="_blank">* umutxyp - YouTube</a></li>
         </ul>
 <br></br>
-        <h1><strong>Projects</strong></h1>
+        <h1><strong>PROJECTS</strong></h1>
         <p><strong>Code Share:</strong> My first project was a public platform for developers to share their software. This initiative helped me gain significant experience in planning, development, and project management.</p>
 <br></br>
-        <h1><strong>Goals</strong></h1>
+        <h1><strong>GOALS</strong></h1>
         <p>I aim to reach wider audiences by sharing knowledge in the fields of cryptocurrency and technology. With a focus on innovative thinking and professionalism, I strive to make a difference, especially in community management and social media.</p>
         <br></br>
         <p>If you're interested in learning more about software, crypto, or community management, let’s connect on my social media channels! 😊</p>
@@ -53,7 +53,7 @@ export default function Home() {
               </div>
               
             </div>
-            <br></br>
+            <br></br><br></br>
             <span style={{ zIndex: '-1' }} className="text-white/5 absolute bottom-3 left-7 text-xl sm:text-2xl md:text-4xl lg:text-3xl font-semibold">Content Creator / Community Manager</span>
           </div>
       </div>
