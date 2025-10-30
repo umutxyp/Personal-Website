@@ -16,11 +16,12 @@ export default function ContactSection() {
   const socialIcons = {
     facebook: FaFacebook,
     instagram: FaInstagram,
-    youtube: FaYoutube,
+    // youtube: FaYoutube, // odstraněno
+    email: HiMail, // NOVĚ místo telegramu
     github: FaGithub,
-    telegram: FaTelegram,
     twitter: FaTwitter,
     linkedin: FaLinkedin,
+    // telegram: FaTelegram, // odstraněno
   };
 
   return (
@@ -75,7 +76,7 @@ export default function ContactSection() {
               }}
               className="text-2xl sm:text-3xl mb-6 text-center"
             >
-              Follow Me On Social Media
+              Kontaktuj mě na sociálních sítích a e‑mailem
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
               {Object.entries(siteConfig.social).map(([platform, url]) => {
@@ -114,7 +115,7 @@ export default function ContactSection() {
                       style={{ color: 'inherit', fontWeight: 'var(--style-headingWeight)' }}
                       className="text-sm sm:text-base capitalize"
                     >
-                      {platform}
+                      {platform === 'email' ? 'E-mail' : platform}
                     </span>
                   </motion.a>
                 );

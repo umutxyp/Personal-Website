@@ -2,11 +2,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenu, HiX } from 'react-icons/hi';
-import { 
-  FaFacebook, FaInstagram, FaYoutube, FaGithub, 
-  FaTelegram, FaTwitter, FaLinkedin 
-} from 'react-icons/fa';
+import { HiMenu, HiX, HiMail } from 'react-icons/hi';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 import { siteConfig } from '../lib/config';
 
 export default function Header() {
@@ -31,11 +28,7 @@ export default function Header() {
   const socialIcons = {
     facebook: FaFacebook,
     instagram: FaInstagram,
-    youtube: FaYoutube,
-    github: FaGithub,
-    telegram: FaTelegram,
-    twitter: FaTwitter,
-    linkedin: FaLinkedin,
+    email: HiMail,
   };
 
   return (
@@ -64,7 +57,7 @@ export default function Header() {
                   boxShadow: 'var(--style-glow)',
                 }}
               >
-                {siteConfig.personal.username.charAt(0).toUpperCase()}
+                PH
               </div>
               <span 
                 className="text-base sm:text-xl font-bold bg-clip-text text-transparent hidden xs:inline"
@@ -73,7 +66,7 @@ export default function Header() {
                   fontWeight: 'var(--style-headingWeight)',
                 }}
               >
-                {siteConfig.personal.username}
+                Petr Havel
               </span>
             </motion.div>
           </Link>
