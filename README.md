@@ -77,7 +77,9 @@ npm run export   # Export static site
 ## ⚙️ Configuration
 
 ### Site Data
+
 Edit `src/resources/site-data.tsx` to update:
+
 - Personal information
 - Social links
 - Projects
@@ -85,14 +87,18 @@ Edit `src/resources/site-data.tsx` to update:
 - GitHub username
 
 ### UI Theme
+
 Customize theme in `src/resources/once-ui.config.ts`:
+
 - Colors (brand, accent, neutral)
 - Typography
 - Border styles
 - Effects
 
 ### Routes
+
 Enable/disable pages in `src/resources/once-ui.config.ts`:
+
 ```typescript
 const routes = {
   "/": true,
@@ -107,6 +113,7 @@ const routes = {
 ## 📄 Adding Projects
 
 1. Create a new MDX file in `src/app/work/projects/`:
+
 ```mdx
 ---
 title: "Project Name"
@@ -120,18 +127,22 @@ link: "https://project.com"
 Project content here...
 ```
 
-2. The project will automatically appear on the work page.
+1. The project will automatically appear on the work page.
 
 ## 🎨 Customization
 
 ### Colors
+
 Update theme colors in `once-ui.config.ts`:
+
 - `brand`: Primary brand color
 - `accent`: Accent/secondary color
 - `neutral`: Gray scale tones
 
 ### Fonts
+
 Configured in `once-ui.config.ts` using Next.js Font optimization:
+
 - Heading: Geist
 - Body: Geist
 - Code: Geist Mono
@@ -139,11 +150,13 @@ Configured in `once-ui.config.ts` using Next.js Font optimization:
 ## 🌐 Deployment
 
 ### Vercel (Recommended)
+
 1. Push to GitHub
 2. Import project in Vercel
 3. Deploy automatically
 
 ### Manual Build
+
 ```bash
 npm run build
 npm start
@@ -163,11 +176,13 @@ github: {
 ## 🔧 Environment Variables
 
 Optional: Create `.env.local` for password protection:
+
 ```env
 PAGE_ACCESS_PASSWORD=your_password
 ```
 
 Enable protected routes in `once-ui.config.ts`:
+
 ```typescript
 const protectedRoutes = {
   "/about": true
@@ -184,7 +199,7 @@ This project is open source and available under the [MIT License](LICENSE).
 - **GitHub:** [@umutxyp](https://github.com/umutxyp)
 - **LinkedIn:** [umutxyp](https://linkedin.com/in/umutxyp)
 - **Twitter:** [@devbayraktar](https://twitter.com/devbayraktar)
-- **Email:** umutbayraktar55@gmail.com
+- **Email:** <umutbayraktar55@gmail.com>
 
 ---
 
