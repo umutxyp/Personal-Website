@@ -30,7 +30,7 @@ const home: Home = {
   description: siteData.person.biography,
   headline: <>{siteData.hero.headline}</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">{siteData.hero.featured.badge}</strong>{" "}
@@ -101,7 +101,7 @@ const blog: Blog = {
   path: "/blog",
   label: "Blog",
   title: "Writing about code, community, and content",
-  description: `Notes on CodeShare, creators, and automation experiments by ${person.name}`,
+  description: `Notes on Codeshare, creators, and automation experiments by ${person.name}`,
 };
 
 const work: Work = {
@@ -115,7 +115,7 @@ const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Product gallery - ${person.name}`,
-  description: "Screens from CodeShare, Beatra, Vip Transfer Turkey, and DNZ Geri Dönüşüm.",
+  description: "Screens from Codeshare, Beatra, Vip Transfer Turkey, and DNZ Geri Dönüşüm.",
   images: siteData.gallery.map((src, index) => ({
     src,
     alt: `showcase-${index + 1}`,

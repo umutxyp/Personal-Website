@@ -18,13 +18,14 @@ export const Footer = () => {
         s={{
           direction: "column",
           horizontal: "center",
-          align: "center",
+          vertical: "center",
         }}
       >
-        <Text variant="body-default-s" onBackground="neutral-strong">
-          <Text onBackground="neutral-weak">Copyright {currentYear}</Text>
-          <Text paddingX="4">{person.name}</Text>
-          <Text onBackground="neutral-weak">/ CodeShare Technology Ltd.</Text>
+        <Text variant="body-default-s" onBackground="neutral-weak">
+          © {currentYear}{" "}
+          <a href="https://codeshare.me" style={{ color: "inherit" }}>
+            Codeshare
+          </a>
         </Text>
         <Row gap="16">
           {social.map(

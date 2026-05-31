@@ -1,8 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import {
-  AvatarGroup,
-  Carousel,
   Column,
   Flex,
   Heading,
@@ -23,6 +22,7 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   href,
+  priority,
   images = [],
   title,
   content,
@@ -31,60 +31,57 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   link,
 }) => {
   return (
-    <Column fillWidth gap="m">
-      <Carousel
-        sizes="(max-width: 960px) 100vw, 960px"
-        items={images.map((image) => ({
-          slide: image,
-          alt: title,
-        }))}
-      />
-      <Flex
-        s={{ direction: "column" }}
-        fillWidth
-        paddingX="s"
-        paddingTop="12"
-        paddingBottom="24"
-        gap="l"
-      >
+    <Flex
+      fillWidth
+      radius="l"
+      border="neutral-alpha-weak"
+      overflow="hidden"
+      s={{ direction: "column" }}
+    >
+      {images[0] && (
+        <div style={{ width: "280px", flexShrink: 0, position: "relative", aspectRatio: "4/3" }}
+          className="project-card-image">
+          <Image
+            priority={priority}
+            src={images[0]}
+            alt={title}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      )}
+      <Column flex={1} gap="12" padding="20" vertical="center">
         {title && (
-          <Flex flex={5}>
-            <Heading as="h2" wrap="balance" variant="heading-strong-xl">
-              {title}
-            </Heading>
-          </Flex>
+          <Heading as="h2" wrap="balance" variant="heading-strong-m">
+            {title}
+          </Heading>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
-          <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
-            <Flex gap="24" wrap>
-              {content?.trim() && (
-                <SmartLink
-                  suffixIcon="arrowRight"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={href}
-                >
-                  <Text variant="body-default-s">Read case study</Text>
-                </SmartLink>
-              )}
-              {link && (
-                <SmartLink
-                  suffixIcon="arrowUpRightFromSquare"
-                  style={{ margin: "0", width: "fit-content" }}
-                  href={link}
-                >
-                  <Text variant="body-default-s">View project</Text>
-                </SmartLink>
-              )}
-            </Flex>
-          </Column>
+        {description?.trim() && (
+          <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
+            {description}
+          </Text>
         )}
-      </Flex>
-    </Column>
+        <Flex gap="16" wrap>
+          {content?.trim() && (
+            <SmartLink
+              suffixIcon="arrowRight"
+              style={{ margin: "0", width: "fit-content" }}
+              href={href}
+            >
+              <Text variant="body-default-s">Read case study</Text>
+            </SmartLink>
+          )}
+          {link && (
+            <SmartLink
+              suffixIcon="arrowUpRightFromSquare"
+              style={{ margin: "0", width: "fit-content" }}
+              href={link}
+            >
+              <Text variant="body-default-s">View project</Text>
+            </SmartLink>
+          )}
+        </Flex>
+      </Column>
+    </Flex>
   );
 };

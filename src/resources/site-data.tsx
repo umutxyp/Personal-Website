@@ -3,8 +3,12 @@ const siteData = {
     baseURL: "https://umutbayraktar.vercel.app",
     keywords: [
       "Umut Bayraktar",
-      "CodeShare",
+      "Codeshare",
       "Full-stack developer",
+      "AI Systems Researcher",
+      "Content Creator",
+      "Community Management",
+      "Social Media Management",
       "Next.js",
       "Discord bots",
       "Digital marketplace",
@@ -14,7 +18,7 @@ const siteData = {
     firstName: "Umut",
     lastName: "Bayraktar",
     name: "Umut Bayraktar",
-    role: "Founder - Full-Stack Developer - Content Creator",
+    role: "AI Systems Researcher · Full-Stack Developer · Content Creator",
     avatar: "/images/avatar.jpg",
     email: "umutbayraktar55@gmail.com",
     phone: "+90 505 679 1509",
@@ -23,24 +27,24 @@ const siteData = {
     address: "Antalya, Turkey",
     languages: ["Türkçe", "English"],
     biography:
-      "Founder of CodeShare Technology Ltd building marketplaces, realtime infrastructure, and creator automation pipelines for 44K+ makers.",
+      "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media.",
   },
   hero: {
-    headline: "Designing CodeShare and high-impact digital products",
+    headline: "Full-Stack Developer, AI Researcher & Content Creator",
     subline: (
       <>
-        Founder of <strong>CodeShare Technology Ltd.</strong>, builder of Beatra, and creator of
-        automation pipelines followed by 44K+ makers. I architect marketplaces, Discord apps, and
-        web platforms that move from concept to revenue fast.
+        6+ years building scalable platforms, managing communities, and creating content across
+        Instagram, YouTube, and TikTok. Founder of <strong>Codeshare Technology</strong> — shipping
+        products used by millions worldwide.
       </>
     ),
     featured: {
-      label: "CodeShare Marketplace",
+      label: "Codeshare Marketplace",
       href: "https://codeshare.me",
       badge: "Digital commerce platform",
     },
     ctaPrimary: {
-      label: "Explore CodeShare",
+      label: "Explore Codeshare",
       href: "https://codeshare.me",
     },
     ctaSecondary: {
@@ -48,75 +52,110 @@ const siteData = {
       href: "https://beatra.app",
     },
     stats: [
-      { value: "44K+", label: "Audience across Instagram & YouTube" },
-      { value: "15K+", label: "Developers inside CodeShare" },
-      { value: "1M+", label: "Monthly Beatra listeners" },
-      { value: "4", label: "Active venture & partner builds" },
+      { value: "44K+", label: "Followers across Instagram, YouTube & TikTok" },
+      { value: "15K+", label: "Developers inside Codeshare" },
+      { value: "1.2M+", label: "Beatra users across Discord servers" },
+      { value: "6+", label: "Years in community & social media management" },
     ],
   },
   newsletter: {
     display: false,
     title: "Build log",
-    description: "Shipping notes from CodeShare, Beatra, and creator studio automations.",
+    description: "Shipping notes from Codeshare, Beatra, and creator studio automations.",
   },
   social: [
+    { name: "Instagram", icon: "instagram", link: "https://instagram.com/umutxyp" },
+    { name: "YouTube", icon: "youtube", link: "https://youtube.com/@umutxyp" },
+    { name: "TikTok", icon: "tiktok", link: "https://tiktok.com/@umutxyp" },
+    { name: "umutxyp", icon: "discord", link: "https://discord.gg/FnU3Whr9ef" },
     { name: "GitHub", icon: "github", link: "https://github.com/umutxyp" },
     { name: "LinkedIn", icon: "linkedin", link: "https://linkedin.com/in/umutxyp" },
     { name: "Twitter", icon: "twitter", link: "https://twitter.com/devbayraktar" },
-    { name: "Instagram", icon: "instagram", link: "https://instagram.com/umutxyp" },
-    { name: "YouTube", icon: "youtube", link: "https://youtube.com/@umutxyp" },
     { name: "Telegram", icon: "telegram", link: "https://t.me/umutxyp" },
-    { name: "Discord", icon: "discord", link: "https://discord.gg/NrkMaPRc73" },
-    { name: "Email", icon: "email", link: "mailto:umutbayraktar55@gmail.com" },
   ],
   about: {
     introTitle: "Who I am",
     introDescription:
-      "Passionate developer, entrepreneur, and AI researcher. I run CodeShare Technology Ltd, lead Beatra's streaming stack, and maintain enterprise systems for Vip Transfer Turkey and DNZ Geri Donusum. I live by the motto 'My life, my world' and build technology that reflects creativity, freedom, and purpose.",
+      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been deeply involved in community management, social media management, and full-stack software development — building and growing platforms from the ground up. I produce content across Instagram, YouTube, and TikTok, reaching 44K+ followers, while simultaneously architecting scalable digital products used by millions. My work spans Discord ecosystems, digital marketplaces, AI-powered tools, and real-time infrastructure.",
     experiences: [
       {
-        company: "CodeShare Technology Ltd",
-        timeframe: "2019 - Present",
+        company: "Codeshare Technology",
+        timeframe: "Jan 2019 - Present",
         role: "Founder & CEO",
         achievements: [
-          "Designed the CodeShare marketplace, verification workflows, and creator monetization tooling.",
-          "Oversee AI-assisted publishing, payment flows, and support automation for 15K+ users.",
+          "Built a scalable end-to-end digital product marketplace for developers, content creators, and digital entrepreneurs — covering code projects, game keys, software licenses, and creator-exclusive assets.",
+          "Implemented a verified seller system, SSL-secured payments, buyer protection, and YouTube API integration for subscriber-exclusive products.",
+          "Grew the platform to 15K+ active users and 1,000+ digital listings across global markets.",
         ],
         images: [],
         link: "https://codeshare.me",
       },
       {
-        company: "Beatra (formerly MusicMaker)",
-        timeframe: "2022 - Present",
+        company: "Beatra",
+        timeframe: "Oct 2025 - Present",
         role: "Founder & Lead Developer",
         achievements: [
-          "Built a cross-platform music streaming stack for Discord and web with HD audio and smart playlists.",
-          "Open-sourced the infrastructure while serving more than a million listeners each month.",
+          "Built a modern multi-platform music streaming ecosystem operating across Discord, web, and desktop — supporting YouTube, Spotify, SoundCloud, and more.",
+          "Scaled to 16,000+ Discord servers and 1.2M+ users with real-time synchronized playback, audio filters, analytics, and a privacy-first open-source infrastructure.",
+          "Developed Beatra Wrapped, server stats pages, user profile pages, and a premium tier with 24/7 mode and advanced queue management.",
         ],
         images: [],
         link: "https://beatra.app",
       },
       {
-        company: "Vip Transfer Turkey",
-        timeframe: "2021 - Present",
-        role: "Senior Web Developer",
+        company: "Dotrai",
+        timeframe: "Mar 2025 - Present",
+        role: "Founder",
         achievements: [
-          "Rebuilt the booking funnel powering over EUR1M monthly revenue with SEO-first pages and automated pricing.",
-          "Maintain mission-critical integrations for payments, CRM, multilingual content, and dispatch tooling.",
+          "Founded and lead Dotrai, a new AI-focused venture based in Antalya, Turkey.",
+        ],
+        images: [],
+        link: "",
+      },
+      {
+        company: "Vip Transfer Turkey",
+        timeframe: "Sep 2021 - Present",
+        role: "Web Developer & Co-Founder",
+        achievements: [
+          "Designed and built the full-stack platform for a premium VIP airport and hotel transfer service covering Antalya, Belek, Side, Kemer, and Alanya.",
+          "Developed booking workflows, real-time service integrations, multilingual content, and SEO-optimized pages powering significant monthly revenue.",
+          "Led digital marketing strategy, analytics, and international audience growth across Turkish and European markets.",
         ],
         images: [],
         link: "https://viptransfertr.com",
       },
       {
-        company: "DNZ Geri Donusum",
-        timeframe: "2024 - Present",
+        company: "DNZ Geri Dönüşüm",
+        timeframe: "Jan 2025 - Present",
         role: "Web Developer",
         achievements: [
-          "Designed sustainable recycling dashboards, lead forms, and bilingual landing pages.",
-          "Implemented logistics tooling that tracks tonnage, savings, and compliance metrics in real time.",
+          "Built the digital presence for a sustainable recycling and waste management company offering industrial scrap collection, metal/plastic/paper recycling, and on-site evaluations.",
+          "Implemented service pages, dynamic scrap pricing based on market values, and logistics tooling supporting building demolition and factory dismantling operations.",
         ],
         images: [],
         link: "https://dnzgeridonusum.com",
+      },
+      {
+        company: "Sylon",
+        timeframe: "2026 - Present",
+        role: "Founder & Lead Developer",
+        achievements: [
+          "Built an AI-powered Discord moderation bot with anti-spam, ad detection, server guard, ticket system, and welcome automation.",
+          "Serving 21+ servers and 20K+ users with 99.9% uptime across all shards.",
+        ],
+        images: [],
+        link: "https://sylon.app",
+      },
+      {
+        company: "MCSTAT",
+        timeframe: "Dec 2025 - Present",
+        role: "Founder & Lead Developer",
+        achievements: [
+          "Built a real-time Minecraft server discovery platform tracking 7,000+ servers with live player counts, vote rankings, uptime history, leaderboards, and detailed server profiles.",
+          "Platform monitors 574K+ concurrent players and serves as a global discovery engine for the Minecraft community.",
+        ],
+        images: [],
+        link: "https://mcstat.org",
       },
     ],
     studies: [
@@ -180,6 +219,22 @@ const siteData = {
           { name: "Glitch", icon: "code" },
         ],
       },
+      {
+        title: "Community & Social Media",
+        description: "6+ years experience",
+        images: [],
+        tags: [
+          { name: "Community Management", icon: "person" },
+          { name: "Social Media Management", icon: "person" },
+          { name: "Content Creation", icon: "person" },
+          { name: "Digital Marketing", icon: "person" },
+          { name: "Project Management", icon: "person" },
+          { name: "Discord", icon: "discord" },
+          { name: "Instagram", icon: "instagram" },
+          { name: "YouTube", icon: "youtube" },
+          { name: "TikTok", icon: "tiktok" },
+        ],
+      },
     ],
   },
   gallery: [
@@ -192,7 +247,7 @@ const siteData = {
   github: {
     username: "umutxyp",
     highlight: [
-      "CodeShare",
+      "Codeshare",
       "Beatra",
       "MusicBot",
       "VipTransferTR",
@@ -200,7 +255,7 @@ const siteData = {
       "CreatorStudioAutomation",
     ],
     description:
-      "Open-sourcing Discord bots, automation pipelines, and production-ready SaaS starters used inside CodeShare.",
+      "Open-sourcing Discord bots, automation pipelines, and production-ready SaaS starters used inside Codeshare.",
   },
 };
 
