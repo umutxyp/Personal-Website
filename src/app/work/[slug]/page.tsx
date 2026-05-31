@@ -123,6 +123,18 @@ export default async function Project({
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
+        {post.metadata.link && (
+          <Row marginTop="40" horizontal="center">
+            <Button
+              href={post.metadata.link}
+              variant="primary"
+              size="m"
+              suffixIcon="arrowRight"
+            >
+              Visit {post.metadata.title}
+            </Button>
+          </Row>
+        )}
       </Column>
       <Column fillWidth gap="40" horizontal="center" marginTop="40">
         <Line maxWidth="40" />

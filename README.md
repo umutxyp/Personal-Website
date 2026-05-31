@@ -1,10 +1,10 @@
 # Umut Bayraktar - Portfolio
 
-Modern, high-performance portfolio website built with Next.js 15, Once UI, and TypeScript. Showcasing projects, experience, and technical expertise as a Full-Stack Developer and Founder of CodeShare Technology Ltd.
+Modern, high-performance portfolio website built with Next.js 16, Once UI, and TypeScript. Showcasing projects, experience, and technical expertise as a Full-Stack Developer and Founder of Codeshare Technology Ltd.
 
 ## ✨ Features
 
-- **🚀 Next.js 15** - Latest React framework with App Router
+- **🚀 Next.js 16** - Latest React framework with App Router
 - **🎨 Once UI System** - Beautiful, accessible component library
 - **📱 Fully Responsive** - Optimized for all devices
 - **🌙 Dark/Light Mode** - Theme switching with system preference detection
@@ -16,7 +16,7 @@ Modern, high-performance portfolio website built with Next.js 15, Once UI, and T
 
 ## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15.3
+- **Framework:** Next.js 16.2
 - **UI Library:** Once UI System 1.4
 - **Language:** TypeScript 5.8
 - **Styling:** SCSS Modules
@@ -169,7 +169,7 @@ The `/github` page automatically fetches your public repositories. Update your G
 ```typescript
 github: {
   username: "umutxyp",
-  highlight: ["CodeShare", "Beatra", "MusicBot"],
+  highlight: ["Codeshare", "Beatra", "MusicBot"],
 }
 ```
 

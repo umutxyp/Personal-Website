@@ -200,7 +200,7 @@ const sameAs: SameAsConfig = {
   github: "https://github.com/umutxyp",
   twitter: "https://twitter.com/devbayraktar",
   youtube: "https://youtube.com/@umutxyp",
-  discord: "https://discord.gg/NrkMaPRc73",
+  discord: "https://discord.gg/FnU3Whr9ef",
   telegram: "https://t.me/umutxyp",
 };
 
