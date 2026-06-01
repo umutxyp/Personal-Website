@@ -72,6 +72,7 @@ const siteData = {
     { name: "LinkedIn", icon: "linkedin", link: "https://linkedin.com/in/umutxyp" },
     { name: "Twitter", icon: "twitter", link: "https://twitter.com/devbayraktar" },
     { name: "Telegram", icon: "telegram", link: "https://t.me/umutxyp" },
+    { name: "Facebook", icon: "facebook", link: "https://facebook.com/umutxyp" },
   ],
   about: {
     introTitle: "Who I am",
