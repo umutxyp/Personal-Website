@@ -21,10 +21,10 @@ const siteData = {
     role: "AI Systems Researcher · Full-Stack Developer · Content Creator",
     avatar: "/images/avatar.jpg",
     email: "umutbayraktar55@gmail.com",
-    phone: "+90 505 679 1509",
+    phone: "",
     website: "https://umutbayraktar.vercel.app",
-    timezone: "Europe/Istanbul",
-    address: "Antalya, Turkey",
+    timezone: "Asia/Hanoi",
+    address: "Vietnam",
     languages: ["Türkçe", "English"],
     biography:
       "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media.",
