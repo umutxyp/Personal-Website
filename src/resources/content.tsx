@@ -115,7 +115,7 @@ const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Product gallery - ${person.name}`,
-  description: "Screens from Codeshare, Beatra, Vip Transfer Turkey, and DNZ Geri Dönüşüm.",
+  description: "Screens from MCStat, Beatra, JustDiscord, Codeshare, and Sylon.",
   images: siteData.gallery.map((src, index) => ({
     src,
     alt: `showcase-${index + 1}`,

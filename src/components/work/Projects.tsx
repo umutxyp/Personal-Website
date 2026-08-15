@@ -15,7 +15,13 @@ export function Projects({ range, exclude }: ProjectsProps) {
     allProjects = allProjects.filter((post) => !exclude.includes(post.slug));
   }
 
+  // Ordered by the traffic each project actually carries, not by publish date —
+  // the oldest product is also one of the busiest. Anything without an explicit
+  // order falls to the end and sorts newest-first.
   const sortedProjects = allProjects.sort((a, b) => {
+    const orderA = a.metadata.order ?? Number.MAX_SAFE_INTEGER;
+    const orderB = b.metadata.order ?? Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) return orderA - orderB;
     return new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
   });
 

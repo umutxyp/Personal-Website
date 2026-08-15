@@ -1,7 +1,8 @@
 ---
-title: "MCStat.org — Minecraft Server List & Tracker"
-publishedAt: "2026-05-15"
-summary: "Real-time Minecraft server tracking platform with live player counts, vote rankings, uptime history, and detailed server profiles."
+title: "MCStat.org"
+publishedAt: "2025-12-10"
+order: 1
+summary: "A real-time Minecraft server list tracking 6,732 servers and a quarter of a million concurrent players, with 50K+ player profiles."
 images:
   - "/images/projects/mcstat.png"
 team:
@@ -12,24 +13,52 @@ team:
 link: "https://mcstat.org"
 ---
 
-## Find Servers Players Actually Join
+## Find servers players actually join
 
-MCStat.org is a real-time Minecraft server discovery and analytics platform. Unlike static server lists, every stat — player count, uptime percentage, vote tally — updates live so players always see accurate data before they connect.
+Most Minecraft server lists rank by whoever bought the most votes. MCStat starts from a
+different question: is anyone actually playing? Every server on the list is pinged
+continuously, so the player count next to a listing is the count right now — not what the
+owner typed into a form.
 
-- **Live Player Counts:** Pings every tracked server on a short interval and surfaces real-time online counts.
-- **Vote Rankings:** Community voting system that surfaces the most active and trusted servers.
-- **Uptime History:** Per-server uptime graphs and percentage scores so players can trust a server's reliability.
-- **Detailed Server Pages:** Version info, server type tags (SMP, PvP, Prison, etc.), copy-IP button, and player profiles.
-- **Leaderboards:** Global rankings by player count, votes, and uptime for competitive visibility.
-- **Forum & Skins:** Community forum for server owners and a skin browser integrated into player profiles.
+Today the platform tracks **6,732 servers**, sees around **225,000 players online** at any
+moment, and peaks near **250,000 a day**. It is the highest-traffic product I run.
 
-## Key Metrics
+## What it does
 
-- **574K+** players tracked online
-- **7,179** servers indexed
-- **5,857** servers currently online
-- **631K+** peak concurrent players today
+- **Live server pages** with player counts, uptime history, ping latency, version and
+  software detection, country, tags, and a copyable IP.
+- **Vote rankings** on a rolling period, with anonymous voting and abuse controls.
+- **50,000+ player profiles** carrying name history, skin and texture history, session
+  records, and a searchable cape gallery.
+- **A forum** with categories, topics, reports, and a word filter.
+- **A self-serve ad marketplace** — server owners buy labelled sponsored slots directly,
+  with campaigns, invoices, and webhook-driven billing events.
 
-## Tech Stack
+## The plugin
 
-Next.js · Node.js · PostgreSQL · Redis · Minecraft query protocol · Cloudflare · Docker.
+Pinging a server from the outside only tells you how many people are on it. For owners who
+want more, [MCStat-Plugin](https://github.com/mcstatorg/MCStat-Plugin) runs on Bukkit,
+proxy, and hybrid stacks and streams signed HTTPS telemetry straight from the machine:
+player sessions, TPS, vote links, and dashboard-ready analytics.
+
+## How it is built
+
+The runtime is split by responsibility on purpose, into separate systemd services:
+
+- the **website** serves pages and nothing else,
+- the **ping worker** hammers thousands of servers on its own schedule,
+- the **Discord bot** runs apart from both,
+- and **maintenance** runs on a timer rather than staying resident all day.
+
+The website should not restart because the bot crashed. The ping worker should not compete
+with the web server for CPU inside the same process. Splitting them is what keeps a list
+this size responsive.
+
+At the SEO layer the catalogue is well past 100,000 crawlable URLs — servers, players,
+capes, forum topics — so sitemaps are sharded, canonicals are explicit, and every listing
+page carries structured data.
+
+## Stack
+
+Next.js · TypeScript · PostgreSQL · Prisma · Redis · Node.js ping worker · Discord.js ·
+Nginx · self-hosted Linux.
