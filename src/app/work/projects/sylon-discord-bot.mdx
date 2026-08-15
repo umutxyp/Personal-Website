@@ -1,7 +1,8 @@
 ---
-title: "Sylon — AI Discord Moderation Bot"
-publishedAt: "2026-04-15"
-summary: "AI-powered Discord moderation bot with anti-spam, ad detection, server guard, welcome automation, and activity logs."
+title: "Sylon"
+publishedAt: "2026-01-05"
+order: 5
+summary: "AI Discord moderation that catches ads, invite links, and scams in any language — including text hidden inside images."
 images:
   - "/images/projects/sylon.png"
 team:
@@ -12,17 +13,41 @@ team:
 link: "https://sylon.app"
 ---
 
-## AI-Powered Server Protection
+## The problem with word filters
 
-Sylon is a Discord moderation bot that uses AI to automatically detect spam, ads, and unwanted content — keeping servers clean without manual intervention. Built to scale from small communities to large servers with 20K+ users.
+Advertisement spam does not arrive as a clean `discord.gg/` link. It arrives spaced out,
+punctuated with symbols, translated into a language your filter does not cover, or burned
+into an image so no text exists to match at all.
 
-- **AI Anti-Spam:** Machine learning filters that adapt to new spam patterns in real time.
-- **Ad Detection:** Automatically identifies and removes promotional content based on context.
-- **Server Guard:** Raid protection, alt account detection, and role-gated join flows.
-- **Welcome Automation:** Customizable welcome messages, role assignment, and onboarding flows.
-- **Activity Logs:** Full audit trail of moderation actions, joins, leaves, and message edits.
-- **Ticket System:** Built-in support ticket creation and management directly in Discord.
+Sylon reads the message the way a moderator would. The ad detection is a model, not a
+regex, and it runs on the image content too.
 
-## Tech Stack
+## What it runs
 
-Node.js · Discord.js · AI/ML classification · PostgreSQL · Redis · Docker · Cloudflare Workers.
+- **Moderation suite** — ban, kick, mute, warn, clear, with cases, logs, and per-role
+  limits.
+- **AI advertisement protection** — invites, ads, and scams in any language, image content
+  included.
+- **Spam protection** against message floods, repeated content, and cross-channel image
+  raids.
+- **Ticket system** with HTML transcripts, office hours, satisfaction surveys, and case
+  tracking.
+- **Server guard** and anti-raid controls.
+- **Leveling** from message and voice XP, with reward roles, multipliers, and custom rank
+  cards.
+- **Giveaways** with entry requirements, bonus entries, and one-click winner rerolls.
+- **Role menus**, **auto role**, **word filter**, and **welcome/goodbye** automation with
+  custom images.
+
+Everything is configurable from Discord or from the web dashboard, and the dashboard shows
+live counters for threats blocked and moderation actions taken.
+
+## Where it stands
+
+**69+ servers · 33K+ users · 99.9% uptime** across all shards — including the communities
+around my own products.
+
+## Stack
+
+Discord.js · Node.js · MongoDB · AI classification · Next.js dashboard · Nginx ·
+self-hosted Linux.

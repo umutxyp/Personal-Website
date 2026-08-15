@@ -1,0 +1,67 @@
+---
+title: "JustDiscord"
+publishedAt: "2026-02-01"
+order: 3
+summary: "A Discord server and bot list built around trust — verified ownership, reviews that explain their score, and 91K+ free emojis."
+images:
+  - "/images/projects/justdiscord.png"
+team:
+  - name: "Umut Bayraktar"
+    role: "Founder & Lead Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://linkedin.com/in/umutxyp"
+link: "https://justdiscord.org"
+---
+
+## Tell a good server from a big one
+
+Discord lists rank by member count, which tells you a server is popular, not that it is
+worth joining. JustDiscord puts a score out of 5 on every listing and requires the reviews
+to say what the score is *for* — so the ranking carries an argument, not just a number.
+
+Three rules hold the place together:
+
+- **Ownership is verified through Discord itself.** Nobody lists a server or a bot they do
+  not run.
+- **Sponsored placements are always labelled.** Paid position is visible as paid position.
+- **The emojis, stickers and packs are free.** All of them.
+
+## The catalogue
+
+| | |
+|:--|--:|
+| Servers | **8,071** |
+| Bots | **8,188** |
+| Emojis | **91,035** |
+| Stickers | **5,364** |
+| Emoji packs | **2,114** |
+
+Emojis and stickers can be downloaded as files or installed straight into a server you
+manage, one click, without leaving the page.
+
+## For developers
+
+Listed bots get a real API rather than a badge:
+
+- **Vote checks** — ask whether a given user voted in the last 12 hours.
+- **Stat posting** — push server counts and command lists on a timer.
+- **Vote webhooks** — signed callbacks when somebody votes, verifiable in one call.
+
+All of it wrapped in [`@justdiscord/sdk`](https://github.com/justdiscordorg/sdk): official,
+TypeScript, zero dependencies, ESM and CommonJS, Node 18+.
+
+## Engineering notes
+
+A catalogue this size is mostly a search and crawl problem. Listings are paginated and
+filtered server-side, the sitemap is sharded across a dozen files because a single one
+would not hold 100,000+ URLs, and the edge cache is scoped to crawler files and OG cards
+only — the HTML itself stays dynamic, because the layout reads the session.
+
+Every listing renders its own social card and its own structured data, and every translated
+listing carries its locale so the canonical URL points at the right language instead of
+collapsing back to English.
+
+## Stack
+
+Next.js · TypeScript · PostgreSQL · Prisma · Redis · Discord API · Nginx · self-hosted
+Linux.

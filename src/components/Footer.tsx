@@ -23,8 +23,8 @@ export const Footer = () => {
       >
         <Text variant="body-default-s" onBackground="neutral-weak">
           © {currentYear}{" "}
-          <a href="https://codeshare.me" style={{ color: "inherit" }}>
-            Codeshare
+          <a href="https://github.com/umutxyp" style={{ color: "inherit" }}>
+            umutxyp
           </a>
         </Text>
         <Row gap="16">

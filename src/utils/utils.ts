@@ -18,6 +18,12 @@ type Metadata = {
   tag?: string;
   team: Team[];
   link?: string;
+  /**
+   * Manual position in the project list, lowest first. Projects are ordered by
+   * how much traffic they actually carry, which the publish date does not track.
+   * Anything without an order falls to the end and sorts by date.
+   */
+  order?: number;
 };
 
 import { notFound } from "next/navigation";
@@ -47,6 +53,7 @@ function readMDXFile(filePath: string) {
     tag: data.tag || [],
     team: data.team || [],
     link: data.link || "",
+    order: typeof data.order === "number" ? data.order : undefined,
   };
 
   return { metadata, content };

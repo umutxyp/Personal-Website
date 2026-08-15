@@ -1,7 +1,8 @@
-﻿---
+---
 title: "Beatra Streaming Platform"
-publishedAt: "2026-06-01"
-summary: "High-quality music streaming on Discord and the web with HD audio, smart playlists, and premium dashboards."
+publishedAt: "2025-10-01"
+order: 2
+summary: "A free Discord music bot in 32,826 servers with 2.1M+ users, streaming from nine platforms across Discord, web, and desktop."
 images:
   - "/images/projects/beatra.png"
 team:
@@ -12,22 +13,41 @@ team:
 link: "https://beatra.app"
 ---
 
-## Stream Music Anywhere
+## Music that follows you across Discord
 
-Beatra (the evolution of MusicMaker) is a multi-platform music platform serving more than a million listeners. It streams from YouTube, Spotify, SoundCloud, and custom libraries while keeping Discord and the web dashboard perfectly in sync.
+Beatra grew out of MusicMaker, the open-source Discord music bot I published years earlier
+and which still sits at the top of my GitHub. Where that project was a bot, Beatra is a
+platform: the same queue and the same account work inside Discord, in the browser, on the
+desktop app, and inside a Discord Activity.
 
-- **Multi-Platform:** Discord bot + web player with the same queue, audio filters, and smart playlists.
-- **Lightning Fast:** Optimized Lavalink clusters, Go microservices, and FFmpeg tuning for instant playback.
-- **HD Audio Quality:** Lossless streaming with adaptive bitrates, 24/7 uptime, and failover shards.
-- **Smart Playlists:** Queue automation, collaborative playlists, and advanced permissions for premium communities.
-- **Secure & Private:** Privacy-first architecture, GDPR compliance, encrypted telemetry, and open-source transparency.
+It currently runs in **32,826 Discord servers** for **2.1M+ users**, and it is free.
 
-## Why Beatra?
+## Nine sources, one queue
 
-- Global language support (22+ locales) so every community feels native.
-- Premium tier unlocks extended queues, priority routing, and exclusive effects.
-- Modern dashboard shows live playback, queue management, analytics, and moderation shortcuts.
+YouTube · YouTube Music · Spotify · Apple Music · Deezer · SoundCloud · Tidal · Audius ·
+Qobuz. Paste a link from any of them, or search once and let smart autoplay keep the room
+going.
 
-## Tech Stack
+## What people actually use
 
-Next.js dashboard · React · Tailwind CSS · Node.js · Go · Lavalink · Redis · PostgreSQL · Discord API · Cloudflare Workers.
+- **24/7 mode** — the bot stays in the channel whether or not anyone is listening.
+- **Smart autoplay** across 20+ genres, so a queue never simply ends.
+- **Audio filters** — bassboost, nightcore, 8D, and the rest, applied live.
+- **Playlists** that survive the session, shared per user and per server.
+- **Beatra Wrapped**, plus listening analytics, top-song and top-artist pages, and public
+  profile and server pages.
+- **Custom bots** — a tenant system that runs a community's own branded bot on the same
+  infrastructure.
+- **Premium** at $1.49/month for people who want to skip voting and lift the limits.
+
+## Running it
+
+Playback is the easy part; staying up is not. Beatra runs across sharded gateway
+processes, a pool of voice workers, and companion services that keep source tokens fresh —
+each one its own systemd unit so a bad deploy in one place does not silence 32,000 servers
+at once. Uptime sits at 99%.
+
+## Stack
+
+Discord.js v14 · Node.js · Lavalink · Next.js dashboard · React · Electron · MongoDB ·
+Redis · Nginx · self-hosted Linux.
