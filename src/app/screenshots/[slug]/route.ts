@@ -31,6 +31,28 @@ const HIDE_OVERLAYS = `
   }
 `;
 
+// Runs in the page. Hides dialogs, full-screen layers sitting above the page
+// (modal backdrops), and anything pinned to the lower half of the screen (toasts,
+// chat widgets, cookie bars). Headers and sidebars start at the top, so they stay.
+function hideOverlays() {
+  const { innerWidth: width, innerHeight: height } = window;
+  for (const element of document.querySelectorAll<HTMLElement>("body *")) {
+    const style = getComputedStyle(element);
+    const isDialog =
+      element.matches('[role="dialog"], [role="alertdialog"], [aria-modal="true"], dialog[open]') &&
+      style.display !== "none";
+    if (!isDialog && style.position !== "fixed") continue;
+
+    const box = element.getBoundingClientRect();
+    if (box.width === 0 || box.height === 0) continue;
+    const coversScreen = box.width >= width * 0.95 && box.height >= height * 0.95 && Number(style.zIndex) > 10;
+    const pinnedLow = box.top > height * 0.5;
+    if (isDialog || coversScreen || pinnedLow) {
+      element.style.setProperty("display", "none", "important");
+    }
+  }
+}
+
 export function generateStaticParams() {
   return getScreenshotProjects().map(({ slug }) => ({ slug }));
 }
@@ -74,7 +96,12 @@ async function capture(url: string): Promise<Buffer> {
     await page.waitForNetworkIdle({ idleTime: 500, timeout: 8_000 }).catch(() => {});
     await page.addStyleTag({ content: HIDE_OVERLAYS });
     await page.evaluate(() => window.scrollTo(0, 0));
+    // Popups that open a moment after load (an extension promo, a "join our
+    // Discord" card) would otherwise be what the cover shows.
     await new Promise((resolve) => setTimeout(resolve, 2_500));
+    await page.keyboard.press("Escape");
+    await page.evaluate(hideOverlays);
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
     const title = await page.title();
     const text = await page.evaluate(() => document.body?.innerText.slice(0, 2_000) ?? "");
