@@ -119,7 +119,7 @@ const routes = {
 title: "Project Name"
 publishedAt: "2024-01-01"
 summary: "Short description"
-images: ["/images/projects/project.png"]
+images: ["/images/projects/project.jpg"]
 team: []
 link: "https://project.com"
 ---
@@ -128,6 +128,20 @@ Project content here...
 ```
 
 1. The project will automatically appear on the work page.
+
+### Cover screenshots
+
+Cover images are screenshots of each project's live site, captured by
+`.github/workflows/project-screenshots.yml` every Monday, on demand from the Actions tab,
+and whenever a project page changes. The workflow opens `link` (or `screenshotUrl` if set),
+saves a 2000×1250 JPEG over `images[0]`, and commits it — which redeploys the site.
+
+- `images[0]` must be a `.jpg`; the first capture creates it.
+- `screenshot: false` keeps a hand-made cover.
+- A site that fails to load, or answers with a bot check, keeps its previous image; the
+  run summary lists which ones.
+
+Run it locally with `npm i --no-save playwright && npx playwright install chromium && node scripts/capture-screenshots.mjs [slug ...]`.
 
 ## 🎨 Customization
 
