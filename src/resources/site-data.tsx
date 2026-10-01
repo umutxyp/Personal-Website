@@ -36,16 +36,12 @@ const siteData = {
     biography:
       "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media. Founder & CEO of Codeshare Technology, the London software studio behind Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai.",
   },
+  // Numbers in text are written as %project.key% tokens and filled from codeshare.me
+  // at render time (src/lib/live-stats.ts), so they stay current without edits here.
   hero: {
     headline: "Full-Stack Developer, AI Researcher & Content Creator",
-    subline: (
-      <>
-        6+ years building platforms that carry real traffic — a Discord music bot reaching 3M+
-        users in 40K+ servers, an AI moderation bot, a Minecraft data platform with 463K player
-        records, a Discord discovery platform, an anime tracker, and an AI chat. Founder of{" "}
-        <strong>Codeshare Technology</strong>, the London software studio they all live under.
-      </>
-    ),
+    subline:
+      "6+ years building platforms that carry real traffic — a Discord music bot reaching %beatra.users% users in %beatra.servers% servers, an AI moderation bot, a Minecraft data platform with %mcstat.players% player records, a Discord discovery platform, an anime tracker, and an AI chat. Founder of **Codeshare Technology**, the London software studio they all live under.",
     featured: {
       label: "Codeshare Technology",
       href: "https://codeshare.me",
@@ -60,9 +56,9 @@ const siteData = {
       href: "https://beatra.app",
     },
     stats: [
-      { value: "3M+", label: "Beatra users" },
-      { value: "40K+", label: "Discord servers running Beatra" },
-      { value: "463K", label: "MCStat player records" },
+      { value: "%beatra.users%", label: "Beatra users" },
+      { value: "%beatra.servers%", label: "Discord servers running Beatra" },
+      { value: "%mcstat.players%", label: "MCStat player records" },
       { value: "44K+", label: "Followers across Instagram, YouTube & TikTok" },
     ],
   },
@@ -85,7 +81,7 @@ const siteData = {
   about: {
     introTitle: "Who I am",
     introDescription:
-      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been building and running platforms end to end — writing the code, operating the servers they run on, and growing the communities around them. Today that work lives under Codeshare Technology, the London software studio I founded: a Discord music bot reaching 3M+ users in 40K+ servers, an AI moderation bot in 500 servers, a Minecraft data platform tracking 6,752 servers and 463K player records, a Discord discovery platform with 11,000+ listings, an anime and manga tracker with 123K titles, and a free AI chat. The company was incorporated in 2025, but most of the products are older than it — the first one dates back to 2020. The core of every product stays free, I run all of it myself, and I produce content across Instagram, YouTube, and TikTok for 44K+ followers.",
+      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been building and running platforms end to end — writing the code, operating the servers they run on, and growing the communities around them. Today that work lives under Codeshare Technology, the London software studio I founded: a Discord music bot reaching %beatra.users% users in %beatra.servers% servers, an AI moderation bot in %sylon.servers% servers, a Minecraft data platform tracking %mcstat.servers% servers and %mcstat.players% player records, a Discord directory with %justdiscord.servers% server and %justdiscord.bots% bot listings, an anime and manga tracker with %justanime.titles% titles, and a free AI chat. The company was incorporated in 2025, but most of the products are older than it — the first one dates back to 2020. The core of every product stays free, I run all of it myself, and I produce content across Instagram, YouTube, and TikTok for 44K+ followers.",
     experiences: [
       {
         company: "Codeshare Technology",
@@ -93,7 +89,7 @@ const siteData = {
         role: "Founder & CEO",
         achievements: [
           "Run Codeshare Technology Ltd (registered in England and Wales, no. 16672504), a small studio that builds software for online communities and runs it — no agency work, no consulting, nothing built for a client.",
-          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — from code to servers to the communities around them.",
+          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — present in %studio.servers% Discord servers and reaching %studio.users% Discord users, from code to servers to the communities around them.",
           "Keep the core of every product free: Beatra plays music, Sylon guards a server, MCStat gives its data away through an open API, and Dotrai answers questions, none of it behind a payment.",
           "Built the first products in 2020 and incorporated the company in August 2025, once four of the six products already existed and needed a company around them.",
         ],
@@ -105,8 +101,9 @@ const siteData = {
         timeframe: "Dec 2025 - Present",
         role: "Founder & Lead Developer",
         achievements: [
-          "Built a real-time Minecraft server list and data platform with live player counts, uptime history, vote rankings, ping latency, per-country breakdowns, and an open API.",
-          "Tracks 6,752 servers and holds 463K player records with name history, skin history, and a cape gallery — 428K skins archived.",
+          "Built a Minecraft server list and data platform that polls every server around the clock and keeps every reading, so a server page is a history rather than a snapshot — with vote rankings, uptime, ping, per-country breakdowns, and public API endpoints for server search and detail.",
+          "Tracks %mcstat.servers% servers and %mcstat.players% player records, and keeps an archive of every skin and cape it has seen — %mcstat.skins% skins and %mcstat.capes% capes — because Mojang keeps no history of either.",
+          "Ranks players separately by session time, by how many different servers they play on, and by activity points.",
           "Split the runtime into separate services so the website never restarts because the bot crashed and the ping worker never competes with the web server for CPU.",
           "Shipped a Bukkit/proxy plugin that streams signed telemetry — sessions, TPS, vote links — straight from server owners' machines.",
         ],
@@ -120,7 +117,7 @@ const siteData = {
         achievements: [
           "First built in November 2020 and launched in 2021 as MusicMaker; shut it down in 2022 and brought it back in October 2025 as Beatra, on its original account.",
           "Built a multi-platform music streaming ecosystem spanning Discord, web, desktop, and Discord Activities, playing from YouTube, YouTube Music, Spotify, Apple Music, Deezer, SoundCloud, Tidal, Audius, and Qobuz.",
-          "Scaled to 40K+ Discord servers and 3M+ users with synchronized playback, audio filters, smart autoplay, and 99% uptime.",
+          "Running in %beatra.servers% Discord servers for %beatra.users% users with synchronized playback, audio filters, smart autoplay, and 99% uptime — every server that had MusicMaker still had the bot when it came back, because the account was never deleted.",
           "Shipped Beatra Wrapped, listening analytics, server and profile pages, a custom-bot tenant system, and a premium tier at $1.49/month.",
         ],
         images: [],
@@ -131,8 +128,9 @@ const siteData = {
         timeframe: "Aug 2026 - Present",
         role: "Founder & Lead Developer",
         achievements: [
-          "Built a Discord server and bot discovery platform designed around trust: every listing carries a score out of 5 with reviews that explain the score, ownership is verified through Discord itself, and sponsored placements are always labelled.",
-          "Runs a catalogue of 2,835 server listings and 8,198 bot listings, plus 96.8K free emojis and stickers installable straight to a server you own — with 18.4K unique visitors.",
+          "Built a Discord server and bot directory designed around trust: every listing carries a score out of 5 with reviews that explain the score, verified ownership is marked, and sponsored placements are always labelled.",
+          "Ranks listings by community votes over a rolling 30-day window, so a server has to keep earning its place instead of coasting on a lead from years ago.",
+          "Runs %justdiscord.servers% server listings and %justdiscord.bots% bot listings, plus %justdiscord.emojis% free emojis and stickers downloadable with no account — %justdiscord.visitors% unique visitors so far.",
           "Shipped an hourly bump system, a public API with vote webhooks, and an official zero-dependency TypeScript SDK on npm.",
         ],
         images: [],
@@ -144,9 +142,9 @@ const siteData = {
         role: "Founder & Lead Developer",
         achievements: [
           "Started in February 2020 as Server Support, the oldest product I run; it became Sylon with its own site in April 2026.",
-          "Built an AI moderation bot that catches Discord advertisements, invite links, and scams in any language — including text hidden inside images.",
-          "Shipped a full moderation suite with cases and logs, a ticket system with HTML transcripts, server guard, anti-raid and anti-spam, leveling with custom rank cards, giveaways, role menus, and welcome automation.",
-          "Serving 500 servers and 300K users with 99.9% uptime across all shards.",
+          "Built an AI moderation bot that catches Discord advertisements, invite links, and scams in any language — including text hidden inside images — and writes every action it takes, with the reason, to a log channel.",
+          "Shipped a join gate that screens accounts at the door, raid protection with one-command server lockdown, harassment detection, a URL scanner, appeals, tickets with HTML transcripts, leveling, giveaways, a suggestion board, and role menus.",
+          "Serving %sylon.servers% servers and %sylon.users% users with %sylon.uptime% uptime.",
         ],
         images: [],
         link: "https://sylon.app",
@@ -156,8 +154,8 @@ const siteData = {
         timeframe: "Aug 2026 - Present",
         role: "Founder & Lead Developer",
         achievements: [
-          "Built an anime and manga tracker where every single episode can be rated and reviewed, not just the series as a whole — over a catalogue of 123K titles, 176K character records, and 1,190 airing schedule entries.",
-          "Shipped studio following, user follows, seasonal calendars, trending charts, achievements, and community reviews.",
+          "Built an anime and manga tracker where every single episode can be rated and reviewed, not just the series as a whole — over a catalogue of %justanime.titles% titles, %justanime.characters% character records, and %justanime.schedule% airing schedule entries.",
+          "Shipped a library and watchlist, studio following, recommendations, user follows, seasonal calendars, trending charts, achievements, and community reviews.",
           "Built JustAnime Sync, a Chrome and Firefox extension that marks episodes and chapters as you watch or read on 200+ streaming and reading sites, and mirrors progress to linked AniList and MyAnimeList accounts.",
         ],
         images: [],
@@ -168,9 +166,9 @@ const siteData = {
         timeframe: "Mar 2025 - Present",
         role: "Founder & Lead Developer",
         achievements: [
-          "Built a free, browser-based AI chat that searches the live web, runs real code, and shows its reasoning.",
-          "Shipped streaming responses, syntax-highlighted code help across languages, and conversations saved to the account so they continue on any device.",
-          "Kept sign-up to an email and a password — no credit card, no setup, no download.",
+          "Built a free, browser-based AI chat that shows its working: visible reasoning, live web search with the sources kept on the answer, and code run in a sandbox so the output is real rather than guessed.",
+          "Shipped file and image understanding, streaming responses, saved history across devices, and incognito chats that are never written down.",
+          "Opened it to everyone in 2026 after most of its life in development — free, no card, no waitlist.",
         ],
         images: [],
         link: "https://dotrai.com",

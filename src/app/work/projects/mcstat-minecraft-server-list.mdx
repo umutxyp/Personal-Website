@@ -2,7 +2,7 @@
 title: "MCStat.org"
 publishedAt: "2025-12-10"
 order: 1
-summary: "A real-time Minecraft server list and data platform: 6,752 servers tracked, 463K player records, and 428K skins archived."
+summary: "A Minecraft server list and data platform that keeps every reading: %mcstat.servers% servers tracked, %mcstat.players% player records, %mcstat.skins% skins archived."
 images:
   - "/images/projects/mcstat.jpg"
 team:
@@ -20,18 +20,33 @@ different question: is anyone actually playing? Every server on the list is ping
 continuously, so the player count next to a listing is the count right now — not what the
 owner typed into a form.
 
-Launched in December 2025, the platform today tracks **6,752 servers**, holds
-**463K player records**, and has archived **428K skins**. Its data is free: anyone can
-read it through the open API.
+Any server will tell you how many people are on it right now, and that number on its own
+is close to useless: forty players is a thriving small server on a Tuesday morning and a
+dying large one on a Saturday night. Every real question is about change — is it growing,
+did it survive the update, does anyone play outside one timezone. So MCStat polls servers
+around the clock and keeps every reading, which is why a server page is a chart rather than
+a snapshot.
+
+Launched in December 2025, it now tracks **%mcstat.servers% servers** and holds
+**%mcstat.players% player records**. Player tracking — sessions, servers played on, skins
+and capes — began in May 2026.
 
 ## What it does
 
 - **Live server pages** with player counts, uptime history, ping latency, version and
   software detection, country, tags, and a copyable IP.
 - **Vote rankings** on a rolling period, with anonymous voting and abuse controls.
-- **463K player records** carrying name history, skin and texture history, session
-  records, and a searchable cape gallery — with **428K skins** archived.
-- **An open API** that gives the server and player data away.
+- **%mcstat.players% player records** with name history, session history, and the servers
+  each player has played on.
+- **An archive of every skin and cape it has seen** — **%mcstat.skins% skins** and
+  **%mcstat.capes% capes**. Mojang serves only the current texture and keeps no history, so
+  a skin someone wore for four years is gone the moment they replace it, unless somebody
+  kept it.
+- **Leaderboards** ranked separately by session time, by how many different servers someone
+  plays on, and by activity points.
+- **Public API endpoints** for server search and server detail — documented, free, and
+  usable in your own project, because a statistics site that hides its statistics is
+  asking to be scraped.
 - **A forum** with categories, topics, reports, and a word filter.
 - **A self-serve ad marketplace** — server owners buy labelled sponsored slots directly,
   with campaigns, invoices, and webhook-driven billing events.

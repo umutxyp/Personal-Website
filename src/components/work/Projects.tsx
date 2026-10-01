@@ -1,13 +1,15 @@
 import { getProjects } from "@/utils/utils";
 import { Column } from "@once-ui-system/core";
 import { ProjectCard } from "@/components";
+import { fillStats, getLiveStats } from "@/lib/live-stats";
 
 interface ProjectsProps {
   range?: [number, number?];
   exclude?: string[];
 }
 
-export function Projects({ range, exclude }: ProjectsProps) {
+export async function Projects({ range, exclude }: ProjectsProps) {
+  const stats = await getLiveStats();
   let allProjects = getProjects();
 
   // Exclude by slug (exact match)
@@ -38,8 +40,8 @@ export function Projects({ range, exclude }: ProjectsProps) {
           href={`/work/${post.slug}`}
           images={post.metadata.images}
           title={post.metadata.title}
-          description={post.metadata.summary}
-          content={post.content}
+          description={fillStats(post.metadata.summary, stats)}
+          hasCaseStudy={Boolean(post.content.trim())}
           avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
           link={post.metadata.link || ""}
         />
