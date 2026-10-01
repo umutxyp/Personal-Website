@@ -131,17 +131,16 @@ Project content here...
 
 ### Cover screenshots
 
-Cover images are screenshots of each project's live site, captured by
-`.github/workflows/project-screenshots.yml` every Monday, on demand from the Actions tab,
-and whenever a project page changes. The workflow opens `link` (or `screenshotUrl` if set),
-saves a 2000×1250 JPEG over `images[0]`, and commits it — which redeploys the site.
+Project covers are live screenshots of each project's site, served from
+`/screenshots/<slug>` (`src/app/screenshots/[slug]/route.ts`). Chromium runs inside
+the Vercel function: every screenshot is captured during the build and regenerated in
+the background once a week, so the Work page, case studies and gallery stay current
+with no CI and no external service.
 
-- `images[0]` must be a `.jpg`; the first capture creates it.
-- `screenshot: false` keeps a hand-made cover.
-- A site that fails to load, or answers with a bot check, keeps its previous image; the
-  run summary lists which ones.
-
-Run it locally with `npm i --no-save playwright && npx playwright install chromium && node scripts/capture-screenshots.mjs [slug ...]`.
+- The page captured is `link`, or `screenshotUrl` if set.
+- `images[0]` is the fallback, used if a site cannot be captured at build time. During a
+  weekly refresh a failed capture keeps the last good screenshot.
+- `screenshot: false` keeps `images[0]` as a hand-made cover.
 
 ## 🎨 Customization
 

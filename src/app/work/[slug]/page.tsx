@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getPosts } from "@/utils/utils";
+import { getProjects } from "@/utils/utils";
 import {
   Meta,
   Schema,
@@ -22,7 +22,7 @@ import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "work", "projects"]);
+  const posts = getProjects();
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -38,7 +38,7 @@ export async function generateMetadata({
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  const posts = getPosts(["src", "app", "work", "projects"]);
+  const posts = getProjects();
   let post = posts.find((post) => post.slug === slugPath);
 
   if (!post) return {};
@@ -62,7 +62,7 @@ export default async function Project({
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slugPath);
+  let post = getProjects().find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
