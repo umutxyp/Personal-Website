@@ -93,9 +93,9 @@ const siteData = {
         role: "Founder & CEO",
         achievements: [
           "Founded and run Codeshare Technology Ltd, a London software studio (registered in England and Wales, no. 16672504) that builds software for online communities and keeps the core of it free.",
-          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — every one self-hosted on infrastructure I operate myself.",
-          "Started Codeshare in 2019 as a Discord community for developers and grew it into a developer marketplace with 10K+ users and 13.9K+ shared snippets, with escrow on every order and verified sellers.",
-          "Retired the marketplace on 14 September 2026 to put that attention on the products; codeshare.me now serves the company site.",
+          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — from code to servers to the communities around them.",
+          "Keep the core of every product free, which means each one has to be cheap to run — so every product is self-hosted on infrastructure I operate, with premium tiers on top rather than paywalls in front.",
+          "Started Codeshare in 2019 as a Discord community for developers and incorporated it as Codeshare Technology Ltd in August 2025.",
         ],
         images: [],
         link: "https://codeshare.me",

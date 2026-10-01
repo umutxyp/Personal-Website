@@ -39,8 +39,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       s={{ direction: "column" }}
     >
       {images[0] && (
-        <div style={{ width: "280px", flexShrink: 0, position: "relative", aspectRatio: "4/3" }}
-          className="project-card-image">
+        <div className="project-card-image">
           <Image
             priority={priority}
             src={images[0]}

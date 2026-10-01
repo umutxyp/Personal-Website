@@ -84,3 +84,22 @@
     min-height: 200px;
   }
 }
+
+/*
+  Project screenshots are 16:10. The image keeps that ratio at every width so the
+  card never crops a screenshot; on phones the card stacks and the image spans
+  the full card width instead of sitting at its fixed desktop width.
+*/
+.project-card-image {
+  position: relative;
+  flex-shrink: 0;
+  width: 320px;
+  aspect-ratio: 16 / 10;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .project-card-image {
+    width: 100%;
+  }
+}

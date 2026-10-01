@@ -20,7 +20,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // The marketplace closed on 14 September 2026; its case study became the company page.
+      // Old case-study URL, kept so existing links still land on the Codeshare page.
       {
         source: "/work/code-share-marketplace",
         destination: "/work/codeshare-technology",
