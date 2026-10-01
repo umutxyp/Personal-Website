@@ -202,6 +202,7 @@ const sameAs: SameAsConfig = {
   youtube: "https://youtube.com/@umutxyp",
   discord: "https://discord.gg/FnU3Whr9ef",
   telegram: "https://t.me/umutxyp",
+  facebook: "https://facebook.com/umutxyp",
 };
 
 // social sharing configuration for blog posts
