@@ -14,6 +14,7 @@ import {
 import { home, about, person, baseURL, routes } from "@/resources";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
+import { getLiveStats, renderStats } from "@/lib/live-stats";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -25,7 +26,8 @@ export async function generateMetadata() {
   });
 }
 
-export default function Home() {
+export default async function Home() {
+  const stats = await getLiveStats();
   return (
     <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center" style={{ minHeight: "80vh", justifyContent: "center" }}>
       <Schema
@@ -71,7 +73,7 @@ export default function Home() {
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
+              {renderStats(home.subline, stats)}
             </Text>
           </RevealFx>
           <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">

@@ -14,7 +14,8 @@ interface ProjectCardProps {
   priority?: boolean;
   images: string[];
   title: string;
-  content: string;
+  /** Whether the project has a case study page to link to. */
+  hasCaseStudy: boolean;
   description: string;
   avatars: { src: string }[];
   link: string;
@@ -25,7 +26,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   priority,
   images = [],
   title,
-  content,
+  hasCaseStudy,
   description,
   avatars,
   link,
@@ -61,7 +62,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           </Text>
         )}
         <Flex gap="16" wrap>
-          {content?.trim() && (
+          {hasCaseStudy && (
             <SmartLink
               suffixIcon="arrowRight"
               style={{ margin: "0", width: "fit-content" }}

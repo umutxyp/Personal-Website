@@ -18,6 +18,7 @@ import {
 import { baseURL, about, person, work } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
+import { fillStats, getLiveStats } from "@/lib/live-stats";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
@@ -45,7 +46,7 @@ export async function generateMetadata({
 
   return Meta.generate({
     title: post.metadata.title,
-    description: post.metadata.summary,
+    description: fillStats(post.metadata.summary, await getLiveStats()),
     baseURL: baseURL,
     image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
     path: `${work.path}/${post.slug}`,
@@ -63,6 +64,7 @@ export default async function Project({
     : routeParams.slug || "";
 
   let post = getProjects().find((post) => post.slug === slugPath);
+  const stats = await getLiveStats();
 
   if (!post) {
     notFound();
@@ -80,7 +82,7 @@ export default async function Project({
         baseURL={baseURL}
         path={`${work.path}/${post.slug}`}
         title={post.metadata.title}
-        description={post.metadata.summary}
+        description={fillStats(post.metadata.summary, stats)}
         datePublished={post.metadata.publishedAt}
         dateModified={post.metadata.publishedAt}
         image={
@@ -122,7 +124,7 @@ export default async function Project({
         <Media priority aspectRatio="16 / 10" radius="m" alt="image" src={post.metadata.images[0]} />
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
-        <CustomMDX source={post.content} />
+        <CustomMDX source={fillStats(post.content, stats)} />
         {post.metadata.link && (
           <Row marginTop="40" horizontal="center">
             <Button

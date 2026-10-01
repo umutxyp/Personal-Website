@@ -142,6 +142,14 @@ with no CI and no external service.
   weekly refresh a failed capture keeps the last good screenshot.
 - `screenshot: false` keeps `images[0]` as a hand-made cover.
 
+### Live numbers
+
+Product numbers are never typed in by hand. Text in `src/resources/site-data.tsx` and in
+the project MDX files refers to them as tokens like `%beatra.servers%` or
+`%mcstat.players%`, and `src/lib/live-stats.ts` fills them from the stat tiles on
+[codeshare.me](https://codeshare.me) and its project pages. They are read at build time
+and refreshed weekly; if codeshare.me cannot be reached, the last known values are used.
+
 ## 🎨 Customization
 
 ### Colors

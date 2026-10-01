@@ -14,6 +14,7 @@ import {
 } from "@once-ui-system/core";
 import { baseURL, about, person, social } from "@/resources";
 import React from "react";
+import { getLiveStats, renderStats } from "@/lib/live-stats";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -25,7 +26,8 @@ export async function generateMetadata() {
   });
 }
 
-export default function About() {
+export default async function About() {
+  const stats = await getLiveStats();
   return (
     <Column maxWidth="s" gap="xl" paddingY="12" horizontal="center">
       <Schema
@@ -124,7 +126,7 @@ export default function About() {
         <Column fillWidth gap="m">
           <Heading as="h2" variant="display-strong-s">{about.intro.title}</Heading>
           <Line />
-          <Text variant="body-default-l">{about.intro.description}</Text>
+          <Text variant="body-default-l">{renderStats(about.intro.description, stats)}</Text>
         </Column>
       )}
 
@@ -153,7 +155,7 @@ export default function About() {
               <Column as="ul" gap="12">
                 {experience.achievements.map((achievement, achIndex) => (
                   <Text as="li" variant="body-default-m" key={`${experience.company}-${achIndex}`}>
-                    {achievement}
+                    {renderStats(achievement, stats)}
                   </Text>
                 ))}
               </Column>

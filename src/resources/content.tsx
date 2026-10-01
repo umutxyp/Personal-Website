@@ -1,7 +1,6 @@
 import { Row, Line, Text } from "@once-ui-system/core";
 import type { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
 import siteData from "./site-data";
-import React from "react";
 
 const person: Person = {
   firstName: siteData.person.firstName,
@@ -64,7 +63,8 @@ const about: About = {
   intro: {
     display: true,
     title: "Hello!",
-    description: <>{siteData.about.introDescription}</>,
+    // Plain text with %project.key% tokens; the About page fills them (live-stats).
+    description: siteData.about.introDescription,
   },
   work: {
     display: true,
@@ -73,7 +73,7 @@ const about: About = {
       company: experience.company,
       timeframe: experience.timeframe,
       role: experience.role,
-      achievements: experience.achievements.map((achievement, idx) => <React.Fragment key={`${experience.company}-${idx}`}>{achievement}</React.Fragment>),
+      achievements: experience.achievements,
       images: [],
     })),
   },
