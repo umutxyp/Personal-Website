@@ -4,6 +4,7 @@ const siteData = {
     keywords: [
       "Umut Bayraktar",
       "Codeshare",
+      "Codeshare Technology",
       "Full-stack developer",
       "AI Systems Researcher",
       "Content Creator",
@@ -11,9 +12,13 @@ const siteData = {
       "Social Media Management",
       "Next.js",
       "Discord bots",
-      "Digital marketplace",
+      "Software studio",
+      "Discord music bot",
+      "Discord moderation bot",
       "Minecraft server list",
       "Discord server list",
+      "Anime tracker",
+      "AI chat",
     ],
   },
   person: {
@@ -29,7 +34,7 @@ const siteData = {
     address: "Vietnam",
     languages: ["Türkçe", "English"],
     biography:
-      "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media. Founder of Codeshare Technology, shipping platforms used by millions.",
+      "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media. Founder & CEO of Codeshare Technology, the London software studio behind Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai.",
   },
   hero: {
     headline: "Full-Stack Developer, AI Researcher & Content Creator",
@@ -37,13 +42,14 @@ const siteData = {
       <>
         6+ years building platforms that carry real traffic — a Minecraft server list tracking a
         quarter of a million players, a Discord music bot in 32K servers, a Discord discovery
-        platform, and a digital marketplace. Founder of <strong>Codeshare Technology</strong>.
+        platform, an AI moderation bot, an anime tracker, and an AI chat. Founder of{" "}
+        <strong>Codeshare Technology</strong>, the software studio they all live under.
       </>
     ),
     featured: {
-      label: "Codeshare Marketplace",
+      label: "Codeshare Technology",
       href: "https://codeshare.me",
-      badge: "Digital commerce platform",
+      badge: "Software studio",
     },
     ctaPrimary: {
       label: "Explore Codeshare",
@@ -56,14 +62,14 @@ const siteData = {
     stats: [
       { value: "2.1M+", label: "Beatra users across 32.8K Discord servers" },
       { value: "250K", label: "Minecraft players tracked daily on MCStat" },
+      { value: "6", label: "Products shipped under Codeshare Technology" },
       { value: "44K+", label: "Followers across Instagram, YouTube & TikTok" },
-      { value: "6+", label: "Years in community & social media management" },
     ],
   },
   newsletter: {
     display: false,
     title: "Build log",
-    description: "Shipping notes from Codeshare, Beatra, MCStat, and JustDiscord.",
+    description: "Shipping notes from Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai.",
   },
   social: [
     { name: "Instagram", icon: "instagram", link: "https://instagram.com/umutxyp" },
@@ -79,17 +85,17 @@ const siteData = {
   about: {
     introTitle: "Who I am",
     introDescription:
-      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been building and running platforms end to end — writing the code, operating the servers they run on, and growing the communities around them. Today that means a Minecraft server list that tracks a quarter of a million concurrent players, a Discord music bot in 32,000+ servers, a Discord discovery platform with 16,000+ listings, a digital marketplace, and an AI moderation bot. I run all of it on my own infrastructure, and I produce content across Instagram, YouTube, and TikTok for 44K+ followers.",
+      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been building and running platforms end to end — writing the code, operating the servers they run on, and growing the communities around them. Today that work lives under Codeshare Technology, the London software studio I founded: a Minecraft server list that tracks a quarter of a million concurrent players, a Discord music bot in 32,000+ servers, a Discord discovery platform with 16,000+ listings, an AI moderation bot, an anime and manga tracker, and a free AI chat. The core of every product stays free, I run all of it on my own infrastructure, and I produce content across Instagram, YouTube, and TikTok for 44K+ followers.",
     experiences: [
       {
         company: "Codeshare Technology",
         timeframe: "Jan 2019 - Present",
         role: "Founder & CEO",
         achievements: [
-          "Founded and run the company behind Codeshare, Beatra, MCStat, JustDiscord, and Sylon — every product self-hosted on infrastructure I operate myself.",
-          "Built an end-to-end digital marketplace covering game top-ups, gift cards, software licenses, accounts, source code, and freelance services, with escrow on every order and verified sellers.",
-          "Shipped a YouTube API integration that gates products behind channel subscriptions, plus a developer CLI that version-controls snippets from the terminal.",
-          "Grew the marketplace to 10K+ users and 13.9K+ shared snippets across 30+ categories.",
+          "Founded and run Codeshare Technology Ltd, a London software studio (registered in England and Wales, no. 16672504) that builds software for online communities and keeps the core of it free.",
+          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — every one self-hosted on infrastructure I operate myself.",
+          "Started Codeshare in 2019 as a Discord community for developers and grew it into a developer marketplace with 10K+ users and 13.9K+ shared snippets, with escrow on every order and verified sellers.",
+          "Retired the marketplace on 14 September 2026 to put that attention on the products; codeshare.me now serves the company site.",
         ],
         images: [],
         link: "https://codeshare.me",
@@ -142,6 +148,30 @@ const siteData = {
         ],
         images: [],
         link: "https://sylon.app",
+      },
+      {
+        company: "JustAnime",
+        timeframe: "Present",
+        role: "Founder & Lead Developer",
+        achievements: [
+          "Built an anime and manga tracker where every single episode can be rated and reviewed, not just the series as a whole.",
+          "Shipped studio following, user follows, seasonal calendars, trending charts, achievements, and community reviews.",
+          "Built JustAnime Sync, a Chrome and Firefox extension that marks episodes and chapters as you watch or read on 200+ streaming and reading sites, and mirrors progress to linked AniList and MyAnimeList accounts.",
+        ],
+        images: [],
+        link: "https://justanime.me",
+      },
+      {
+        company: "Dotrai",
+        timeframe: "Present",
+        role: "Founder & Lead Developer",
+        achievements: [
+          "Built a free, browser-based AI chat that searches the live web, runs real code, and shows its reasoning.",
+          "Shipped streaming responses, syntax-highlighted code help across languages, and conversations saved to the account so they continue on any device.",
+          "Kept sign-up to an email and a password — no credit card, no setup, no download.",
+        ],
+        images: [],
+        link: "https://dotrai.com",
       },
     ],
     studies: [
@@ -243,8 +273,10 @@ const siteData = {
     "/images/projects/mcstat.png",
     "/images/projects/beatra.png",
     "/images/projects/justdiscord.png",
-    "/images/projects/codeshare.png",
     "/images/projects/sylon.png",
+    "/images/projects/justanime.png",
+    "/images/projects/dotrai.png",
+    "/images/projects/codeshare.png",
     "/images/projects/umutxyp.jpg",
   ],
   github: {

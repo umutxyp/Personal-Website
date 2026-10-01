@@ -101,21 +101,21 @@ const blog: Blog = {
   path: "/blog",
   label: "Blog",
   title: "Writing about code, community, and content",
-  description: `Notes on Codeshare, creators, and automation experiments by ${person.name}`,
+  description: `Notes on Codeshare Technology, creators, and automation experiments by ${person.name}`,
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects - ${person.name}`,
-  description: `Software, marketplaces, and community experiments by ${person.name}`,
+  description: `Products and case studies from Codeshare Technology by ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
   title: `Product gallery - ${person.name}`,
-  description: "Screens from MCStat, Beatra, JustDiscord, Codeshare, and Sylon.",
+  description: "Screens from MCStat, Beatra, JustDiscord, Sylon, JustAnime, Dotrai, and Codeshare.",
   images: siteData.gallery.map((src, index) => ({
     src,
     alt: `showcase-${index + 1}`,
