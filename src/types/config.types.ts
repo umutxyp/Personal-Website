@@ -157,6 +157,7 @@ export type SameAsConfig = {
   twitter?: string;
   youtube?: string;
   telegram?: string;
+  facebook?: string;
 };
 
 /**
