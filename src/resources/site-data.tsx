@@ -34,16 +34,16 @@ const siteData = {
     address: "Vietnam",
     languages: ["Türkçe", "English"],
     biography:
-      "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media. Founder & CEO of Codeshare Technology, the studio behind Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — six products reaching 2.9M Discord users.",
+      "Professional software developer, AI systems researcher, and content creator with 6+ years of experience in full-stack development, community management, and social media. Founder & CEO of Codeshare Technology, the London software studio behind Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai.",
   },
   hero: {
     headline: "Full-Stack Developer, AI Researcher & Content Creator",
     subline: (
       <>
-        6+ years building platforms that carry real traffic — a Discord music bot reaching 3M
-        users in 40K servers, an AI moderation bot, a Minecraft data platform with 463K player
+        6+ years building platforms that carry real traffic — a Discord music bot reaching 3M+
+        users in 40K+ servers, an AI moderation bot, a Minecraft data platform with 463K player
         records, a Discord discovery platform, an anime tracker, and an AI chat. Founder of{" "}
-        <strong>Codeshare Technology</strong>, the studio they all live under.
+        <strong>Codeshare Technology</strong>, the London software studio they all live under.
       </>
     ),
     featured: {
@@ -60,9 +60,9 @@ const siteData = {
       href: "https://beatra.app",
     },
     stats: [
-      { value: "2.9M", label: "Discord users reached across Codeshare products" },
-      { value: "3M", label: "Beatra users across 40K Discord servers" },
-      { value: "463K", label: "Minecraft player records on MCStat" },
+      { value: "3M+", label: "Beatra users" },
+      { value: "40K+", label: "Discord servers running Beatra" },
+      { value: "463K", label: "MCStat player records" },
       { value: "44K+", label: "Followers across Instagram, YouTube & TikTok" },
     ],
   },
@@ -85,7 +85,7 @@ const siteData = {
   about: {
     introTitle: "Who I am",
     introDescription:
-      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been building and running platforms end to end — writing the code, operating the servers they run on, and growing the communities around them. Today that work lives under Codeshare Technology, the studio I founded: a Discord music bot reaching 3M users in 40,000 servers, an AI moderation bot in 500 servers, a Minecraft data platform tracking 6,752 servers and 463K player records, a Discord discovery platform with 11,000+ listings, an anime and manga tracker with 123K titles, and a free AI chat. The core of every product stays free, I run all of it on my own infrastructure, and I produce content across Instagram, YouTube, and TikTok for 44K+ followers.",
+      "I am a professional software developer, AI systems researcher, and content creator. For over 6 years I have been building and running platforms end to end — writing the code, operating the servers they run on, and growing the communities around them. Today that work lives under Codeshare Technology, the London software studio I founded: a Discord music bot reaching 3M+ users in 40K+ servers, an AI moderation bot in 500 servers, a Minecraft data platform tracking 6,752 servers and 463K player records, a Discord discovery platform with 11,000+ listings, an anime and manga tracker with 123K titles, and a free AI chat. The company was incorporated in 2025, but most of the products are older than it — the first one dates back to 2020. The core of every product stays free, I run all of it myself, and I produce content across Instagram, YouTube, and TikTok for 44K+ followers.",
     experiences: [
       {
         company: "Codeshare Technology",
@@ -93,7 +93,7 @@ const siteData = {
         role: "Founder & CEO",
         achievements: [
           "Run Codeshare Technology Ltd (registered in England and Wales, no. 16672504), a small studio that builds software for online communities and runs it — no agency work, no consulting, nothing built for a client.",
-          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — reaching 2.9M Discord users, from code to servers to the communities around them.",
+          "Lead six products — Beatra, Sylon, MCStat, JustDiscord, JustAnime, and Dotrai — from code to servers to the communities around them.",
           "Keep the core of every product free: Beatra plays music, Sylon guards a server, MCStat gives its data away through an open API, and Dotrai answers questions, none of it behind a payment.",
           "Built the first products in 2020 and incorporated the company in August 2025, once four of the six products already existed and needed a company around them.",
         ],
@@ -120,7 +120,7 @@ const siteData = {
         achievements: [
           "First built in November 2020 and launched in 2021 as MusicMaker; shut it down in 2022 and brought it back in October 2025 as Beatra, on its original account.",
           "Built a multi-platform music streaming ecosystem spanning Discord, web, desktop, and Discord Activities, playing from YouTube, YouTube Music, Spotify, Apple Music, Deezer, SoundCloud, Tidal, Audius, and Qobuz.",
-          "Scaled to 40K Discord servers and 3M users with synchronized playback, audio filters, smart autoplay, and 99% uptime.",
+          "Scaled to 40K+ Discord servers and 3M+ users with synchronized playback, audio filters, smart autoplay, and 99% uptime.",
           "Shipped Beatra Wrapped, listening analytics, server and profile pages, a custom-bot tenant system, and a premium tier at $1.49/month.",
         ],
         images: [],
@@ -213,7 +213,6 @@ const siteData = {
           { name: "Socket.IO", icon: "javascript" },
           { name: "Discord.js", icon: "discord" },
           { name: "Lavalink", icon: "code" },
-          { name: "Go", icon: "code" },
         ],
       },
       {
