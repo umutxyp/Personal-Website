@@ -8,7 +8,33 @@ import {
   Schema,
   Text,
 } from "@once-ui-system/core";
+import { FaCodeFork, FaRegClock, FaRegStar } from "react-icons/fa6";
 import { baseURL, person, about, siteData } from "@/resources";
+
+// GitHub's own language colours, for the dot beside each repository's language.
+const LANGUAGE_COLORS: Record<string, string> = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  Python: "#3572a5",
+  Go: "#00add8",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  SCSS: "#c6538c",
+  Java: "#b07219",
+  "C#": "#178600",
+  "C++": "#f34b7d",
+  C: "#555555",
+  Rust: "#dea584",
+  PHP: "#4f5d95",
+  Shell: "#89e051",
+  Lua: "#000080",
+};
+
+const dateFormat = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
 
 type GitHubRepo = {
   id: number;
@@ -96,7 +122,7 @@ function RepoCard({ repo, pinned }: { repo: GitHubRepo; pinned?: boolean }) {
       fillHeight
       direction="column"
     >
-      <Column gap="12" fillWidth fillHeight vertical="between">
+      <Column gap="16" fillWidth fillHeight vertical="between">
         <Column gap="8" fillWidth>
           <Row gap="8" vertical="center" wrap>
             <Heading
@@ -138,19 +164,39 @@ function RepoCard({ repo, pinned }: { repo: GitHubRepo; pinned?: boolean }) {
         </Column>
         <Row gap="16" vertical="center" wrap>
           {repo.language && (
-            <Text variant="label-default-s" onBackground="neutral-medium">
-              {repo.language}
-            </Text>
+            <Row gap="8" vertical="center">
+              <span
+                aria-hidden
+                style={{
+                  width: 10,
+                  height: 10,
+                  borderRadius: "50%",
+                  background: LANGUAGE_COLORS[repo.language] ?? "var(--neutral-on-background-weak)",
+                }}
+              />
+              <Text variant="label-default-s" onBackground="neutral-medium">
+                {repo.language}
+              </Text>
+            </Row>
           )}
-          <Text variant="label-default-s" onBackground="neutral-medium">
-            ⭐ {repo.stargazers_count}
-          </Text>
-          <Text variant="label-default-s" onBackground="neutral-medium">
-            🍴 {repo.forks_count}
-          </Text>
-          <Text variant="label-default-xs" onBackground="neutral-weak">
-            Updated {new Date(repo.updated_at).toLocaleDateString()}
-          </Text>
+          <Row gap="4" vertical="center" aria-label={`${repo.stargazers_count} stars`}>
+            <FaRegStar size={14} aria-hidden />
+            <Text variant="label-default-s" onBackground="neutral-medium">
+              {repo.stargazers_count.toLocaleString("en-US")}
+            </Text>
+          </Row>
+          <Row gap="4" vertical="center" aria-label={`${repo.forks_count} forks`}>
+            <FaCodeFork size={14} aria-hidden />
+            <Text variant="label-default-s" onBackground="neutral-medium">
+              {repo.forks_count.toLocaleString("en-US")}
+            </Text>
+          </Row>
+          <Row gap="4" vertical="center">
+            <FaRegClock size={12} aria-hidden />
+            <Text variant="label-default-xs" onBackground="neutral-weak">
+              Updated {dateFormat.format(new Date(repo.updated_at))}
+            </Text>
+          </Row>
         </Row>
       </Column>
     </Card>
