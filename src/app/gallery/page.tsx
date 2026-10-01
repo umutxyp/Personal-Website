@@ -1,5 +1,3 @@
-import path from "path";
-import fs from "fs";
 import { Flex, Meta, Schema } from "@once-ui-system/core";
 import GalleryView from "@/components/gallery/GalleryView";
 import { baseURL, gallery, person } from "@/resources";
@@ -15,12 +13,6 @@ export async function generateMetadata() {
 }
 
 export default function Gallery() {
-  const galleryDir = path.join(process.cwd(), "public", "images", "gallery");
-  const files = fs.readdirSync(galleryDir).filter((f) =>
-    /\.(png|jpg|jpeg|webp|gif)$/i.test(f)
-  );
-  const images = files.map((file) => `/images/gallery/${file}`);
-
   return (
     <Flex maxWidth="l">
       <Schema
@@ -36,7 +28,7 @@ export default function Gallery() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <GalleryView images={images} />
+      <GalleryView images={gallery.images.map((image) => image.src)} />
     </Flex>
   );
 }

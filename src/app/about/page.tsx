@@ -135,7 +135,13 @@ export default function About() {
           <Line />
           {about.work.experiences.map((experience, index) => (
             <Column key={`${experience.company}-${index}`} fillWidth gap="8">
-              <Row fillWidth horizontal="between" vertical="end">
+              <Row
+                fillWidth
+                gap="4"
+                horizontal="between"
+                vertical="end"
+                s={{ direction: "column", horizontal: "start", vertical: "start" }}
+              >
                 <Text variant="heading-strong-l">{experience.company}</Text>
                 <Text variant="heading-default-xs" onBackground="neutral-weak">
                   {experience.timeframe}
@@ -179,12 +185,12 @@ export default function About() {
           <Line />
           {about.technical.skills.map((skill, index) => (
             <Column key={`${skill.title}-${index}`} fillWidth gap="12">
-              <Row fillWidth horizontal="between" vertical="end">
+              <Column fillWidth gap="4">
                 <Text variant="heading-strong-m">{skill.title}</Text>
                 <Text variant="heading-default-xs" onBackground="brand-weak">
                   {skill.description}
                 </Text>
-              </Row>
+              </Column>
               <Row wrap gap="8">
                 {skill.tags?.map((tag) => (
                   <Tag key={tag.name} size="l">{tag.name}</Tag>

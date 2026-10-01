@@ -119,7 +119,7 @@ const routes = {
 title: "Project Name"
 publishedAt: "2024-01-01"
 summary: "Short description"
-images: ["/images/projects/project.png"]
+images: ["/images/projects/project.jpg"]
 team: []
 link: "https://project.com"
 ---
@@ -128,6 +128,19 @@ Project content here...
 ```
 
 1. The project will automatically appear on the work page.
+
+### Cover screenshots
+
+Project covers are live screenshots of each project's site, served from
+`/screenshots/<slug>` (`src/app/screenshots/[slug]/route.ts`). Chromium runs inside
+the Vercel function: every screenshot is captured during the build and regenerated in
+the background once a week, so the Work page, case studies and gallery stay current
+with no CI and no external service.
+
+- The page captured is `link`, or `screenshotUrl` if set.
+- `images[0]` is the fallback, used if a site cannot be captured at build time. During a
+  weekly refresh a failed capture keeps the last good screenshot.
+- `screenshot: false` keeps `images[0]` as a hand-made cover.
 
 ## 🎨 Customization
 
