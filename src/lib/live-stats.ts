@@ -77,23 +77,33 @@ const decode = (text: string) => text.replace(/&(amp|lt|gt|quot|#39|#x27|nbsp);/
 // A figure: "6", "2.9M", "6,752", "99.9%", but not step numbers ("01").
 const VALUE = /^(?!0\d)\d[\d.,]{0,8}[KMB]?\+?%?$/;
 
+/** The page with every <tag …>…</tag> block cut out, found by position rather than by pattern. */
+function dropBlocks(html: string, tag: string): string {
+  const lower = html.toLowerCase();
+  let out = "";
+  let at = 0;
+  for (;;) {
+    const start = lower.indexOf(`<${tag}`, at);
+    if (start < 0) return out + html.slice(at);
+    out += html.slice(at, start);
+    const end = lower.indexOf(`</${tag}`, start);
+    const close = end < 0 ? -1 : lower.indexOf(">", end);
+    if (close < 0) return out;
+    at = close + 1;
+  }
+}
+
 /**
- * The words of a page, one run of text per line. Scripts and styles go first (their closing
- * tags matched however they are written), then every tag, again and again until none is left,
- * so a tag hidden inside another cannot survive. Only the figures are kept from this, and React
- * escapes them when they are shown.
+ * The words of a page, one run of text per line: scripts and styles cut out, every tag turned
+ * into a line break, and any < or > still left over turned into one too, so no markup survives.
+ * Only the figures are kept from this, and React escapes them when they are shown.
  */
 function toText(html: string): string {
-  let text = html;
-  let before: string;
-  do {
-    before = text;
-    text = text
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gi, "")
-      .replace(/<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gi, "")
-      .replace(/<[^>]*>/g, "\n");
-  } while (text !== before);
-  return text.replace(/[<>]/g, "\n");
+  return dropBlocks(dropBlocks(html, "script"), "style")
+    .split("<")
+    .map((part) => part.slice(part.indexOf(">") + 1))
+    .join("\n")
+    .replace(/>/g, "\n");
 }
 
 /**
