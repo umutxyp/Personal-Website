@@ -5,7 +5,7 @@ import { Frame, Fx, Heading, Mdx, Reveal, Scene } from "@/components";
 import { fillStats, getLiveStats } from "@/lib/live-stats";
 import { baseURL, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
-import { getProjects } from "@/utils/utils";
+import { getProjects, workPath } from "@/utils/utils";
 
 export const revalidate = 86400;
 
@@ -91,7 +91,7 @@ export default async function Project({ params }: Params) {
             {others.map((item) => (
               <li key={item.slug}>
                 <div className="row-head">
-                  <Link href={`/work/${item.slug}`}>{item.metadata.title}</Link>
+                  <Link href={workPath(item.slug)}>{item.metadata.title}</Link>
                 </div>
                 <p>{fillStats(item.metadata.summary, stats)}</p>
               </li>

@@ -3,7 +3,7 @@ import { Frame, Fx, Heading, Pic, ProjectCard, Reveal, Scene } from "@/component
 import { getPinnedNames } from "@/lib/github";
 import { compact, fillStats, getLiveStats, getRepos, renderStats } from "@/lib/live-stats";
 import { person, siteData } from "@/resources";
-import { getProjects } from "@/utils/utils";
+import { getProjects, workPath } from "@/utils/utils";
 
 // The numbers on this page are read from codeshare.me and GitHub; once a day is plenty.
 export const revalidate = 86400;
@@ -111,7 +111,7 @@ export default async function Home() {
                 url={product.url}
                 logo={product.logo}
                 logoTile={"logoTile" in product ? product.logoTile : undefined}
-                href={written.has(product.slug) ? `/work/${product.slug}` : product.url}
+                href={written.has(product.slug) ? workPath(product.slug) : product.url}
                 description={product.description}
                 stats={product.stats.map((stat) => ({
                   value: fillStats(stat.value, stats),

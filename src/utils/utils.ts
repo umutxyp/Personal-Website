@@ -32,6 +32,11 @@ type Metadata = {
 
 import { notFound } from "next/navigation";
 
+/** The address of a project's page. */
+export function workPath(slug: string): string {
+  return `/work/${encodeURIComponent(slug)}`;
+}
+
 /**
  * A cover named in a project's front matter: a file of our own under /images, or a picture on
  * another https site. Anything else (a javascript: or data: address, markup) is left out.
@@ -78,7 +83,8 @@ function readMDXFile(filePath: string) {
 }
 
 function getMDXData(dir: string) {
-  const mdxFiles = getMDXFiles(dir);
+  // A file's name is its address (/work/<slug>), so only plain names are taken.
+  const mdxFiles = getMDXFiles(dir).filter((file) => /^[a-z0-9-]+\.mdx$/.test(file));
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
     const slug = path.basename(file, path.extname(file));

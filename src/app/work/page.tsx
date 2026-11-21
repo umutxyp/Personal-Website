@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Frame, Fx, Pic, Reveal, Scene } from "@/components";
 import { fillStats, getLiveStats } from "@/lib/live-stats";
 import { person } from "@/resources";
-import { sortedProjects } from "@/utils/utils";
+import { sortedProjects, workPath } from "@/utils/utils";
 
 export const revalidate = 86400;
 
@@ -30,7 +30,7 @@ export default async function Work() {
         <div className="shots">
           {sortedProjects().map((project, n) => (
             <Reveal key={project.slug}>
-              <Link href={`/work/${project.slug}`} className="shot sketch">
+              <Link href={workPath(project.slug)} className="shot sketch">
                 <Frame />
                 <Pic name={`grow-${n % 4}`} width={600} height={80} className="grown" />
                 <img

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Frame, Fx, Scene } from "@/components";
 import { person } from "@/resources";
-import { getProjects } from "@/utils/utils";
+import { getProjects, workPath } from "@/utils/utils";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -26,7 +26,7 @@ export default function Gallery() {
       <div className="wrap">
         <div className="gallery">
           {shots.map((project) => (
-            <Link key={project.slug} href={`/work/${project.slug}`} className="shot sketch">
+            <Link key={project.slug} href={workPath(project.slug)} className="shot sketch">
               <Frame />
               <img
                 className="frame"
