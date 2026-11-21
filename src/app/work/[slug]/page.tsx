@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Frame, Heading, Mdx, Reveal } from "@/components";
+import { Frame, Fx, Heading, Mdx, Reveal, Scene } from "@/components";
 import { fillStats, getLiveStats } from "@/lib/live-stats";
 import { baseURL, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
@@ -20,12 +20,20 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const project = getProjects().find((item) => item.slug === slug);
   if (!project) return {};
   const description = fillStats(project.metadata.summary, await getLiveStats());
-  const image = project.metadata.images[0] || `/api/og/generate?title=${encodeURIComponent(project.metadata.title)}`;
+  const image =
+    project.metadata.images[0] ||
+    `/api/og/generate?title=${encodeURIComponent(project.metadata.title)}`;
   return {
     title: project.metadata.title,
     description,
     alternates: { canonical: `/work/${slug}` },
-    openGraph: { type: "article", title: project.metadata.title, description, url: `${baseURL}/work/${slug}`, images: [image] },
+    openGraph: {
+      type: "article",
+      title: project.metadata.title,
+      description,
+      url: `${baseURL}/work/${slug}`,
+      images: [image],
+    },
   };
 }
 
@@ -49,44 +57,53 @@ export default async function Project({ params }: Params) {
   };
 
   return (
-    <article className="narrow">
-      <header className="page-head">
-        <h1 className="wavy">{metadata.title}</h1>
-        <p>{fillStats(metadata.summary, stats)}</p>
-        <div className="tags">
-          <span className="tag small">since {formatDate(metadata.publishedAt)}</span>
-          {metadata.link && (
-            <a className="tag" href={metadata.link} rel="noopener">
-              {metadata.link.replace(/^https?:\/\//, "")}
-            </a>
-          )}
-        </div>
-      </header>
+    <>
+      <div className="narrow">
+        <header className="page-head">
+          <Fx steady>
+            <h1 className="wavy">{metadata.title}</h1>
+          </Fx>
+          <p>{fillStats(metadata.summary, stats)}</p>
+          <div className="tags">
+            <span className="tag small">since {formatDate(metadata.publishedAt)}</span>
+            {metadata.link && (
+              <a className="tag" href={metadata.link} rel="noopener">
+                {metadata.link.replace(/^https?:\/\//, "")}
+              </a>
+            )}
+          </div>
+        </header>
+      </div>
+      <Scene project={slug} small />
+      <article className="narrow">
+        {metadata.images[0] && (
+          <div className="cover sketch">
+            <Frame />
+            <img src={metadata.images[0]} alt={`${metadata.title}, its site as it looks now`} />
+          </div>
+        )}
 
-      {metadata.images[0] && (
-        <div className="cover sketch">
-<Frame />
-          <img src={metadata.images[0]} alt={`${metadata.title}, its site as it looks now`} />
-        </div>
-      )}
+        <Mdx source={fillStats(project.content, stats)} />
 
-      <Mdx source={fillStats(project.content, stats)} />
-
-      <Reveal as="section" className="section">
-        <Heading line={2}>More work</Heading>
-        <ul className="rows">
-          {others.map((item) => (
-            <li key={item.slug}>
-              <div className="row-head">
-                <Link href={`/work/${item.slug}`}>{item.metadata.title}</Link>
-              </div>
-              <p>{fillStats(item.metadata.summary, stats)}</p>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
-      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: structured data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-    </article>
+        <Reveal as="section" className="section">
+          <Heading line={2}>More work</Heading>
+          <ul className="rows">
+            {others.map((item) => (
+              <li key={item.slug}>
+                <div className="row-head">
+                  <Link href={`/work/${item.slug}`}>{item.metadata.title}</Link>
+                </div>
+                <p>{fillStats(item.metadata.summary, stats)}</p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: structured data
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </article>
+    </>
   );
 }

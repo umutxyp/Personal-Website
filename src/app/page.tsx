@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Frame, Heading, Pic, ProjectCard, Reveal } from "@/components";
+import { Frame, Fx, Heading, Pic, ProjectCard, Reveal, Scene } from "@/components";
 import { getPinnedNames } from "@/lib/github";
 import { compact, fillStats, getLiveStats, getRepos, renderStats } from "@/lib/live-stats";
 import { person, siteData } from "@/resources";
@@ -20,10 +20,10 @@ export default async function Home() {
   return (
     <>
       <section className="hero">
-        <Pic name="sky-a" width={380} height={300} className="sky sky-a" eager />
-        <Pic name="sky-b" width={380} height={300} className="sky sky-b" eager />
         <div className="hero-text">
-          <h1>{person.name}</h1>
+          <Fx steady>
+            <h1>{person.name}</h1>
+          </Fx>
           <span className="underline" aria-hidden="true">
             <i />
             <i />
@@ -34,9 +34,7 @@ export default async function Home() {
             ))}
           </ul>
         </div>
-        <div className="land">
-          <Pic name="land" width={2400} height={520} eager />
-        </div>
+        <Scene page="home" />
       </section>
 
       <div className="wrap">
@@ -71,9 +69,9 @@ export default async function Home() {
         <Reveal as="section" className="section">
           <Heading line={1}>Projects</Heading>
           <div className="studio sketch">
-<Frame />
-            <Pic name="plants-3" width={600} height={70} className="grown" />
-            <Pic name="sleeper" width={240} height={132} className="sleeper" />
+            <Frame />
+            <Pic name="grow-3" width={600} height={80} className="grown" />
+            <Pic name="perch" width={260} height={170} className="perch" />
             <div className="studio-head">
               <img src={studio.logo} width={120} height={128} alt="" />
               <div>
@@ -115,7 +113,10 @@ export default async function Home() {
                 logoTile={"logoTile" in product ? product.logoTile : undefined}
                 href={written.has(product.slug) ? `/work/${product.slug}` : product.url}
                 description={product.description}
-                stats={product.stats.map((stat) => ({ value: fillStats(stat.value, stats), label: stat.label }))}
+                stats={product.stats.map((stat) => ({
+                  value: fillStats(stat.value, stats),
+                  label: stat.label,
+                }))}
                 plants={n}
               />
             ))}

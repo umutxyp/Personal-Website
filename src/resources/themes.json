@@ -5,71 +5,137 @@
       "id": "fox",
       "name": "Fox by the sea",
       "swatch": [
-        "#2188e0",
-        "#86cfe0",
+        "#cde6fa",
+        "#ffe6c2",
         "#ff8559",
-        "#4aa8f2"
+        "#16314c"
       ]
     },
     {
       "id": "cat",
       "name": "Cat in the ivy",
       "swatch": [
-        "#2f8f5b",
-        "#8fc79c",
-        "#d4572f",
-        "#f3b888"
+        "#e2f0d3",
+        "#ffefc0",
+        "#e2572f",
+        "#17301d"
       ]
     },
     {
       "id": "lion",
       "name": "Lion on the savanna",
       "swatch": [
-        "#c07a16",
-        "#e3c46a",
-        "#e2572b",
-        "#efbf62"
+        "#ffd9a1",
+        "#ff9c55",
+        "#ffe7a0",
+        "#2f1708"
       ]
     },
     {
       "id": "owl",
       "name": "Owl at night",
       "swatch": [
-        "#6a55d6",
-        "#b4a8ec",
-        "#f2a23a",
-        "#9a8adf"
+        "#d8ccfb",
+        "#f8c3da",
+        "#ffc15e",
+        "#1b1740"
       ]
     },
     {
       "id": "bear",
       "name": "Bear in the forest",
       "swatch": [
-        "#3c7d3a",
-        "#7fb069",
-        "#c9532c",
-        "#b07a4d"
+        "#dfecdd",
+        "#f9f0cf",
+        "#e8623a",
+        "#12241a"
       ]
     },
     {
       "id": "penguin",
       "name": "Penguin in the snow",
       "swatch": [
-        "#1697b7",
-        "#bfe6f2",
+        "#dbf0fa",
+        "#f5e8f3",
         "#ff9a3d",
-        "#2a3f52"
+        "#22475f"
       ]
     },
     {
       "id": "tortoise",
       "name": "Tortoise in the desert",
       "swatch": [
-        "#c8642f",
-        "#9cc7a0",
+        "#ffe2bc",
+        "#ffbd84",
         "#e8473a",
-        "#8fae6b"
+        "#3a2012"
       ]
     }
-  ]
+  ],
+  "scenes": {
+    "pages": {
+      "home": {
+        "v": 0,
+        "focus": 0.65
+      },
+      "about": {
+        "v": 1,
+        "focus": 0.358
+      },
+      "work": {
+        "v": 2,
+        "focus": 0.683
+      },
+      "code": {
+        "v": 3,
+        "focus": 0.325
+      },
+      "gallery": {
+        "v": 4,
+        "focus": 0.517
+      }
+    },
+    "projects": {
+      "codeshare-technology": {
+        "v": 0,
+        "focus": 0.504
+      },
+      "beatra-streaming-platform": {
+        "v": 1,
+        "focus": 0.504
+      },
+      "shroudly-anti-censorship": {
+        "v": 2,
+        "focus": 0.537
+      },
+      "vanigo-travel-app": {
+        "v": 3,
+        "focus": 0.471
+      },
+      "sylon-discord-bot": {
+        "v": 4,
+        "focus": 0.371
+      },
+      "mcstat-minecraft-server-list": {
+        "v": 0,
+        "focus": 0.504
+      },
+      "justanime-anime-tracker": {
+        "v": 1,
+        "focus": 0.504
+      },
+      "justdiscord-server-bot-list": {
+        "v": 2,
+        "focus": 0.537
+      },
+      "dotrai-ai-chat": {
+        "v": 3,
+        "focus": 0.471
+      },
+      "creator-studio-automation": {
+        "v": 4,
+        "focus": 0.371
+      }
+    }
+  }
 }

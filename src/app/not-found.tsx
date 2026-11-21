@@ -13,7 +13,7 @@ export default function NotFound() {
           </Link>
         </div>
       </header>
-      <Pic name="sleeper" width={240} height={132} className="lost" />
+      <Pic name="perch" width={260} height={170} className="lost" />
     </div>
   );
 }

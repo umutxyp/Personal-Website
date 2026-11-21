@@ -6,6 +6,7 @@ export const baseURL = siteData.baseURL;
 export const person = siteData.person;
 export const themes = themeList.themes;
 export const defaultTheme = themeList.default;
+export const scenes = themeList.scenes;
 
 /** The pages in the header, in order. */
 export const nav = [

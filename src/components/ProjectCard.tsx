@@ -16,11 +16,20 @@ type Props = {
 };
 
 /** A product in a hand-drawn frame, the theme's plants growing along its top. */
-export function ProjectCard({ name, url, logo, logoTile, href, description, stats, plants }: Props) {
+export function ProjectCard({
+  name,
+  url,
+  logo,
+  logoTile,
+  href,
+  description,
+  stats,
+  plants,
+}: Props) {
   return (
     <Link href={href} className="card sketch">
       <Frame />
-      <Pic name={`plants-${plants % 4}`} width={600} height={70} className="grown" />
+      <Pic name={`grow-${plants % 4}`} width={600} height={80} className="grown" />
       <div className="card-head">
         <span className="logo" style={logoTile ? { background: logoTile } : undefined}>
           <img src={logo} width={54} height={54} alt="" loading="lazy" />

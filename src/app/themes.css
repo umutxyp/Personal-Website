@@ -1,7 +1,7 @@
-/* Written by scripts/draw.py from THEMES. Do not edit: change the colours there and run it again. */
+/* Written by scripts/paint.py from UI and SCENES. Do not edit: change the colours there and run it again. */
 
 :root, html[data-theme="fox"][data-mode="light"] {
-  --bg: #fbfdff;
+  --bg: #e9f4fd;
   --card: #ffffff;
   --ink: #14273d;
   --soft: #4d6379;
@@ -13,11 +13,18 @@
   --leaf-1: #86cfe0;
   --leaf-2: #4fa9cc;
   --leaf-3: #b5e2ee;
+  --sky-1: #cde6fa;
+  --sky-2: #ffe6c2;
+  --glow: #fff0c0;
+  --pop: #ff8559;
+  --ground: #16314c;
+  --ground-ink: #dee2e6;
+  --ground-soft: #a2adb7;
   color-scheme: light;
 }
 
 html[data-theme="fox"][data-mode="dark"] {
-  --bg: #0c141d;
+  --bg: #0d1826;
   --card: #101b27;
   --ink: #e4eef8;
   --soft: #9db1c6;
@@ -29,11 +36,18 @@ html[data-theme="fox"][data-mode="dark"] {
   --leaf-1: #2f86b3;
   --leaf-2: #51aad6;
   --leaf-3: #1f6790;
+  --sky-1: #122741;
+  --sky-2: #214669;
+  --glow: #e6eef8;
+  --pop: #ffb36b;
+  --ground: #050c14;
+  --ground-ink: #dcddde;
+  --ground-soft: #9b9ea1;
   color-scheme: dark;
 }
 
 html[data-theme="cat"][data-mode="light"] {
-  --bg: #fcfdf8;
+  --bg: #f2f8e8;
   --card: #ffffff;
   --ink: #1f2a24;
   --soft: #51605a;
@@ -45,11 +59,18 @@ html[data-theme="cat"][data-mode="light"] {
   --leaf-1: #8fc79c;
   --leaf-2: #63a97a;
   --leaf-3: #b7dcab;
+  --sky-1: #e2f0d3;
+  --sky-2: #ffefc0;
+  --glow: #fff4c2;
+  --pop: #e2572f;
+  --ground: #17301d;
+  --ground-ink: #dfe2df;
+  --ground-soft: #a2aca5;
   color-scheme: light;
 }
 
 html[data-theme="cat"][data-mode="dark"] {
-  --bg: #0e1512;
+  --bg: #0c1510;
   --card: #131c18;
   --ink: #ece8da;
   --soft: #a9ad9f;
@@ -61,11 +82,18 @@ html[data-theme="cat"][data-mode="dark"] {
   --leaf-1: #4f9c69;
   --leaf-2: #6fbf86;
   --leaf-3: #3b7a52;
+  --sky-1: #102019;
+  --sky-2: #1a3427;
+  --glow: #e9f1dd;
+  --pop: #ffc66b;
+  --ground: #040906;
+  --ground-ink: #dcdddc;
+  --ground-soft: #9b9d9b;
   color-scheme: dark;
 }
 
 html[data-theme="lion"][data-mode="light"] {
-  --bg: #fffbf2;
+  --bg: #fff2d9;
   --card: #ffffff;
   --ink: #3a2a14;
   --soft: #75624a;
@@ -77,11 +105,18 @@ html[data-theme="lion"][data-mode="light"] {
   --leaf-1: #e3c46a;
   --leaf-2: #c9a23f;
   --leaf-3: #efdc9c;
+  --sky-1: #ffd9a1;
+  --sky-2: #ff9c55;
+  --glow: #fff1b8;
+  --pop: #ffe7a0;
+  --ground: #2f1708;
+  --ground-ink: #e2dfdc;
+  --ground-soft: #aca29c;
   color-scheme: light;
 }
 
 html[data-theme="lion"][data-mode="dark"] {
-  --bg: #17130c;
+  --bg: #161109;
   --card: #1e1910;
   --ink: #f4ead6;
   --soft: #b9aa8e;
@@ -93,11 +128,18 @@ html[data-theme="lion"][data-mode="dark"] {
   --leaf-1: #a8842c;
   --leaf-2: #cfa646;
   --leaf-3: #7d6220;
+  --sky-1: #231a0f;
+  --sky-2: #3b2a15;
+  --glow: #f4e7c6;
+  --pop: #ffcf7a;
+  --ground: #080502;
+  --ground-ink: #dcdcdc;
+  --ground-soft: #9c9b9a;
   color-scheme: dark;
 }
 
 html[data-theme="owl"][data-mode="light"] {
-  --bg: #faf9ff;
+  --bg: #f0ebff;
   --card: #ffffff;
   --ink: #241f47;
   --soft: #5c5780;
@@ -109,11 +151,18 @@ html[data-theme="owl"][data-mode="light"] {
   --leaf-1: #b4a8ec;
   --leaf-2: #8d7fd8;
   --leaf-3: #d6cff7;
+  --sky-1: #d8ccfb;
+  --sky-2: #f8c3da;
+  --glow: #fff1f7;
+  --pop: #ffc15e;
+  --ground: #1b1740;
+  --ground-ink: #dfdfe4;
+  --ground-soft: #a4a2b3;
   color-scheme: light;
 }
 
 html[data-theme="owl"][data-mode="dark"] {
-  --bg: #0f0e1c;
+  --bg: #0c0b1a;
   --card: #151428;
   --ink: #ebe8fb;
   --soft: #a9a5c9;
@@ -125,11 +174,18 @@ html[data-theme="owl"][data-mode="dark"] {
   --leaf-1: #5a4fae;
   --leaf-2: #7d70d6;
   --leaf-3: #40377f;
+  --sky-1: #131130;
+  --sky-2: #23204d;
+  --glow: #ebe8ff;
+  --pop: #ffd27a;
+  --ground: #03030a;
+  --ground-ink: #dcdcdd;
+  --ground-soft: #9a9a9d;
   color-scheme: dark;
 }
 
 html[data-theme="bear"][data-mode="light"] {
-  --bg: #fbfcf6;
+  --bg: #f2f7ee;
   --card: #ffffff;
   --ink: #26301f;
   --soft: #5a654f;
@@ -141,11 +197,18 @@ html[data-theme="bear"][data-mode="light"] {
   --leaf-1: #7fb069;
   --leaf-2: #4f8a45;
   --leaf-3: #b6d59c;
+  --sky-1: #dfecdd;
+  --sky-2: #f9f0cf;
+  --glow: #fff7d2;
+  --pop: #e8623a;
+  --ground: #12241a;
+  --ground-ink: #dee0df;
+  --ground-soft: #a0a7a3;
   color-scheme: light;
 }
 
 html[data-theme="bear"][data-mode="dark"] {
-  --bg: #0f1410;
+  --bg: #0d1410;
   --card: #151c16;
   --ink: #e9edd9;
   --soft: #a7b097;
@@ -157,11 +220,18 @@ html[data-theme="bear"][data-mode="dark"] {
   --leaf-1: #3f7a3c;
   --leaf-2: #5fa055;
   --leaf-3: #2c5a2c;
+  --sky-1: #111f1a;
+  --sky-2: #1b3429;
+  --glow: #e7f0e2;
+  --pop: #ffc86b;
+  --ground: #030705;
+  --ground-ink: #dcdcdc;
+  --ground-soft: #9a9c9b;
   color-scheme: dark;
 }
 
 html[data-theme="penguin"][data-mode="light"] {
-  --bg: #f8fcff;
+  --bg: #f2f9fe;
   --card: #ffffff;
   --ink: #1b2e3c;
   --soft: #55707f;
@@ -173,11 +243,18 @@ html[data-theme="penguin"][data-mode="light"] {
   --leaf-1: #bfe6f2;
   --leaf-2: #8fd0e6;
   --leaf-3: #e2f5fb;
+  --sky-1: #dbf0fa;
+  --sky-2: #f5e8f3;
+  --glow: #ffffff;
+  --pop: #ff9a3d;
+  --ground: #22475f;
+  --ground-ink: #e0e5e9;
+  --ground-soft: #a7b5bf;
   color-scheme: light;
 }
 
 html[data-theme="penguin"][data-mode="dark"] {
-  --bg: #0b1418;
+  --bg: #07111a;
   --card: #101c22;
   --ink: #e3f2f8;
   --soft: #9bb6c2;
@@ -189,11 +266,18 @@ html[data-theme="penguin"][data-mode="dark"] {
   --leaf-1: #2c6f86;
   --leaf-2: #4a9db8;
   --leaf-3: #1d5568;
+  --sky-1: #0a1d2c;
+  --sky-2: #123349;
+  --glow: #eaf6ff;
+  --pop: #7af0c8;
+  --ground: #03090e;
+  --ground-ink: #dcdddd;
+  --ground-soft: #9a9d9f;
   color-scheme: dark;
 }
 
 html[data-theme="tortoise"][data-mode="light"] {
-  --bg: #fffaf3;
+  --bg: #fff5e4;
   --card: #ffffff;
   --ink: #3b2a1f;
   --soft: #7a6455;
@@ -205,11 +289,18 @@ html[data-theme="tortoise"][data-mode="light"] {
   --leaf-1: #9cc7a0;
   --leaf-2: #6fa57a;
   --leaf-3: #c4dfc0;
+  --sky-1: #ffe2bc;
+  --sky-2: #ffbd84;
+  --glow: #fff2c6;
+  --pop: #e8473a;
+  --ground: #3a2012;
+  --ground-ink: #e3e0de;
+  --ground-soft: #b0a6a0;
   color-scheme: light;
 }
 
 html[data-theme="tortoise"][data-mode="dark"] {
-  --bg: #17120e;
+  --bg: #150f0b;
   --card: #1f1812;
   --ink: #f4e7d8;
   --soft: #bba794;
@@ -221,5 +312,12 @@ html[data-theme="tortoise"][data-mode="dark"] {
   --leaf-1: #4c8a5a;
   --leaf-2: #6dae76;
   --leaf-3: #356543;
+  --sky-1: #20160f;
+  --sky-2: #35251a;
+  --glow: #f5e7d0;
+  --pop: #ffb86b;
+  --ground: #080402;
+  --ground-ink: #dcdcdc;
+  --ground-soft: #9c9b9a;
   color-scheme: dark;
 }

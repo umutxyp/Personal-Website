@@ -1,38 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="84" viewBox="0 0 900 84" fill="none"><style>.d{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:d 1s linear forwards}
-@keyframes d{0%{stroke-dashoffset:1;opacity:1}100%{stroke-dashoffset:0;opacity:1}}
-.s{fill:none;stroke-linecap:round;stroke-linejoin:round}
-.lf{transform:scale(0);animation:lf .9s cubic-bezier(.34,1.56,.64,1) forwards}
-@keyframes lf{to{transform:scale(1)}}
-.sw{animation:sw 4s ease-in-out infinite alternate}
-@keyframes sw{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
-.bb{opacity:0;animation:bb 4s ease-in infinite}
-@keyframes bb{0%{opacity:0;transform:translateY(8px) scale(.6)}18%{opacity:1}80%{opacity:.9}100%{opacity:0;transform:translateY(-30px) scale(1.05)}}
-.fall{opacity:0;animation:fall 7s linear infinite}
-@keyframes fall{0%{opacity:0;transform:translate(0,-20px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translate(26px,150px)}}
-.tw{animation:tw 2.6s ease-in-out infinite alternate}
-@keyframes tw{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.1)}}
-.bob{animation:bob 3.4s ease-in-out infinite alternate}
-@keyframes bob{from{transform:translateY(1.5px) rotate(-3.5deg)}to{transform:translateY(-3.5px) rotate(3deg)}}
-.wv{animation:wv 7s ease-in-out infinite alternate}
-@keyframes wv{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
-.cl{animation:cl 11s ease-in-out infinite alternate}
-@keyframes cl{from{transform:translateX(-10px)}to{transform:translateX(16px)}}
-.br{animation:br 2.8s ease-in-out infinite alternate}
-@keyframes br{from{transform:scale(1,1)}to{transform:scale(1.012,1.045)}}
-.tl{animation:tl 3.4s ease-in-out infinite alternate}
-@keyframes tl{from{transform:rotate(-7deg)}to{transform:rotate(6deg)}}
-.zz{opacity:0;animation:zz 3.9s ease-in-out infinite}
-@keyframes zz{0%{opacity:0;transform:translate(3px,7px)}35%{opacity:.85}100%{opacity:0;transform:translate(-9px,-17px)}}
-.spin{animation:spin 60s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.fly{animation:fly 9s ease-in-out infinite alternate}
-@keyframes fly{from{transform:translate(-8px,3px)}to{transform:translate(10px,-5px)}}
-.glow{animation:glow 3.2s ease-in-out infinite alternate}
-@keyframes glow{from{opacity:.55}to{opacity:1}}
-.blink{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
-@keyframes blink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
-.swing{animation:swing 3.6s ease-in-out infinite alternate}
-@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
-.i{opacity:0;animation:i .7s ease forwards}
-@keyframes i{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}.d{stroke-dashoffset:0;opacity:1}.lf{transform:none}.i{opacity:1}.zz{opacity:.7}.bb{opacity:.85}.fall{opacity:.8}}</style><path class="d" pathLength="1" d="M6 50.4C22.5 52.9 76.6 65.5 104.7 65.8C132.9 66 146.7 52.1 174.8 51.8C203 51.6 244.5 63.9 273.5 64C302.5 64.1 324.3 52.5 348.8 52.4C373.4 52.3 394.9 63.3 420.7 63.5C446.5 63.8 473.4 53.4 503.9 53.8C534.5 54.2 574.4 66.4 603.9 66.1C633.5 65.7 652 51.9 681.2 51.8C710.5 51.6 750.6 65.2 779.5 65.2C808.4 65.3 837.8 52.4 854.6 51.9C871.3 51.4 875.8 60.5 880 62.3" stroke="#e3f2f8" stroke-width="2.3" style="animation-delay:0.20s;animation-duration:1.20s"/><g transform="translate(424.1 -2.1)"><g class="fall" style="animation-duration:6.7s;animation-delay:2.01s"><circle r="1.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(520.8 -13.5)"><g class="fall" style="animation-duration:8.5s;animation-delay:1.78s"><circle r="2.3" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(209.6 -17.5)"><g class="fall" style="animation-duration:7.0s;animation-delay:1.49s"><circle r="2.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(245.5 -12.5)"><g class="fall" style="animation-duration:5.3s;animation-delay:1.24s"><circle r="2.3" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(105.3 -21.9)"><g class="fall" style="animation-duration:8.6s;animation-delay:3.22s"><circle r="2.5" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(711.4 -20.6)"><g class="fall" style="animation-duration:6.9s;animation-delay:3.26s"><circle r="2.2" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(371.9 -7.9)"><g class="fall" style="animation-duration:5.9s;animation-delay:2.17s"><circle r="1.9" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" class="sc" width="900" height="84" viewBox="0 0 900 84" fill="none" preserveAspectRatio="xMidYMax slice"><style>.sc-pz{transform:translate(calc(var(--mx,0)*var(--z)*-46px),calc(var(--my,0)*var(--z)*-14px + var(--sy,0)*(1 - var(--z))*70px));transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.sc-in{opacity:0;animation:sc-in 1.3s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes sc-in{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.sc-tw{animation:sc-tw 3s ease-in-out infinite alternate}
+@keyframes sc-tw{from{opacity:.2}to{opacity:1}}
+.sc-drift{animation:sc-drift 70s ease-in-out infinite alternate}
+@keyframes sc-drift{from{transform:translateX(-50px)}to{transform:translateX(70px)}}
+.sc-sway{animation:sc-sway 4.5s ease-in-out infinite alternate}
+@keyframes sc-sway{from{transform:rotate(-2.4deg)}to{transform:rotate(2.8deg)}}
+.sc-wind{animation:sc-wind 4.5s ease-in-out infinite alternate}
+@keyframes sc-wind{from{transform:skewX(-3deg)}to{transform:skewX(5deg)}}
+.sc-br{animation:sc-br 3.6s ease-in-out infinite alternate}
+@keyframes sc-br{from{transform:scale(1,1)}to{transform:scale(1.004,1.016)}}
+.sc-bob{animation:sc-bob 5s ease-in-out infinite alternate}
+@keyframes sc-bob{from{transform:translateY(1.5px) rotate(-1.6deg)}to{transform:translateY(-2.5px) rotate(1.4deg)}}
+.sc-fall{animation:sc-fall 9s linear infinite}
+@keyframes sc-fall{0%{transform:translate(0,-60px);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translate(60px,420px);opacity:0}}
+.sc-rise{animation:sc-rise 7s ease-in infinite}
+@keyframes sc-rise{0%{transform:translateY(20px);opacity:0}20%{opacity:.9}100%{transform:translateY(-90px);opacity:0}}
+.sc-float{animation:sc-float 9s ease-in-out infinite alternate}
+@keyframes sc-float{from{transform:translate(-14px,6px)}to{transform:translate(16px,-8px)}}
+.sc-beam{animation:sc-beam 9s ease-in-out infinite alternate}
+@keyframes sc-beam{from{transform:rotate(-16deg);opacity:.25}to{transform:rotate(12deg);opacity:.75}}
+.sc-wave{animation:sc-wave 9s ease-in-out infinite alternate}
+@keyframes sc-wave{from{transform:translateX(-22px)}to{transform:translateX(22px)}}
+.sc-aur{animation:sc-aur 13s ease-in-out infinite alternate}
+@keyframes sc-aur{from{transform:translateX(-60px) scaleY(.86);opacity:.5}to{transform:translateX(50px) scaleY(1.12);opacity:.95}}
+.sc-still *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.sc *{animation:none!important;transition:none!important}.sc .sc-in{opacity:1}}</style><defs><linearGradient id="pds661g"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".12" stop-color="#fff"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="pds661"><rect width="900" height="84" fill="url(#pds661g)"/></mask></defs><g mask="url(#pds661)"><path d="M-20 58L-5 58L9 58L24 58L39 58L53 58L68 58L83 58L98 57L112 58L127 57L142 58L156 58L171 57L186 57L200 57L215 55L230 52L244 51L259 47L274 47L288 45L303 46L318 43L332 40L347 41L362 43L377 42L391 39L406 38L421 37L435 36L450 38L465 42L479 42L494 40L509 39L523 43L538 47L553 49L568 52L582 52L597 54L612 55L626 53L641 55L656 53L670 48L685 45L700 46L714 44L729 47L744 48L758 52L773 54L788 57L802 57L817 58L832 57L847 58L861 58L876 58L891 58L905 58L920 58L920 84L-20 84Z" fill="#1b3a4f"/><path d="M-20 73L9 72L39 71L68 71L98 74L127 70L156 69L186 68L215 65L244 66L274 64L303 67L332 68L362 68L391 69L421 70L450 74L479 76L509 76L538 74L568 75L597 75L626 73L656 69L685 68L714 69L744 66L773 68L802 69L832 70L861 73L891 72L920 73L920 84L-20 84Z" fill="#365366"/></g><g><path d="M-5.7 0Q-2.8 -3.8 0 0Q2.8 -3.8 5.7 0" fill="none" stroke="#5f798a" stroke-width="1.1" stroke-linecap="round" stroke-opacity=".8"><animate attributeName="d" values="M-5.7 0Q-2.8 -3.8 0 0Q2.8 -3.8 5.7 0;M-5.7 -1.9Q-2.8 1.3 0 0Q2.8 1.3 5.7 -1.9;M-5.7 0Q-2.8 -3.8 0 0Q2.8 -3.8 5.7 0" dur="0.52s" repeatCount="indefinite"/></path><animateMotion path="M-20 17.9Q450 -39.7 920 -2" dur="47s" begin="-8s" repeatCount="indefinite"/></g><g><path d="M-4.2 0Q-2.1 -2.8 0 0Q2.1 -2.8 4.2 0" fill="none" stroke="#5f798a" stroke-width="0.8" stroke-linecap="round" stroke-opacity=".8"><animate attributeName="d" values="M-4.2 0Q-2.1 -2.8 0 0Q2.1 -2.8 4.2 0;M-4.2 -1.4Q-2.1 0.9 0 0Q2.1 0.9 4.2 -1.4;M-4.2 0Q-2.1 -2.8 0 0Q2.1 -2.8 4.2 0" dur="0.52s" repeatCount="indefinite"/></path><animateMotion path="M-20 16.4Q450 -4.3 920 -6.4" dur="46s" begin="-18s" repeatCount="indefinite"/></g><g><path d="M-6 0Q-3 -4 0 0Q3 -4 6 0" fill="none" stroke="#5f798a" stroke-width="1.2" stroke-linecap="round" stroke-opacity=".8"><animate attributeName="d" values="M-6 0Q-3 -4 0 0Q3 -4 6 0;M-6 -2Q-3 1.3 0 0Q3 1.3 6 -2;M-6 0Q-3 -4 0 0Q3 -4 6 0" dur="0.55s" repeatCount="indefinite"/></path><animateMotion path="M-20 37.7Q450 -28.8 920 23.7" dur="54s" begin="-28s" repeatCount="indefinite"/></g></svg>

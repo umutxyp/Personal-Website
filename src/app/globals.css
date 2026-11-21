@@ -1,5 +1,5 @@
 /* The whole site is drawn by hand: ink lines, hand lettering, a marker for the numbers.
-   Colours come from the theme (themes.css, written by scripts/draw.py). */
+   Colours come from the theme (themes.css, written by scripts/paint.py). */
 
 *,
 *::before,
@@ -65,7 +65,13 @@ b {
 mark {
   color: var(--ink);
   font-weight: 800;
-  background: linear-gradient(102deg, transparent 1.5%, var(--marker) 4%, var(--marker) 95%, transparent 98.5%);
+  background: linear-gradient(
+    102deg,
+    transparent 1.5%,
+    var(--marker) 4%,
+    var(--marker) 95%,
+    transparent 98.5%
+  );
   border-radius: 0.6em 0.25em 0.7em 0.3em / 0.3em 0.7em 0.25em 0.6em;
   padding: 0.02em 0.28em;
   margin: 0 -0.08em;
@@ -96,8 +102,10 @@ mark {
   width: 100%;
   height: 9px;
   background: var(--accent);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") left center / 28px 9px repeat-x;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") left center / 28px 9px repeat-x;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E")
+    left center / 28px 9px repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E")
+    left center / 28px 9px repeat-x;
   animation: grow 0.8s cubic-bezier(0.6, 0.1, 0.3, 1) 0.25s both;
 }
 
@@ -391,49 +399,20 @@ button {
   background: var(--marker);
 }
 
-/* ── the hero ── the name in the middle of the sky, the sky's things in its two corners, the
-   theme's land under it. The name and the pictures never share a place, so nothing can run
-   into the writing on any screen. */
+/* ── the hero ── the name, and under it the theme's world across the whole screen. The page's
+   background is the top of that world's sky, so the name stands in the sky without the two ever
+   sharing a place: nothing in the picture can run into the writing on any screen. */
 
 .hero {
-  --sky: min(22vw, 250px);
   position: relative;
-  overflow: hidden;
-  background: linear-gradient(to bottom, var(--bg) 35%, color-mix(in srgb, var(--wash) 60%, var(--bg)) 100%);
-}
-
-.sky {
-  position: absolute;
-  top: 0;
-  width: var(--sky);
-}
-
-.sky-a {
-  left: 0;
-}
-
-.sky-b {
-  right: 0;
+  padding-top: clamp(26px, 5vw, 70px);
 }
 
 .hero-text {
   position: relative;
   z-index: 1;
-  /* below the two corner pictures, which are 300/380 as tall as they are wide */
-  padding: calc(var(--sky) * 0.8) 20px 0;
+  padding: 0 20px;
   text-align: center;
-}
-
-/* on a wide screen the corners are clear of the writing (which is never wider than 940px),
-   so the name can sit up between them */
-@media (min-width: 1240px) {
-  .hero {
-    --sky: min(250px, (100vw - 940px) / 2);
-  }
-
-  .hero-text {
-    padding-top: clamp(40px, 5vw, 84px);
-  }
 }
 
 .hero h1 {
@@ -471,8 +450,10 @@ button {
   width: 100%;
   height: 45%;
   background: var(--accent);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9' viewBox='0 0 28 9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") left center / auto 100% repeat-x;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9' viewBox='0 0 28 9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E") left center / auto 100% repeat-x;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9' viewBox='0 0 28 9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E")
+    left center / auto 100% repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='9' viewBox='0 0 28 9'%3E%3Cpath d='M0 4.5C3.5 4.5 3.5 1.6 7 1.6S10.5 4.5 14 4.5S17.5 7.4 21 7.4S24.5 4.5 28 4.5' fill='none' stroke='%23000' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E")
+    left center / auto 100% repeat-x;
   animation: grow 0.8s cubic-bezier(0.6, 0.1, 0.3, 1) 1.5s both;
 }
 
@@ -517,26 +498,6 @@ button {
   }
 }
 
-/* the land: one wide picture, cropped to the screen, kept by its lower middle where the animal is */
-.land {
-  position: relative;
-  height: clamp(190px, 27vw, 450px);
-  margin-top: clamp(4px, 1.5vw, 22px);
-  -webkit-mask-image: linear-gradient(to bottom, #000 86%, transparent);
-  mask-image: linear-gradient(to bottom, #000 86%, transparent);
-}
-
-.land .pic {
-  position: absolute;
-  inset: 0;
-  aspect-ratio: auto !important;
-}
-
-.land .pic img {
-  object-fit: cover;
-  object-position: 63% 100%;
-}
-
 @media (max-width: 560px) {
   .hero .roles {
     flex-direction: column;
@@ -546,6 +507,155 @@ button {
   .hero .roles li + li::before {
     content: none;
   }
+}
+
+/* ── the world ── one wide painting, cropped to the screen from the bottom and kept by the part
+   that matters (--focus). Its top fades into the sky-coloured page, its foot into the page below. */
+
+.scene {
+  position: relative;
+  height: clamp(250px, 36vw, 660px);
+  margin-top: clamp(6px, 2vw, 28px);
+  pointer-events: none;
+  user-select: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 86%, transparent);
+}
+
+.scene.small {
+  height: clamp(210px, 30vw, 520px);
+  margin-top: 8px;
+  margin-bottom: -10px;
+}
+
+.scene img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: var(--focus, 50%) 100%;
+  animation: fade-in 0.8s ease both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ── what comes off the writing ── the particles are drawn behind the letters */
+
+.fx {
+  position: relative;
+  isolation: isolate;
+}
+
+.fx-heading {
+  flex: none;
+}
+
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.fx-p {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--s);
+  height: var(--s);
+  opacity: 0;
+  animation: fx-go var(--t) cubic-bezier(0.25, 0.6, 0.35, 1) forwards;
+}
+
+@keyframes fx-go {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(0) scale(0.5);
+  }
+  15% {
+    opacity: var(--o, 0.9);
+  }
+  70% {
+    opacity: var(--o, 0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) rotate(var(--r)) scale(1);
+  }
+}
+
+.fx-bubble {
+  border: 1.6px solid var(--accent);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 30%,
+    color-mix(in srgb, #fff 70%, transparent) 0 18%,
+    transparent 30%
+  );
+  --o: 0.75;
+}
+
+.fx-petal {
+  background: var(--warm);
+  border-radius: 60% 0 60% 50%;
+  --o: 0.8;
+}
+
+.fx-dust {
+  background: var(--accent);
+  border-radius: 50%;
+  --o: 0.55;
+}
+
+.fx-firefly {
+  background: var(--pop);
+  border-radius: 50%;
+  box-shadow: 0 0 7px 3px color-mix(in srgb, var(--pop) 60%, transparent);
+  animation-name: fx-go, fx-blink;
+  animation-duration: var(--t), 0.9s;
+  animation-iteration-count: 1, infinite;
+  animation-direction: normal, alternate;
+}
+
+@keyframes fx-blink {
+  to {
+    filter: brightness(0.5);
+  }
+}
+
+.fx-leaf {
+  background: linear-gradient(135deg, var(--leaf-1), var(--leaf-2));
+  border-radius: 0 100% 0 100%;
+  --o: 0.85;
+}
+
+.fx-snow {
+  background: var(--leaf-2);
+  border-radius: 50%;
+  box-shadow: 0 0 4px color-mix(in srgb, var(--leaf-2) 70%, transparent);
+}
+
+html[data-mode="dark"] .fx-snow {
+  background: #eef8ff;
+  box-shadow: 0 0 5px #eef8ffaa;
+}
+
+.fx-sand {
+  background: var(--accent);
+  border-radius: 50%;
+  --o: 0.6;
+}
+
+/* at night the big titles carry a little of the moonlight */
+html[data-mode="dark"] .hero h1,
+html[data-mode="dark"] .page-head h1 {
+  text-shadow: 0 0 28px color-mix(in srgb, var(--glow) 22%, transparent);
 }
 
 /* ── sections ── */
@@ -601,6 +711,7 @@ button {
   .hero h1,
   .hero .roles,
   .hero .underline i,
+  .scene img,
   .wavy::after {
     animation: none;
   }
@@ -667,11 +778,11 @@ button {
   padding: 30px 34px 26px;
 }
 
-.studio .sleeper {
+.studio .perch {
   position: absolute;
   right: 6%;
   bottom: calc(100% - 3px);
-  width: min(200px, 34%);
+  width: min(190px, 30%);
   z-index: 1;
 }
 
@@ -910,7 +1021,18 @@ button {
   margin-right: 0.3em;
   vertical-align: -0.1em;
   background: var(--warm);
-  clip-path: polygon(50% 2%, 62% 36%, 98% 36%, 69% 58%, 80% 94%, 50% 72%, 20% 94%, 31% 58%, 2% 36%, 38% 36%);
+  clip-path: polygon(
+    50% 2%,
+    62% 36%,
+    98% 36%,
+    69% 58%,
+    80% 94%,
+    50% 72%,
+    20% 94%,
+    31% 58%,
+    2% 36%,
+    38% 36%
+  );
 }
 
 .rows p {
@@ -1218,19 +1340,31 @@ button {
   border-top: 2px dashed color-mix(in srgb, var(--ink) 30%, transparent);
 }
 
-/* ── footer ── */
+/* ── footer ── the theme's land, and the footer is the ground it stands on */
 
 .footer {
   margin-top: 90px;
 }
 
 .footer .ground {
-  width: 100%;
+  height: clamp(110px, 10.8vw, 260px);
+  aspect-ratio: auto !important;
+}
+
+.footer .ground img {
+  object-fit: cover;
+  object-position: 80% 100%;
 }
 
 .footer-body {
+  --ink: var(--ground-ink);
+  --soft: var(--ground-soft);
+  --card: color-mix(in srgb, var(--ground) 86%, #fff);
+  --marker: color-mix(in srgb, var(--accent) 50%, var(--ground));
+  margin-top: -1px;
   padding: 26px 0 40px;
-  background: var(--wash);
+  background: var(--ground);
+  color: var(--soft);
   text-align: center;
   transition: background-color 0.35s ease;
 }
@@ -1238,6 +1372,7 @@ button {
 .footer-body h4 {
   margin-bottom: 14px;
   font-size: 1.375rem;
+  color: var(--ink);
 }
 
 .footer-body .small {
@@ -1310,4 +1445,9 @@ button {
   .mobile-nav {
     display: none;
   }
+}
+
+.lost {
+  width: min(240px, 60%);
+  margin: 40px auto 0;
 }

@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "draw": "python3 scripts/draw.py",
+    "paint": "python3 scripts/paint.py",
     "lint": "biome lint src",
     "format": "biome format --write src"
   },

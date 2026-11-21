@@ -7,7 +7,12 @@ import { Footer, Header } from "@/components";
 import { baseURL, defaultTheme, person, siteData, themes } from "@/resources";
 
 // The name is written in Gochi Hand, everything else in Shantell Sans: a marker and a pen.
-const display = Gochi_Hand({ weight: "400", subsets: ["latin"], variable: "--font-display", display: "swap" });
+const display = Gochi_Hand({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 const text = Shantell_Sans({
   subsets: ["latin", "latin-ext"],
   axes: ["BNCE", "INFM", "SPAC"],
@@ -28,15 +33,21 @@ export const metadata: Metadata = {
     title: `${person.name} | ${person.role}`,
     description: person.biography,
     url: baseURL,
-    images: [{ url: `/api/og/generate?title=${encodeURIComponent(person.name)}`, width: 1280, height: 720 }],
+    images: [
+      {
+        url: `/api/og/generate?title=${encodeURIComponent(person.name)}`,
+        width: 1280,
+        height: 720,
+      },
+    ],
   },
   twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fbfdff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0c141d" },
+    { media: "(prefers-color-scheme: light)", color: "#e9f4fd" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d1826" },
   ],
 };
 
@@ -64,7 +75,13 @@ const jsonLd = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-theme={defaultTheme} data-mode="light" className={`${display.variable} ${text.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme={defaultTheme}
+      data-mode="light"
+      className={`${display.variable} ${text.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* biome-ignore lint/security/noDangerouslySetInnerHtml: our own script, set before paint */}
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
@@ -76,8 +93,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Header />
         <main>{children}</main>
         <Footer />
-        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: structured data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: structured data
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   );
