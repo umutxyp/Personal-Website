@@ -53,11 +53,13 @@ export const viewport: Viewport = {
 
 // Runs before the first paint: the theme and the mode the visitor chose last time, or the
 // default theme in the mode their system asks for. A link can carry a choice too
-// (?theme=owl&mode=dark), which is then remembered like any other.
-const themeInit = `(function(){var d=document.documentElement,t,m,q=new URLSearchParams(location.search),ok=${JSON.stringify(themes.map((theme) => theme.id))};
+// (?theme=owl&mode=dark), which is then remembered like any other. The script is a fixed
+// string: the themes it may choose from are read from <html data-themes>, and the default is
+// the data-theme the server already wrote, so nothing is ever spliced into code.
+const themeInit = `(function(){var d=document.documentElement,t,m,q=new URLSearchParams(location.search),ok=(d.getAttribute("data-themes")||"").split(" ");
 try{if(ok.indexOf(q.get("theme"))>=0)localStorage.setItem("theme",q.get("theme"));if(q.get("mode")==="light"||q.get("mode")==="dark")localStorage.setItem("mode",q.get("mode"));
 t=localStorage.getItem("theme");m=localStorage.getItem("mode")}catch(e){t=q.get("theme");m=q.get("mode")}
-if(ok.indexOf(t)<0)t=${JSON.stringify(defaultTheme)};
+if(ok.indexOf(t)<0)t=d.getAttribute("data-theme");
 if(m!=="light"&&m!=="dark")m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
 d.dataset.theme=t;d.dataset.mode=m})()`;
 
@@ -78,6 +80,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html
       lang="en"
       data-theme={defaultTheme}
+      data-themes={themes.map((theme) => theme.id).join(" ")}
       data-mode="light"
       className={`${display.variable} ${text.variable}`}
       suppressHydrationWarning

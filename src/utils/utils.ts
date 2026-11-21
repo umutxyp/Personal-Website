@@ -32,6 +32,18 @@ type Metadata = {
 
 import { notFound } from "next/navigation";
 
+/**
+ * A cover named in a project's front matter: a file of our own under /images, or a picture on
+ * another https site. Anything else (a javascript: or data: address, markup) is left out.
+ */
+function isSafeImage(src: unknown): src is string {
+  return (
+    typeof src === "string" &&
+    (/^\/images\/[\w./-]+$/.test(src) || /^https:\/\/[^\s"'<>]+$/.test(src)) &&
+    !src.includes("..")
+  );
+}
+
 function getMDXFiles(dir: string) {
   if (!fs.existsSync(dir)) {
     return [];
@@ -53,10 +65,10 @@ function readMDXFile(filePath: string) {
     publishedAt: data.publishedAt,
     summary: data.summary || "",
     image: data.image || "",
-    images: data.images || [],
+    images: (Array.isArray(data.images) ? data.images : []).filter(isSafeImage),
     tag: data.tag || [],
     team: data.team || [],
-    link: data.link || "",
+    link: typeof data.link === "string" && /^https:\/\/[^\s"'<>]+$/.test(data.link) ? data.link : "",
     order: typeof data.order === "number" ? data.order : undefined,
     screenshot: data.screenshot !== false,
     screenshotUrl: data.screenshotUrl || "",

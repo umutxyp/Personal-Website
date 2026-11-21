@@ -78,6 +78,25 @@ const decode = (text: string) => text.replace(/&(amp|lt|gt|quot|#39|#x27|nbsp);/
 const VALUE = /^(?!0\d)\d[\d.,]{0,8}[KMB]?\+?%?$/;
 
 /**
+ * The words of a page, one run of text per line. Scripts and styles go first (their closing
+ * tags matched however they are written), then every tag, again and again until none is left,
+ * so a tag hidden inside another cannot survive. Only the figures are kept from this, and React
+ * escapes them when they are shown.
+ */
+function toText(html: string): string {
+  let text = html;
+  let before: string;
+  do {
+    before = text;
+    text = text
+      .replace(/<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gi, "")
+      .replace(/<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gi, "")
+      .replace(/<[^>]*>/g, "\n");
+  } while (text !== before);
+  return text.replace(/[<>]/g, "\n");
+}
+
+/**
  * Reads a page's figures into { label: value }. Every figure on codeshare.me is a
  * value followed by its label, so the page is read as lines of text and each value
  * is paired with the line after it.
@@ -89,8 +108,7 @@ async function readFigures(path: string): Promise<Record<string, string>> {
       next: { revalidate: REVALIDATE_SECONDS },
     });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    const html = (await response.text()).replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, "");
-    const lines = decode(html.replace(/<[^>]+>/g, "\n"))
+    const lines = decode(toText(await response.text()))
       .split("\n")
       .map((line) => line.trim())
       .filter(Boolean);
