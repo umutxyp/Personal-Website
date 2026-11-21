@@ -1,127 +1,161 @@
-import {
-  Heading,
-  Text,
-  Button,
-  Avatar,
-  RevealFx,
-  Column,
-  Badge,
-  Row,
-  Schema,
-  Meta,
-  Line,
-} from "@once-ui-system/core";
-import { home, about, person, baseURL, routes } from "@/resources";
-import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
-import { getLiveStats, renderStats } from "@/lib/live-stats";
+import Link from "next/link";
+import { Frame, Heading, Pic, ProjectCard, Reveal } from "@/components";
+import { getPinnedNames } from "@/lib/github";
+import { compact, fillStats, getLiveStats, getRepos, renderStats } from "@/lib/live-stats";
+import { person, siteData } from "@/resources";
+import { getProjects } from "@/utils/utils";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: home.title,
-    description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
-}
+// The numbers on this page are read from codeshare.me and GitHub; once a day is plenty.
+export const revalidate = 86400;
 
 export default async function Home() {
-  const stats = await getLiveStats();
+  const [stats, repos, pinned] = await Promise.all([getLiveStats(), getRepos(), getPinnedNames()]);
+  const written = new Set(getProjects().map((project) => project.slug));
+  const { home, studio, products } = siteData;
+  const openSource = pinned
+    .map((name) => repos.find((repo) => repo.name === name))
+    .filter((repo) => repo !== undefined)
+    .slice(0, 6);
+
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center" style={{ minHeight: "80vh", justifyContent: "center" }}>
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        path={home.path}
-        title={home.title}
-        description={home.description}
-        image={`/api/og/generate?title=${encodeURIComponent(home.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
-          {home.featured.display && (
-            <RevealFx
-              fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
-            >
-              <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
-                paddingY="4"
-                onBackground="neutral-strong"
-                textVariant="label-default-s"
-                arrow={false}
-                href={home.featured.href}
-              >
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
-            </RevealFx>
-          )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
-            <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
-            </Heading>
-          </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {renderStats(home.subline, stats)}
-            </Text>
-          </RevealFx>
-          <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
-          </RevealFx>
-        </Column>
-      </Column>
-      {routes["/blog"] && (
-        <Column fillWidth gap="24" marginBottom="l">
-          <Row fillWidth paddingRight="64">
-            <Line maxWidth={48} />
-          </Row>
-          <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
-            <Row flex={1} paddingLeft="l" paddingTop="24">
-              <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
-              </Heading>
-            </Row>
-            <Row flex={3} paddingX="20">
-              <Posts range={[1, 2]} columns="2" />
-            </Row>
-          </Row>
-          <Row fillWidth paddingLeft="64" horizontal="end">
-            <Line maxWidth={48} />
-          </Row>
-        </Column>
-      )}
-      <Mailchimp />
-    </Column>
+    <>
+      <section className="hero">
+        <Pic name="sky-a" width={380} height={300} className="sky sky-a" eager />
+        <Pic name="sky-b" width={380} height={300} className="sky sky-b" eager />
+        <div className="hero-text">
+          <h1>{person.name}</h1>
+          <span className="underline" aria-hidden="true">
+            <i />
+            <i />
+          </span>
+          <ul className="roles">
+            {person.roles.map((role) => (
+              <li key={role}>{role}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="land">
+          <Pic name="land" width={2400} height={520} eager />
+        </div>
+      </section>
+
+      <div className="wrap">
+        <nav className="links" aria-label="Elsewhere">
+          {siteData.social.map((item) => (
+            <a key={item.name} className="tag" href={item.link} rel="me noopener">
+              {item.name}
+            </a>
+          ))}
+        </nav>
+
+        <Reveal as="section" className="section">
+          <Heading line={0}>About</Heading>
+          <p className="note">{renderStats(home.about, stats)}</p>
+          <p className="more">
+            <Link className="link" href="/about">
+              the longer story
+            </Link>
+          </p>
+          <div className="stats">
+            {home.stats.map((stat) => (
+              <div className="stat" key={stat.label}>
+                <b>
+                  <mark>{fillStats(stat.value, stats)}</mark>
+                </b>
+                <span>{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal as="section" className="section">
+          <Heading line={1}>Projects</Heading>
+          <div className="studio sketch">
+<Frame />
+            <Pic name="plants-3" width={600} height={70} className="grown" />
+            <Pic name="sleeper" width={240} height={132} className="sleeper" />
+            <div className="studio-head">
+              <img src={studio.logo} width={120} height={128} alt="" />
+              <div>
+                <h3>{studio.name}</h3>
+                <p>
+                  <a href={studio.url}>{studio.url.replace("https://", "")}</a> · {studio.tag}
+                </p>
+              </div>
+            </div>
+            <p>{studio.description}</p>
+            <ul className="products">
+              {products.map((product) => (
+                <li key={product.name}>
+                  <a className="tag small" href={product.url}>
+                    {product.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="figures">
+              {studio.stats.map((stat) => (
+                <span key={stat.label}>
+                  <b>
+                    <mark>{fillStats(stat.value, stats)}</mark>
+                  </b>{" "}
+                  {stat.label}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="cards">
+            {products.map((product, n) => (
+              <ProjectCard
+                key={product.name}
+                name={product.name}
+                url={product.url}
+                logo={product.logo}
+                logoTile={"logoTile" in product ? product.logoTile : undefined}
+                href={written.has(product.slug) ? `/work/${product.slug}` : product.url}
+                description={product.description}
+                stats={product.stats.map((stat) => ({ value: fillStats(stat.value, stats), label: stat.label }))}
+                plants={n}
+              />
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal as="section" className="section">
+          <Heading line={2}>Tech stack</Heading>
+          <ul className="stack">
+            {home.stack.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal as="section" className="section">
+          <Heading line={0} id="open-source">
+            Open source
+          </Heading>
+          <ul className="rows">
+            {openSource.map((repo) => (
+              <li key={repo.id}>
+                <div className="row-head">
+                  <a href={repo.html_url}>{repo.name}</a>
+                  <span className="stars">
+                    <i className="star" />
+                    {compact(repo.stargazers_count)}
+                  </span>
+                </div>
+                {repo.description && <p>{repo.description}</p>}
+              </li>
+            ))}
+          </ul>
+          <p className="more" style={{ marginTop: 18 }}>
+            <Link className="link" href="/github">
+              all of it
+            </Link>
+          </p>
+        </Reveal>
+      </div>
+    </>
   );
 }

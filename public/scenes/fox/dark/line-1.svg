@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="84" viewBox="0 0 900 84" fill="none"><style>.d{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:d 1s linear forwards}
+@keyframes d{0%{stroke-dashoffset:1;opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+.s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lf{transform:scale(0);animation:lf .9s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes lf{to{transform:scale(1)}}
+.sw{animation:sw 4s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.bb{opacity:0;animation:bb 4s ease-in infinite}
+@keyframes bb{0%{opacity:0;transform:translateY(8px) scale(.6)}18%{opacity:1}80%{opacity:.9}100%{opacity:0;transform:translateY(-30px) scale(1.05)}}
+.fall{opacity:0;animation:fall 7s linear infinite}
+@keyframes fall{0%{opacity:0;transform:translate(0,-20px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translate(26px,150px)}}
+.tw{animation:tw 2.6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.1)}}
+.bob{animation:bob 3.4s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(1.5px) rotate(-3.5deg)}to{transform:translateY(-3.5px) rotate(3deg)}}
+.wv{animation:wv 7s ease-in-out infinite alternate}
+@keyframes wv{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+.cl{animation:cl 11s ease-in-out infinite alternate}
+@keyframes cl{from{transform:translateX(-10px)}to{transform:translateX(16px)}}
+.br{animation:br 2.8s ease-in-out infinite alternate}
+@keyframes br{from{transform:scale(1,1)}to{transform:scale(1.012,1.045)}}
+.tl{animation:tl 3.4s ease-in-out infinite alternate}
+@keyframes tl{from{transform:rotate(-7deg)}to{transform:rotate(6deg)}}
+.zz{opacity:0;animation:zz 3.9s ease-in-out infinite}
+@keyframes zz{0%{opacity:0;transform:translate(3px,7px)}35%{opacity:.85}100%{opacity:0;transform:translate(-9px,-17px)}}
+.spin{animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fly{animation:fly 9s ease-in-out infinite alternate}
+@keyframes fly{from{transform:translate(-8px,3px)}to{transform:translate(10px,-5px)}}
+.glow{animation:glow 3.2s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.55}to{opacity:1}}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.swing{animation:swing 3.6s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.i{opacity:0;animation:i .7s ease forwards}
+@keyframes i{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.d{stroke-dashoffset:0;opacity:1}.lf{transform:none}.i{opacity:1}.zz{opacity:.7}.bb{opacity:.85}.fall{opacity:.8}}</style><path class="d" pathLength="1" d="M6 47.7C16.2 49.3 47 57.5 67.1 57C87.1 56.4 107.3 44.4 126.4 44.6C145.5 44.8 162.8 58.1 181.8 58.4C200.8 58.6 220.8 46.4 240.3 46.2C259.7 46 277.5 57.1 298.4 57.4C319.2 57.7 343.1 47.8 365.6 48C388 48.1 412.3 58.2 433 58.3C453.8 58.3 471.7 48.3 490.3 48.3C508.9 48.4 525.1 58.7 544.7 58.6C564.4 58.5 589.5 48 608.1 47.7C626.7 47.4 636.8 56.8 656.1 56.7C675.5 56.5 702.9 46.8 724.4 46.8C745.8 46.9 764.9 57 784.9 57C804.9 57 828.5 47.1 844.3 46.9C860.2 46.6 874.1 54.2 880 55.7" stroke="#e4eef8" stroke-width="2.3" style="animation-delay:0.20s;animation-duration:1.20s"/><path class="d" pathLength="1" d="M120 73.5C125 72.8 138.9 69.1 149.9 69.3C160.9 69.6 175.2 75.1 185.8 75.1C196.5 75.2 204.7 69.5 213.8 69.6C222.9 69.7 231.7 75.7 240.3 75.7C248.8 75.6 258.3 69.5 264.9 69.2C271.6 68.9 277.5 73.1 280 73.9" stroke="#e4eef8" stroke-width="1.6" stroke-opacity=".4" style="animation-delay:0.80s;animation-duration:0.40s"/><g transform="translate(453.4488587277118 42.08) scale(0.5)"><g class="i" style="animation-delay:1.00s"><g class="bob"><path d="M-17 -2L1 -44L19 -2Z" fill="#1b3a55" stroke="#e4eef8" stroke-width="2.3" stroke-linejoin="round"/><path class="s" d="M1 -44L1 -58M1 -58L15 -53L1 -48" stroke="#e4eef8" stroke-width="2"/><path d="M1 -58L15 -53L1 -48Z" fill="#ff9770"/><path d="M-52 -2L52 -2L35 22L-35 22Z" fill="#1b3a55" stroke="#e4eef8" stroke-width="2.3" stroke-linejoin="round"/><path class="s" d="M-17 -2L0 22L19 -2" stroke="#e4eef8" stroke-width="1.5" stroke-opacity=".55"/></g></g></g><g transform="translate(442.3 72.4)"><g class="bb" style="animation-duration:4.8s;animation-delay:4.06s"><circle r="3.4" fill="#eaf4ff" fill-opacity=".55" stroke="#e4eef8" stroke-width="1.4"/></g></g><g transform="translate(442.6 71.9)"><g class="bb" style="animation-duration:3.6s;animation-delay:2.50s"><circle r="4.9" fill="#eaf4ff" fill-opacity=".55" stroke="#e4eef8" stroke-width="1.4"/></g></g></svg>

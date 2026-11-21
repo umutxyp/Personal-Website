@@ -1,37 +1,39 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { baseURL, about, person, work } from "@/resources";
-import { Projects } from "@/components/work/Projects";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Frame, Pic, Reveal } from "@/components";
+import { fillStats, getLiveStats } from "@/lib/live-stats";
+import { person } from "@/resources";
+import { sortedProjects } from "@/utils/utils";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: work.title,
-    description: work.description,
-    baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(work.title)}`,
-    path: work.path,
-  });
-}
+export const revalidate = 86400;
 
-export default function Work() {
+export const metadata: Metadata = {
+  title: "Work",
+  description: `Products and case studies from Codeshare Technology by ${person.name}`,
+  alternates: { canonical: "/work" },
+};
+
+export default async function Work() {
+  const stats = await getLiveStats();
   return (
-    <Column maxWidth="m" paddingTop="24">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        path={work.path}
-        title={work.title}
-        description={work.description}
-        image={`/api/og/generate?title=${encodeURIComponent(work.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <Heading marginBottom="l" variant="heading-strong-xl" align="center">
-        {work.title}
-      </Heading>
-      <Projects />
-    </Column>
+    <div className="wrap">
+      <header className="page-head">
+        <h1 className="wavy">Work</h1>
+        <p>What I have built and run, each with the story behind it.</p>
+      </header>
+      <div className="shots">
+        {sortedProjects().map((project, n) => (
+          <Reveal key={project.slug}>
+            <Link href={`/work/${project.slug}`} className="shot sketch">
+<Frame />
+              <Pic name={`plants-${n % 4}`} width={600} height={70} className="grown" />
+              <img className="frame" src={project.metadata.images[0]} alt={`${project.metadata.title}, its site as it looks now`} loading="lazy" />
+              <h3>{project.metadata.title}</h3>
+              <p>{fillStats(project.metadata.summary, stats)}</p>
+            </Link>
+          </Reveal>
+        ))}
+      </div>
+    </div>
   );
 }

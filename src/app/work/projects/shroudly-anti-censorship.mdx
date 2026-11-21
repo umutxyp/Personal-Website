@@ -1,0 +1,64 @@
+---
+title: "Shroudly"
+publishedAt: "2025-10-06"
+order: 2
+summary: "A free, open-source app that opens blocked sites and apps without a VPN — downloaded %shroudly.downloads% times, for computers, phones and TVs."
+images:
+  - "/images/projects/shroudly.jpg"
+team:
+  - name: "Umut Bayraktar"
+    role: "Founder & Lead Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://linkedin.com/in/umutxyp"
+link: "https://github.com/umutxyp/Shroudly"
+screenshotUrl: "https://codeshare.me/projects/shroudly"
+---
+
+## Blocked sites, opened without a VPN
+
+Shroudly is for people whose network blocks the sites and apps everybody else uses:
+YouTube, Instagram, X, Facebook, Discord, Telegram, WhatsApp, Wikipedia, Roblox, the news.
+It is free, open source under the MIT licence, and asks for no account.
+
+It has been downloaded **%shroudly.downloads% times** and has **%shroudly.stars% stars** on
+GitHub.
+
+## How it works
+
+A VPN sends everything you do through somebody else's server. Shroudly does not. It runs
+on your own device and changes how the first packets of a connection are sent — split,
+reordered, re-framed — so the filter in between no longer recognises them. Names are looked
+up over encrypted DNS, and the connection then goes straight to the real site.
+
+Networks differ, so the app learns: it remembers which technique opens which site on the
+network you are on, and tries the next one by itself when something stops working. On a
+phone or a TV it works as a VPN on the device, because that is the only way those systems
+let an app see other apps' connections. There is still no server of ours in between.
+
+## Everywhere there is a screen
+
+- **Windows** 10 and 11, with an installer of its own for Windows 7, 8 and 8.1.
+- **macOS** 12 and later, on Intel and Apple Silicon.
+- **Linux**, as an AppImage or a .deb, .rpm or .pacman package.
+- **Android** 8 and later: phones, tablets, Android TV and Google TV, from Google Play or
+  as an APK.
+- **iPhone, iPad, Mac and Apple TV**: the Mac app is on the Mac App Store; the others are
+  in App Store review, with an .ipa in every release meanwhile.
+
+One engine runs on all of them, and the app speaks 31 languages.
+
+## More than opening a page
+
+- **Discord app mode** and **Games and apps mode** on Windows and macOS, for programs that
+  ignore the system proxy: Discord's updater, Roblox, League of Legends, VALORANT.
+- **Block ads and trackers**, off until you turn it on, from a list rebuilt every week.
+- **Tor as the last way out**: a site that no technique opens can go through Tor, only if
+  you say yes, and the app tells you when it did.
+- **Help people in censored countries**: off until you turn it on, your computer can lend
+  its connection to Tor users where Tor itself is blocked.
+
+## What it knows about you
+
+Nothing that identifies you. While protection is on it sends a random id, made fresh every
+time it starts and never saved, so the count of running copies is real. No address is
+stored, there is no account, and the whole thing can be read on GitHub.

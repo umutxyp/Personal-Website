@@ -113,3 +113,11 @@ export function getProjects() {
     return { ...project, metadata: { ...project.metadata, images } };
   });
 }
+
+/** Projects in the order their `order` field asks for, newest first after that. */
+export function sortedProjects() {
+  return getProjects().sort((a, b) => {
+    const byOrder = (a.metadata.order ?? 99) - (b.metadata.order ?? 99);
+    return byOrder || new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime();
+  });
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" fill="none"><style>.d{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:d 1s linear forwards}
+@keyframes d{0%{stroke-dashoffset:1;opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+.s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lf{transform:scale(0);animation:lf .9s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes lf{to{transform:scale(1)}}
+.sw{animation:sw 4s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.bb{opacity:0;animation:bb 4s ease-in infinite}
+@keyframes bb{0%{opacity:0;transform:translateY(8px) scale(.6)}18%{opacity:1}80%{opacity:.9}100%{opacity:0;transform:translateY(-30px) scale(1.05)}}
+.fall{opacity:0;animation:fall 7s linear infinite}
+@keyframes fall{0%{opacity:0;transform:translate(0,-20px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translate(26px,150px)}}
+.tw{animation:tw 2.6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.1)}}
+.bob{animation:bob 3.4s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(1.5px) rotate(-3.5deg)}to{transform:translateY(-3.5px) rotate(3deg)}}
+.wv{animation:wv 7s ease-in-out infinite alternate}
+@keyframes wv{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+.cl{animation:cl 11s ease-in-out infinite alternate}
+@keyframes cl{from{transform:translateX(-10px)}to{transform:translateX(16px)}}
+.br{animation:br 2.8s ease-in-out infinite alternate}
+@keyframes br{from{transform:scale(1,1)}to{transform:scale(1.012,1.045)}}
+.tl{animation:tl 3.4s ease-in-out infinite alternate}
+@keyframes tl{from{transform:rotate(-7deg)}to{transform:rotate(6deg)}}
+.zz{opacity:0;animation:zz 3.9s ease-in-out infinite}
+@keyframes zz{0%{opacity:0;transform:translate(3px,7px)}35%{opacity:.85}100%{opacity:0;transform:translate(-9px,-17px)}}
+.spin{animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fly{animation:fly 9s ease-in-out infinite alternate}
+@keyframes fly{from{transform:translate(-8px,3px)}to{transform:translate(10px,-5px)}}
+.glow{animation:glow 3.2s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.55}to{opacity:1}}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.swing{animation:swing 3.6s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.i{opacity:0;animation:i .7s ease forwards}
+@keyframes i{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.d{stroke-dashoffset:0;opacity:1}.lf{transform:none}.i{opacity:1}.zz{opacity:.7}.bb{opacity:.85}.fall{opacity:.8}}</style><path class="i" d="M-40 90.9C-19.9 92.4 40.5 100 80.6 99.9C120.6 99.9 157.2 90.6 200.2 90.7C243.2 90.8 289.9 100.5 338.7 100.7C387.6 100.9 448.7 91.6 493.3 91.8C537.9 92 566.1 102.1 606.3 101.7C646.5 101.4 690.3 90.1 734.3 89.9C778.3 89.7 822.7 100.7 870.2 100.7C917.7 100.7 971.3 90 1019.5 90.1C1067.6 90.2 1122.3 101 1159.1 101.3C1195.9 101.7 1226.5 93.9 1240 92.4L1240 160L-40 160Z" fill="#122730" style="animation-delay:0.50s"/><path class="i" d="M-40 136C-6.5 134.2 96.7 125.4 160.8 125C224.8 124.7 288.4 134.1 344.4 134C400.3 134 448 125.1 496.4 125C544.9 125 583.3 133.6 635.1 133.7C686.9 133.7 750 125.4 807.3 125.6C864.7 125.8 917 134.6 979.1 134.7C1041.1 134.8 1136 126.5 1179.5 126.2C1223 125.9 1229.9 131.8 1240 132.9L1240 160L-40 160Z" fill="#17333f" fill-opacity=".7" style="animation-delay:0.70s"/><path class="d" pathLength="1" d="M-40 90.9C-19.9 92.4 40.5 100 80.6 99.9C120.6 99.9 157.2 90.6 200.2 90.7C243.2 90.8 289.9 100.5 338.7 100.7C387.6 100.9 448.7 91.6 493.3 91.8C537.9 92 566.1 102.1 606.3 101.7C646.5 101.4 690.3 90.1 734.3 89.9C778.3 89.7 822.7 100.7 870.2 100.7C917.7 100.7 971.3 90 1019.5 90.1C1067.6 90.2 1122.3 101 1159.1 101.3C1195.9 101.7 1226.5 93.9 1240 92.4" stroke="#e3f2f8" stroke-width="2.8" style="animation-delay:0.20s;animation-duration:1.50s"/><path class="i" d="M120 104L156 44L188 70L214 30L262 104Z" fill="#f1f9fc" style="animation-delay:0.75s"/><path class="d" pathLength="1" d="M120 104L156 44L188 70L214 30L262 104Z" stroke="#e3f2f8" stroke-width="2.4" style="animation-delay:0.60s;animation-duration:0.90s"/><g transform="translate(897 -14.2)"><g class="fall" style="animation-duration:6.5s;animation-delay:0.96s"><circle r="2.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(96.4 -39.3)"><g class="fall" style="animation-duration:7.0s;animation-delay:1.73s"><circle r="2.5" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(625.9 -37.2)"><g class="fall" style="animation-duration:6.1s;animation-delay:3.59s"><circle r="2.3" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(1153.6 -18.7)"><g class="fall" style="animation-duration:6.7s;animation-delay:3.42s"><circle r="1.8" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(965.9 -4)"><g class="fall" style="animation-duration:5.8s;animation-delay:2.77s"><circle r="1.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(722.6 1.6)"><g class="fall" style="animation-duration:7.5s;animation-delay:1.48s"><circle r="2" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(967.6 -6.2)"><g class="fall" style="animation-duration:8.8s;animation-delay:2.18s"><circle r="2.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(1111.7 -31.2)"><g class="fall" style="animation-duration:7.6s;animation-delay:1.44s"><circle r="2.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(306.2 -19.1)"><g class="fall" style="animation-duration:6.0s;animation-delay:3.36s"><circle r="2.8" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(206.8 -28.3)"><g class="fall" style="animation-duration:8.5s;animation-delay:2.80s"><circle r="2.7" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(867 -24.5)"><g class="fall" style="animation-duration:8.9s;animation-delay:1.02s"><circle r="1.6" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(608.8 -35.6)"><g class="fall" style="animation-duration:6.2s;animation-delay:3.54s"><circle r="1.9" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g></svg>

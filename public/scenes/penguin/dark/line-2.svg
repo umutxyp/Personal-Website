@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="84" viewBox="0 0 900 84" fill="none"><style>.d{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:d 1s linear forwards}
+@keyframes d{0%{stroke-dashoffset:1;opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+.s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lf{transform:scale(0);animation:lf .9s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes lf{to{transform:scale(1)}}
+.sw{animation:sw 4s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.bb{opacity:0;animation:bb 4s ease-in infinite}
+@keyframes bb{0%{opacity:0;transform:translateY(8px) scale(.6)}18%{opacity:1}80%{opacity:.9}100%{opacity:0;transform:translateY(-30px) scale(1.05)}}
+.fall{opacity:0;animation:fall 7s linear infinite}
+@keyframes fall{0%{opacity:0;transform:translate(0,-20px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translate(26px,150px)}}
+.tw{animation:tw 2.6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.1)}}
+.bob{animation:bob 3.4s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(1.5px) rotate(-3.5deg)}to{transform:translateY(-3.5px) rotate(3deg)}}
+.wv{animation:wv 7s ease-in-out infinite alternate}
+@keyframes wv{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+.cl{animation:cl 11s ease-in-out infinite alternate}
+@keyframes cl{from{transform:translateX(-10px)}to{transform:translateX(16px)}}
+.br{animation:br 2.8s ease-in-out infinite alternate}
+@keyframes br{from{transform:scale(1,1)}to{transform:scale(1.012,1.045)}}
+.tl{animation:tl 3.4s ease-in-out infinite alternate}
+@keyframes tl{from{transform:rotate(-7deg)}to{transform:rotate(6deg)}}
+.zz{opacity:0;animation:zz 3.9s ease-in-out infinite}
+@keyframes zz{0%{opacity:0;transform:translate(3px,7px)}35%{opacity:.85}100%{opacity:0;transform:translate(-9px,-17px)}}
+.spin{animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fly{animation:fly 9s ease-in-out infinite alternate}
+@keyframes fly{from{transform:translate(-8px,3px)}to{transform:translate(10px,-5px)}}
+.glow{animation:glow 3.2s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.55}to{opacity:1}}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.swing{animation:swing 3.6s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.i{opacity:0;animation:i .7s ease forwards}
+@keyframes i{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.d{stroke-dashoffset:0;opacity:1}.lf{transform:none}.i{opacity:1}.zz{opacity:.7}.bb{opacity:.85}.fall{opacity:.8}}</style><path class="d" pathLength="1" d="M6 53.1C20.8 55.1 65.6 65.6 94.8 65.6C123.9 65.6 152.9 53.4 180.9 53.1C208.9 52.8 234.5 64.3 262.8 63.8C291.1 63.3 323.9 50.1 350.5 50.3C377.1 50.5 394.9 64.6 422.4 65.1C449.8 65.7 486.6 53.9 515.2 53.5C543.8 53.2 568.7 63.3 594 63C619.2 62.7 637.8 51.2 666.7 51.7C695.6 52.1 734.1 66 767.2 65.6C800.3 65.3 846.6 50.2 865.4 49.7C884.2 49.1 877.6 60.2 880 62.3" stroke="#e3f2f8" stroke-width="2.3" style="animation-delay:0.20s;animation-duration:1.20s"/><g transform="translate(401.5 -20.3)"><g class="fall" style="animation-duration:6.7s;animation-delay:1.53s"><circle r="2.1" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(158.2 -13.1)"><g class="fall" style="animation-duration:6.0s;animation-delay:2.58s"><circle r="2.5" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(344.9 -4.7)"><g class="fall" style="animation-duration:6.4s;animation-delay:2.32s"><circle r="1.9" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(842.2 -1)"><g class="fall" style="animation-duration:6.3s;animation-delay:2.75s"><circle r="2.4" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(439.7 -22.9)"><g class="fall" style="animation-duration:6.2s;animation-delay:3.47s"><circle r="1.9" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(382.5 -19.6)"><g class="fall" style="animation-duration:6.8s;animation-delay:0.94s"><circle r="2.5" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g><g transform="translate(109.6 -16.1)"><g class="fall" style="animation-duration:6.1s;animation-delay:0.57s"><circle r="1.9" fill="#f1f9fc" stroke="#e3f2f8" stroke-width="1.1"/></g></g></svg>

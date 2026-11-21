@@ -1,34 +1,32 @@
-import { Flex, Meta, Schema } from "@once-ui-system/core";
-import GalleryView from "@/components/gallery/GalleryView";
-import { baseURL, gallery, person } from "@/resources";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Frame, } from "@/components";
+import { person } from "@/resources";
+import { getProjects } from "@/utils/utils";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: gallery.title,
-    description: gallery.description,
-    baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(gallery.title)}`,
-    path: gallery.path,
-  });
-}
+export const metadata: Metadata = {
+  title: "Gallery",
+  description: `Every product by ${person.name} as its site looks now.`,
+  alternates: { canonical: "/gallery" },
+};
 
 export default function Gallery() {
+  const shots = getProjects().filter((project) => project.metadata.images[0]);
   return (
-    <Flex maxWidth="l">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={gallery.title}
-        description={gallery.description}
-        path={gallery.path}
-        image={`/api/og/generate?title=${encodeURIComponent(gallery.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${gallery.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
-      <GalleryView images={gallery.images.map((image) => image.src)} />
-    </Flex>
+    <div className="wrap">
+      <header className="page-head">
+        <h1 className="wavy">Gallery</h1>
+        <p>Each product as its own site looks now: the pictures are taken again every week.</p>
+      </header>
+      <div className="gallery">
+        {shots.map((project) => (
+          <Link key={project.slug} href={`/work/${project.slug}`} className="shot sketch">
+<Frame />
+            <img className="frame" src={project.metadata.images[0]} alt={project.metadata.title} loading="lazy" />
+            <h3>{project.metadata.title}</h3>
+          </Link>
+        ))}
+      </div>
+    </div>
   );
 }

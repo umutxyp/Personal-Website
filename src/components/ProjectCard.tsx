@@ -1,87 +1,45 @@
-"use client";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { Frame } from "./Frame";
+import { Pic } from "./Pic";
 
-import Image from "next/image";
-import {
-  Column,
-  Flex,
-  Heading,
-  SmartLink,
-  Text,
-} from "@once-ui-system/core";
-
-interface ProjectCardProps {
+type Props = {
+  name: string;
+  url: string;
+  logo: string;
+  logoTile?: string;
   href: string;
-  priority?: boolean;
-  images: string[];
-  title: string;
-  /** Whether the project has a case study page to link to. */
-  hasCaseStudy: boolean;
-  description: string;
-  avatars: { src: string }[];
-  link: string;
-}
+  description: ReactNode;
+  stats: { value: string; label: string }[];
+  /** Which of the four drawings grows on its top edge. */
+  plants: number;
+};
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
-  href,
-  priority,
-  images = [],
-  title,
-  hasCaseStudy,
-  description,
-  avatars,
-  link,
-}) => {
+/** A product in a hand-drawn frame, the theme's plants growing along its top. */
+export function ProjectCard({ name, url, logo, logoTile, href, description, stats, plants }: Props) {
   return (
-    <Flex
-      fillWidth
-      radius="l"
-      border="neutral-alpha-weak"
-      overflow="hidden"
-      s={{ direction: "column" }}
-    >
-      {images[0] && (
-        <div className="project-card-image">
-          <Image
-            priority={priority}
-            src={images[0]}
-            alt={title}
-            fill
-            style={{ objectFit: "cover" }}
-          />
+    <Link href={href} className="card sketch">
+      <Frame />
+      <Pic name={`plants-${plants % 4}`} width={600} height={70} className="grown" />
+      <div className="card-head">
+        <span className="logo" style={logoTile ? { background: logoTile } : undefined}>
+          <img src={logo} width={54} height={54} alt="" loading="lazy" />
+        </span>
+        <div>
+          <h3>{name}</h3>
+          <span>{url.replace(/^https?:\/\//, "")}</span>
+        </div>
+      </div>
+      <p>{description}</p>
+      {stats.length > 0 && (
+        <div className="figures">
+          {stats.map((stat) => (
+            <span key={stat.label}>
+              <mark>{stat.value}</mark> {stat.label}
+            </span>
+          ))}
         </div>
       )}
-      <Column flex={1} gap="12" padding="20" vertical="center">
-        {title && (
-          <Heading as="h2" wrap="balance" variant="heading-strong-m">
-            {title}
-          </Heading>
-        )}
-        {description?.trim() && (
-          <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-            {description}
-          </Text>
-        )}
-        <Flex gap="16" wrap>
-          {hasCaseStudy && (
-            <SmartLink
-              suffixIcon="arrowRight"
-              style={{ margin: "0", width: "fit-content" }}
-              href={href}
-            >
-              <Text variant="body-default-s">Read case study</Text>
-            </SmartLink>
-          )}
-          {link && (
-            <SmartLink
-              suffixIcon="arrowUpRightFromSquare"
-              style={{ margin: "0", width: "fit-content" }}
-              href={link}
-            >
-              <Text variant="body-default-s">View project</Text>
-            </SmartLink>
-          )}
-        </Flex>
-      </Column>
-    </Flex>
+    </Link>
   );
-};
+}

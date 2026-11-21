@@ -1,172 +1,84 @@
-import "@once-ui-system/core/css/styles.css";
-import "@once-ui-system/core/css/tokens.css";
-import "@/resources/custom.css";
+import "./themes.css";
+import "./globals.css";
 
-import classNames from "classnames";
+import type { Metadata, Viewport } from "next";
+import { Gochi_Hand, Shantell_Sans } from "next/font/google";
+import { Footer, Header } from "@/components";
+import { baseURL, defaultTheme, person, siteData, themes } from "@/resources";
 
-import {
-  Background,
-  Column,
-  Flex,
-  Meta,
-  RevealFx,
-  SpacingToken,
-} from "@once-ui-system/core";
-import type { Opacity } from "@once-ui-system/core";
-import { Footer, Header, RouteGuard, Providers } from "@/components";
-import { baseURL, effects, fonts, style, dataStyle, home } from "@/resources";
+// The name is written in Gochi Hand, everything else in Shantell Sans: a marker and a pen.
+const display = Gochi_Hand({ weight: "400", subsets: ["latin"], variable: "--font-display", display: "swap" });
+const text = Shantell_Sans({
+  subsets: ["latin", "latin-ext"],
+  axes: ["BNCE", "INFM", "SPAC"],
+  variable: "--font-text",
+  display: "swap",
+});
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: home.title,
-    description: home.description,
-    baseURL: baseURL,
-    path: home.path,
-    image: home.image,
-  });
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(baseURL),
+  title: { default: `${person.name} | ${person.role}`, template: `%s | ${person.name}` },
+  description: person.biography,
+  keywords: siteData.keywords,
+  authors: [{ name: person.name, url: baseURL }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: person.name,
+    title: `${person.name} | ${person.role}`,
+    description: person.biography,
+    url: baseURL,
+    images: [{ url: `/api/og/generate?title=${encodeURIComponent(person.name)}`, width: 1280, height: 720 }],
+  },
+  twitter: { card: "summary_large_image" },
+};
 
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fbfdff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c141d" },
+  ],
+};
+
+// Runs before the first paint: the theme and the mode the visitor chose last time, or the
+// default theme in the mode their system asks for. A link can carry a choice too
+// (?theme=owl&mode=dark), which is then remembered like any other.
+const themeInit = `(function(){var d=document.documentElement,t,m,q=new URLSearchParams(location.search),ok=${JSON.stringify(themes.map((theme) => theme.id))};
+try{if(ok.indexOf(q.get("theme"))>=0)localStorage.setItem("theme",q.get("theme"));if(q.get("mode")==="light"||q.get("mode")==="dark")localStorage.setItem("mode",q.get("mode"));
+t=localStorage.getItem("theme");m=localStorage.getItem("mode")}catch(e){t=q.get("theme");m=q.get("mode")}
+if(ok.indexOf(t)<0)t=${JSON.stringify(defaultTheme)};
+if(m!=="light"&&m!=="dark")m=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+d.dataset.theme=t;d.dataset.mode=m})()`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: person.name,
+  url: baseURL,
+  image: `${baseURL}${person.avatar}`,
+  jobTitle: person.role,
+  description: person.biography,
+  worksFor: { "@type": "Organization", name: siteData.studio.name, url: siteData.studio.url },
+  sameAs: siteData.social.map((item) => item.link).filter((link) => link.startsWith("https://")),
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <Flex
-      suppressHydrationWarning
-      as="html"
-      lang="en"
-      fillWidth
-      className={classNames(
-        fonts.heading.variable,
-        fonts.body.variable,
-        fonts.label.variable,
-        fonts.code.variable,
-      )}
-    >
+    <html lang="en" data-theme={defaultTheme} data-mode="light" className={`${display.variable} ${text.variable}`} suppressHydrationWarning>
       <head>
-        <script
-          id="theme-init"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const root = document.documentElement;
-                  const defaultTheme = 'system';
-                  
-                  // Set defaults from config
-                  const config = ${JSON.stringify({
-                    brand: style.brand,
-                    accent: style.accent,
-                    neutral: style.neutral,
-                    solid: style.solid,
-                    "solid-style": style.solidStyle,
-                    border: style.border,
-                    surface: style.surface,
-                    transition: style.transition,
-                    scaling: style.scaling,
-                    "viz-style": dataStyle.variant,
-                  })};
-                  
-                  // Apply default values
-                  Object.entries(config).forEach(([key, value]) => {
-                    root.setAttribute('data-' + key, value);
-                  });
-                  
-                  // Resolve theme
-                  const resolveTheme = (themeValue) => {
-                    if (!themeValue || themeValue === 'system') {
-                      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                    }
-                    return themeValue;
-                  };
-                  
-                  // Apply saved theme
-                  const savedTheme = localStorage.getItem('data-theme');
-                  const resolvedTheme = resolveTheme(savedTheme);
-                  root.setAttribute('data-theme', resolvedTheme);
-                  
-                  // Apply any saved style overrides
-                  const styleKeys = Object.keys(config);
-                  styleKeys.forEach(key => {
-                    const value = localStorage.getItem('data-' + key);
-                    if (value) {
-                      root.setAttribute('data-' + key, value);
-                    }
-                  });
-                } catch (e) {
-                  console.error('Failed to initialize theme:', e);
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })();
-            `,
-          }}
-        />
-        <link rel="icon" href="/images/avatar.jpg" type="image/jpeg" />
-        <link rel="apple-touch-icon" href="/images/avatar.jpg" />
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: our own script, set before paint */}
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <noscript>
+          <style>{".reveal{opacity:1;transform:none}"}</style>
+        </noscript>
       </head>
-      <Providers>
-        <Column
-          as="body"
-          background="page"
-          fillWidth
-          style={{ minHeight: "100vh" }}
-          margin="0"
-          padding="0"
-          horizontal="center"
-        >
-          <RevealFx fill position="absolute">
-            <Background
-              mask={{
-                x: effects.mask.x,
-                y: effects.mask.y,
-                radius: effects.mask.radius,
-                cursor: effects.mask.cursor,
-              }}
-              gradient={{
-                display: effects.gradient.display,
-                opacity: effects.gradient.opacity as Opacity,
-                x: effects.gradient.x,
-                y: effects.gradient.y,
-                width: effects.gradient.width,
-                height: effects.gradient.height,
-                tilt: effects.gradient.tilt,
-                colorStart: effects.gradient.colorStart,
-                colorEnd: effects.gradient.colorEnd,
-              }}
-              dots={{
-                display: effects.dots.display,
-                opacity: effects.dots.opacity as Opacity,
-                size: effects.dots.size as SpacingToken,
-                color: effects.dots.color,
-              }}
-              grid={{
-                display: effects.grid.display,
-                opacity: effects.grid.opacity as Opacity,
-                color: effects.grid.color,
-                width: effects.grid.width,
-                height: effects.grid.height,
-              }}
-              lines={{
-                display: effects.lines.display,
-                opacity: effects.lines.opacity as Opacity,
-                size: effects.lines.size as SpacingToken,
-                thickness: effects.lines.thickness,
-                angle: effects.lines.angle,
-                color: effects.lines.color,
-              }}
-            />
-          </RevealFx>
-          <Flex fillWidth minHeight="16" s={{ hide: true }} />
-          <Header />
-          <Flex zIndex={0} fillWidth padding="l" horizontal="center" flex={1}>
-            <Flex horizontal="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
-            </Flex>
-          </Flex>
-          <Footer />
-        </Column>
-      </Providers>
-    </Flex>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: structured data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      </body>
+    </html>
   );
 }

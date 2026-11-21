@@ -1,207 +1,90 @@
-import {
-  Avatar,
-  Button,
-  Column,
-  Heading,
-  Icon,
-  IconButton,
-  Tag,
-  Text,
-  Meta,
-  Schema,
-  Row,
-  Line,
-} from "@once-ui-system/core";
-import { baseURL, about, person, social } from "@/resources";
-import React from "react";
+import type { Metadata } from "next";
+import { Frame, Heading, Reveal } from "@/components";
 import { getLiveStats, renderStats } from "@/lib/live-stats";
+import { person, siteData } from "@/resources";
 
-export async function generateMetadata() {
-  return Meta.generate({
-    title: about.title,
-    description: about.description,
-    baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(about.title)}`,
-    path: about.path,
-  });
-}
+export const revalidate = 86400;
+
+export const metadata: Metadata = {
+  title: "About",
+  description: person.biography,
+  alternates: { canonical: "/about" },
+};
 
 export default async function About() {
   const stats = await getLiveStats();
+  const { about } = siteData;
   return (
-    <Column maxWidth="s" gap="xl" paddingY="12" horizontal="center">
-      <Schema
-        as="webPage"
-        baseURL={baseURL}
-        title={about.title}
-        description={about.description}
-        path={about.path}
-        image={`/api/og/generate?title=${encodeURIComponent(about.title)}`}
-        author={{
-          name: person.name,
-          url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
-        }}
-      />
+    <div className="wrap">
+      <header className="page-head">
+        <h1 className="wavy">About</h1>
+        <p>{renderStats(about.intro, stats)}</p>
+        <div className="tags">
+          {person.languages.map((language) => (
+            <span key={language} className="tag small">
+              {language}
+            </span>
+          ))}
+          <a className="tag" href={`mailto:${person.email}`}>
+            write to me
+          </a>
+        </div>
+      </header>
 
-      {/* Header */}
-      <Column fillWidth horizontal="center" align="center" gap="m">
-        {about.avatar.display && <Avatar src={person.avatar} size="xl" />}
-        <Column horizontal="center" align="center" gap="8">
-          <Heading variant="display-strong-l">{person.name}</Heading>
-          <Text variant="heading-default-m" onBackground="neutral-weak">
-            {person.role}
-          </Text>
-          <Row gap="8" vertical="center" marginTop="4">
-            <Icon onBackground="accent-weak" name="globe" size="s" />
-            <Text variant="body-default-s" onBackground="neutral-weak">
-              {person.location}
-            </Text>
-          </Row>
-        </Column>
+      <section className="section">
+        <Heading line={1}>Work</Heading>
+        {about.experiences.map((job) => (
+          <Reveal key={job.company} className="job sketch">
+<Frame />
+            <div className="job-head">
+              <h3>
+                <a href={job.link}>{job.company}</a>
+              </h3>
+              <span className="role">{job.role}</span>
+              <span className="when">{job.timeframe}</span>
+            </div>
+            <ul>
+              {job.achievements.map((line) => (
+                <li key={line}>{renderStats(line, stats)}</li>
+              ))}
+            </ul>
+          </Reveal>
+        ))}
+      </section>
 
-        {person.languages && person.languages.length > 0 && (
-          <Row wrap gap="8" horizontal="center">
-            {person.languages.map((language) => (
-              <Tag key={language} size="l">{language}</Tag>
-            ))}
-          </Row>
-        )}
-
-        {social.length > 0 && (
-          <Row wrap gap="8" horizontal="center" paddingTop="4">
-            {social.map(
-              (item) =>
-                item.link && (
-                  <React.Fragment key={item.name}>
-                    <Row s={{ hide: true }}>
-                      <Button
-                        href={item.link}
-                        prefixIcon={item.icon}
-                        label={item.name}
-                        size="s"
-                        weight="default"
-                        variant="secondary"
-                      />
-                    </Row>
-                    <Row hide s={{ hide: false }}>
-                      <IconButton
-                        size="l"
-                        href={item.link}
-                        icon={item.icon}
-                        variant="secondary"
-                      />
-                    </Row>
-                  </React.Fragment>
-                ),
-            )}
-          </Row>
-        )}
-
-        {about.calendar.display && (
-          <Row
-            fitWidth
-            border="brand-alpha-medium"
-            background="brand-alpha-weak"
-            radius="full"
-            padding="4"
-            gap="8"
-            vertical="center"
-            style={{ backdropFilter: "blur(var(--static-space-1))" }}
-          >
-            <Icon paddingLeft="12" name="calendar" onBackground="brand-weak" />
-            <Row paddingX="8">Schedule a call</Row>
-            <IconButton
-              href={about.calendar.link}
-              data-border="rounded"
-              variant="secondary"
-              icon="chevronRight"
-            />
-          </Row>
-        )}
-      </Column>
-
-      {/* Intro */}
-      {about.intro.display && (
-        <Column fillWidth gap="m">
-          <Heading as="h2" variant="display-strong-s">{about.intro.title}</Heading>
-          <Line />
-          <Text variant="body-default-l">{renderStats(about.intro.description, stats)}</Text>
-        </Column>
-      )}
-
-      {/* Work Experience */}
-      {about.work.display && (
-        <Column fillWidth gap="l">
-          <Heading as="h2" variant="display-strong-s">{about.work.title}</Heading>
-          <Line />
-          {about.work.experiences.map((experience, index) => (
-            <Column key={`${experience.company}-${index}`} fillWidth gap="8">
-              <Row
-                fillWidth
-                gap="4"
-                horizontal="between"
-                vertical="end"
-                s={{ direction: "column", horizontal: "start", vertical: "start" }}
-              >
-                <Text variant="heading-strong-l">{experience.company}</Text>
-                <Text variant="heading-default-xs" onBackground="neutral-weak">
-                  {experience.timeframe}
-                </Text>
-              </Row>
-              <Text variant="body-default-s" onBackground="brand-weak" marginBottom="8">
-                {experience.role}
-              </Text>
-              <Column as="ul" gap="12">
-                {experience.achievements.map((achievement, achIndex) => (
-                  <Text as="li" variant="body-default-m" key={`${experience.company}-${achIndex}`}>
-                    {renderStats(achievement, stats)}
-                  </Text>
+      <Reveal as="section" className="section">
+        <Heading line={2}>What I work with</Heading>
+        <div className="skills">
+          {about.technical.map((skill) => (
+            <div key={skill.title} className="skill sketch">
+<Frame />
+              <h3>{skill.title}</h3>
+              <p>{skill.description}</p>
+              <div className="tags">
+                {skill.tags.map((tag) => (
+                  <span key={tag} className="tag small">
+                    {tag}
+                  </span>
                 ))}
-              </Column>
-            </Column>
+              </div>
+            </div>
           ))}
-        </Column>
-      )}
+        </div>
+      </Reveal>
 
-      {/* Studies */}
-      {about.studies.display && (
-        <Column fillWidth gap="l">
-          <Heading as="h2" variant="display-strong-s">{about.studies.title}</Heading>
-          <Line />
-          {about.studies.institutions.map((institution, index) => (
-            <Column key={`${institution.name}-${index}`} fillWidth gap="8">
-              <Text variant="heading-strong-l">{institution.name}</Text>
-              <Text variant="body-default-m" onBackground="neutral-weak">
-                {institution.description}
-              </Text>
-            </Column>
+      <Reveal as="section" className="section">
+        <Heading line={0}>Studies</Heading>
+        <ul className="rows">
+          {about.studies.map((study) => (
+            <li key={study.name}>
+              <div className="row-head">
+                <b style={{ fontSize: 22 }}>{study.name}</b>
+              </div>
+              <p>{study.description}</p>
+            </li>
           ))}
-        </Column>
-      )}
-
-      {/* Technical Skills */}
-      {about.technical.display && (
-        <Column fillWidth gap="l">
-          <Heading as="h2" variant="display-strong-s">{about.technical.title}</Heading>
-          <Line />
-          {about.technical.skills.map((skill, index) => (
-            <Column key={`${skill.title}-${index}`} fillWidth gap="12">
-              <Column fillWidth gap="4">
-                <Text variant="heading-strong-m">{skill.title}</Text>
-                <Text variant="heading-default-xs" onBackground="brand-weak">
-                  {skill.description}
-                </Text>
-              </Column>
-              <Row wrap gap="8">
-                {skill.tags?.map((tag) => (
-                  <Tag key={tag.name} size="l">{tag.name}</Tag>
-                ))}
-              </Row>
-            </Column>
-          ))}
-        </Column>
-      )}
-    </Column>
+        </ul>
+      </Reveal>
+    </div>
   );
 }

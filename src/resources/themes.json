@@ -1,0 +1,75 @@
+{
+  "default": "fox",
+  "themes": [
+    {
+      "id": "fox",
+      "name": "Fox by the sea",
+      "swatch": [
+        "#2188e0",
+        "#86cfe0",
+        "#ff8559",
+        "#4aa8f2"
+      ]
+    },
+    {
+      "id": "cat",
+      "name": "Cat in the ivy",
+      "swatch": [
+        "#2f8f5b",
+        "#8fc79c",
+        "#d4572f",
+        "#f3b888"
+      ]
+    },
+    {
+      "id": "lion",
+      "name": "Lion on the savanna",
+      "swatch": [
+        "#c07a16",
+        "#e3c46a",
+        "#e2572b",
+        "#efbf62"
+      ]
+    },
+    {
+      "id": "owl",
+      "name": "Owl at night",
+      "swatch": [
+        "#6a55d6",
+        "#b4a8ec",
+        "#f2a23a",
+        "#9a8adf"
+      ]
+    },
+    {
+      "id": "bear",
+      "name": "Bear in the forest",
+      "swatch": [
+        "#3c7d3a",
+        "#7fb069",
+        "#c9532c",
+        "#b07a4d"
+      ]
+    },
+    {
+      "id": "penguin",
+      "name": "Penguin in the snow",
+      "swatch": [
+        "#1697b7",
+        "#bfe6f2",
+        "#ff9a3d",
+        "#2a3f52"
+      ]
+    },
+    {
+      "id": "tortoise",
+      "name": "Tortoise in the desert",
+      "swatch": [
+        "#c8642f",
+        "#9cc7a0",
+        "#e8473a",
+        "#8fae6b"
+      ]
+    }
+  ]
+}

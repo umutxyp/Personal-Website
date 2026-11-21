@@ -1,15 +1,19 @@
-import { Column, Heading, Text } from "@once-ui-system/core";
+import Link from "next/link";
+import { Pic } from "@/components";
 
 export default function NotFound() {
   return (
-    <Column as="section" fill center paddingBottom="160">
-      <Text marginBottom="s" variant="display-strong-xl">
-        404
-      </Text>
-      <Heading marginBottom="l" variant="display-default-xs">
-        Page Not Found
-      </Heading>
-      <Text onBackground="neutral-weak">The page you are looking for does not exist.</Text>
-    </Column>
+    <div className="wrap">
+      <header className="page-head">
+        <h1 className="wavy">Nothing here</h1>
+        <p>This page wandered off. The rest of the site is where you left it.</p>
+        <div className="tags">
+          <Link className="tag" href="/">
+            back home
+          </Link>
+        </div>
+      </header>
+      <Pic name="sleeper" width={240} height={132} className="lost" />
+    </div>
   );
 }

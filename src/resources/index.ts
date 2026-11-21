@@ -1,28 +1,17 @@
-// import a pre-defined template for config and content options
-export {
-  person,
-  social,
-  newsletter,
-  home,
-  about,
-  blog,
-  work,
-  gallery,
-} from "./content";
+import siteData from "./site-data";
+import themeList from "./themes.json";
 
-export {
-  display,
-  mailchimp,
-  routes,
-  protectedRoutes,
-  baseURL,
-  fonts,
-  style,
-  schema,
-  sameAs,
-  socialSharing,
-  effects,
-  dataStyle,
-} from "./once-ui.config";
+export { siteData };
+export const baseURL = siteData.baseURL;
+export const person = siteData.person;
+export const themes = themeList.themes;
+export const defaultTheme = themeList.default;
 
-export { default as siteData } from "./site-data";
+/** The pages in the header, in order. */
+export const nav = [
+  { path: "/", label: "home" },
+  { path: "/about", label: "about" },
+  { path: "/work", label: "work" },
+  { path: "/gallery", label: "gallery" },
+  { path: "/github", label: "open source" },
+];

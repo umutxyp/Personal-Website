@@ -1,49 +1,21 @@
-import { Row, IconButton, Text } from "@once-ui-system/core";
-import { person, social } from "@/resources";
-import styles from "./Footer.module.scss";
+import { person, siteData } from "@/resources";
+import { Pic } from "./Pic";
+import { ThemeRow } from "./ThemePicker";
 
-export const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
+export function Footer() {
   return (
-    <Row as="footer" fillWidth padding="8" horizontal="center" s={{ direction: "column" }}>
-      <Row
-        className={styles.mobile}
-        maxWidth="m"
-        paddingY="8"
-        paddingX="16"
-        gap="16"
-        horizontal="between"
-        vertical="center"
-        s={{
-          direction: "column",
-          horizontal: "center",
-          vertical: "center",
-        }}
-      >
-        <Text variant="body-default-s" onBackground="neutral-weak">
-          © {currentYear}{" "}
-          <a href="https://github.com/umutxyp" style={{ color: "inherit" }}>
-            umutxyp
-          </a>
-        </Text>
-        <Row gap="16">
-          {social.map(
-            (item) =>
-              item.link && (
-                <IconButton
-                  key={item.name}
-                  href={item.link}
-                  icon={item.icon}
-                  tooltip={item.name}
-                  size="s"
-                  variant="ghost"
-                />
-              ),
-          )}
-        </Row>
-      </Row>
-      <Row height="80" hide s={{ hide: false }} />
-    </Row>
+    <footer className="footer">
+      <Pic name="ground" width={1200} height={150} className="ground" />
+      <div className="footer-body">
+        <div className="wrap">
+          <h4>pick a world</h4>
+          <ThemeRow />
+          <p className="small">
+            © {new Date().getFullYear()} {person.name} · drawn by hand, in code ·{" "}
+            <a href={`https://github.com/${siteData.github.username}/Personal-Website`}>the source is open</a>
+          </p>
+        </div>
+      </div>
+    </footer>
   );
-};
+}

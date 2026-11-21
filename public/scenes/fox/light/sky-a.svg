@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="300" viewBox="0 0 380 300" fill="none"><style>.d{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:0;animation:d 1s linear forwards}
+@keyframes d{0%{stroke-dashoffset:1;opacity:1}100%{stroke-dashoffset:0;opacity:1}}
+.s{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.lf{transform:scale(0);animation:lf .9s cubic-bezier(.34,1.56,.64,1) forwards}
+@keyframes lf{to{transform:scale(1)}}
+.sw{animation:sw 4s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.bb{opacity:0;animation:bb 4s ease-in infinite}
+@keyframes bb{0%{opacity:0;transform:translateY(8px) scale(.6)}18%{opacity:1}80%{opacity:.9}100%{opacity:0;transform:translateY(-30px) scale(1.05)}}
+.fall{opacity:0;animation:fall 7s linear infinite}
+@keyframes fall{0%{opacity:0;transform:translate(0,-20px)}12%{opacity:1}88%{opacity:1}100%{opacity:0;transform:translate(26px,150px)}}
+.tw{animation:tw 2.6s ease-in-out infinite alternate}
+@keyframes tw{from{opacity:.25;transform:scale(.7)}to{opacity:1;transform:scale(1.1)}}
+.bob{animation:bob 3.4s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(1.5px) rotate(-3.5deg)}to{transform:translateY(-3.5px) rotate(3deg)}}
+.wv{animation:wv 7s ease-in-out infinite alternate}
+@keyframes wv{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+.cl{animation:cl 11s ease-in-out infinite alternate}
+@keyframes cl{from{transform:translateX(-10px)}to{transform:translateX(16px)}}
+.br{animation:br 2.8s ease-in-out infinite alternate}
+@keyframes br{from{transform:scale(1,1)}to{transform:scale(1.012,1.045)}}
+.tl{animation:tl 3.4s ease-in-out infinite alternate}
+@keyframes tl{from{transform:rotate(-7deg)}to{transform:rotate(6deg)}}
+.zz{opacity:0;animation:zz 3.9s ease-in-out infinite}
+@keyframes zz{0%{opacity:0;transform:translate(3px,7px)}35%{opacity:.85}100%{opacity:0;transform:translate(-9px,-17px)}}
+.spin{animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fly{animation:fly 9s ease-in-out infinite alternate}
+@keyframes fly{from{transform:translate(-8px,3px)}to{transform:translate(10px,-5px)}}
+.glow{animation:glow 3.2s ease-in-out infinite alternate}
+@keyframes glow{from{opacity:.55}to{opacity:1}}
+.blink{transform-box:fill-box;transform-origin:center;animation:blink 5.5s infinite}
+@keyframes blink{0%,91%,100%{transform:scaleY(1)}95%{transform:scaleY(.08)}}
+.swing{animation:swing 3.6s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-9deg)}to{transform:rotate(9deg)}}
+.i{opacity:0;animation:i .7s ease forwards}
+@keyframes i{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.d{stroke-dashoffset:0;opacity:1}.lf{transform:none}.i{opacity:1}.zz{opacity:.7}.bb{opacity:.85}.fall{opacity:.8}}</style><g transform="translate(110 104)"><g class="spin"><path class="i s" d="M64 0L74 0M55.4 32L70.1 40.5M32 55.4L37 64.1M0 64L0 81M-32 55.4L-37 64.1M-55.4 32L-70.1 40.5M-64 0L-74 0M-55.4 -32L-70.1 -40.5M-32 -55.4L-37 -64.1M-0 -64L-0 -81M32 -55.4L37 -64.1M55.4 -32L70.1 -40.5" stroke="#14273d" stroke-width="2.3" style="animation-delay:0.80s"/></g><path class="i" d="M50.4 0C50.8 9.6 46.7 21.4 41 29.8C35.3 38.1 25.6 47.5 16.3 50.1C7 52.7 -5 48.6 -14.7 45.4C-24.5 42.1 -36.1 38.1 -42 30.5C-47.9 23 -50.1 10.3 -50.2 0C-50.3 -10.3 -48.4 -23.1 -42.6 -31C-36.8 -38.9 -24.9 -44.8 -15.4 -47.3C-5.8 -49.7 5.8 -48.8 14.8 -45.6C23.8 -42.4 32.6 -35.6 38.5 -28C44.5 -20.4 50 -9.6 50.4 0Z" fill="#ffd66e" style="animation-delay:0.40s"/><path class="d" pathLength="1" d="M52.6 0C52.6 9.8 46.4 21.6 40.1 29.1C33.8 36.7 23.9 42.3 14.7 45.3C5.5 48.2 -6.3 49.5 -15.1 46.6C-24 43.7 -32.6 35.6 -38.2 27.8C-43.9 20 -48.9 9.5 -49.1 0C-49.4 -9.5 -45.5 -20.8 -39.9 -29C-34.4 -37.2 -25.3 -46.2 -16 -49.4C-6.8 -52.5 6.2 -51.4 15.6 -48.1C25 -44.8 34.3 -37.4 40.5 -29.4C46.6 -21.4 52.7 -9.8 52.6 0Z" stroke="#14273d" stroke-width="2.5" style="animation-delay:0.30s;animation-duration:1.00s"/></g><g transform="translate(250 170) scale(0.9)"><g class="cl" style="animation-delay:-2.2s"><path class="i" d="M-58 14C-76 14 -78 -8 -58 -10C-58 -30 -30 -36 -20 -20C-10 -42 26 -40 30 -16C48 -24 66 -8 54 8C62 14 56 22 46 20C30 22 -30 22 -58 14Z" fill="#d6ecfa" style="animation-delay:0.70s"/><path class="d" pathLength="1" d="M-58 14C-76 14 -78 -8 -58 -10C-58 -30 -30 -36 -20 -20C-10 -42 26 -40 30 -16C48 -24 66 -8 54 8C62 14 56 22 46 20C30 22 -30 22 -58 14Z" stroke="#14273d" stroke-width="2.4444444444444446" style="animation-delay:0.70s;animation-duration:1.10s"/></g></g><g transform="translate(300 70) scale(0.8)"><g class="cl" style="animation-duration:9.2s"><path class="d" pathLength="1" d="M-13 1Q-7 -9 0 0Q7 -9 13 1" stroke="#14273d" stroke-width="2.75" style="animation-delay:1.20s;animation-duration:0.50s"/></g></g></svg>
